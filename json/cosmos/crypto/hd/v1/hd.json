@@ -1,0 +1,58 @@
+{
+  "package": "cosmos.crypto.hd.v1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "crypto": {
+            "nested": {
+              "hd": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/crypto/hd",
+                      "(gogoproto.goproto_getters_all)": false
+                    },
+                    "nested": {
+                      "BIP44Params": {
+                        "options": {
+                          "(gogoproto.goproto_stringer)": false
+                        },
+                        "fields": {
+                          "purpose": {
+                            "type": "uint32",
+                            "id": 1
+                          },
+                          "coinType": {
+                            "type": "uint32",
+                            "id": 2
+                          },
+                          "account": {
+                            "type": "uint32",
+                            "id": 3
+                          },
+                          "change": {
+                            "type": "bool",
+                            "id": 4
+                          },
+                          "addressIndex": {
+                            "type": "uint32",
+                            "id": 5
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

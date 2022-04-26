@@ -1,0 +1,99 @@
+{
+  "package": "cosmos.crypto.keyring.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "cosmos/crypto/hd/v1/hd.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "crypto": {
+            "nested": {
+              "keyring": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/crypto/keyring",
+                      "(gogoproto.goproto_getters_all)": false
+                    },
+                    "nested": {
+                      "Record": {
+                        "oneofs": {
+                          "item": {
+                            "oneof": [
+                              "local",
+                              "ledger",
+                              "multi",
+                              "offline"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "pubKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          },
+                          "local": {
+                            "type": "Local",
+                            "id": 3
+                          },
+                          "ledger": {
+                            "type": "Ledger",
+                            "id": 4
+                          },
+                          "multi": {
+                            "type": "Multi",
+                            "id": 5
+                          },
+                          "offline": {
+                            "type": "Offline",
+                            "id": 6
+                          }
+                        },
+                        "nested": {
+                          "Local": {
+                            "fields": {
+                              "privKey": {
+                                "type": "google.protobuf.Any",
+                                "id": 1
+                              },
+                              "privKeyType": {
+                                "type": "string",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "Ledger": {
+                            "fields": {
+                              "path": {
+                                "type": "hd.v1.BIP44Params",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "Multi": {
+                            "fields": {}
+                          },
+                          "Offline": {
+                            "fields": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

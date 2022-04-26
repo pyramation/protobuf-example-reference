@@ -1,0 +1,35 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api;api",
+              "java_multiple_files": true,
+              "java_outer_classname": "LaunchStageProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "LaunchStage": {
+                "values": {
+                  "LAUNCH_STAGE_UNSPECIFIED": 0,
+                  "UNIMPLEMENTED": 6,
+                  "PRELAUNCH": 7,
+                  "EARLY_ACCESS": 1,
+                  "ALPHA": 2,
+                  "BETA": 3,
+                  "GA": 4,
+                  "DEPRECATED": 5
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

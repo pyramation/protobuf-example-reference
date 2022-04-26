@@ -1,0 +1,182 @@
+{
+  "package": "ibc.core.client.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "cosmos/upgrade/v1beta1/upgrade.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "client": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/02-client/types"
+                    },
+                    "nested": {
+                      "IdentifiedClientState": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          }
+                        }
+                      },
+                      "ConsensusStateWithHeight": {
+                        "fields": {
+                          "height": {
+                            "type": "Height",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yamlconsensus_state"
+                            }
+                          }
+                        }
+                      },
+                      "ClientConsensusStates": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "consensusStates": {
+                            "rule": "repeated",
+                            "type": "ConsensusStateWithHeight",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_states",
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "ClientUpdateProposal": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "title": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "description": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "subjectClientId": {
+                            "type": "string",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:subject_client_id"
+                            }
+                          },
+                          "substituteClientId": {
+                            "type": "string",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:substitute_client_id"
+                            }
+                          }
+                        }
+                      },
+                      "UpgradeProposal": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false,
+                          "(gogoproto.goproto_stringer)": false,
+                          "(gogoproto.equal)": true
+                        },
+                        "fields": {
+                          "title": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "description": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "plan": {
+                            "type": "cosmos.upgrade.v1beta1.Plan",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "upgradedClientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:upgraded_client_state"
+                            }
+                          }
+                        }
+                      },
+                      "Height": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false,
+                          "(gogoproto.goproto_stringer)": false
+                        },
+                        "fields": {
+                          "revisionNumber": {
+                            "type": "uint64",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:revision_number"
+                            }
+                          },
+                          "revisionHeight": {
+                            "type": "uint64",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:revision_height"
+                            }
+                          }
+                        }
+                      },
+                      "Params": {
+                        "fields": {
+                          "allowedClients": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:allowed_clients"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

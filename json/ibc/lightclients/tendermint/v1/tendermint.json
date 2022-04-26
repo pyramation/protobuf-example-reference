@@ -1,0 +1,235 @@
+{
+  "package": "ibc.lightclients.tendermint.v1",
+  "imports": [
+    "tendermint/types/validator.proto",
+    "tendermint/types/types.proto",
+    "confio/proofs.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "ibc/core/client/v1/client.proto",
+    "ibc/core/commitment/v1/commitment.proto",
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "lightclients": {
+            "nested": {
+              "tendermint": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/light-clients/07-tendermint/types"
+                    },
+                    "nested": {
+                      "ClientState": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "chainId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "trustLevel": {
+                            "type": "Fraction",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:trust_level"
+                            }
+                          },
+                          "trustingPeriod": {
+                            "type": "google.protobuf.Duration",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.stdduration)": true,
+                              "(gogoproto.moretags)": "yaml:trusting_period"
+                            }
+                          },
+                          "unbondingPeriod": {
+                            "type": "google.protobuf.Duration",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.stdduration)": true,
+                              "(gogoproto.moretags)": "yaml:unbonding_period"
+                            }
+                          },
+                          "maxClockDrift": {
+                            "type": "google.protobuf.Duration",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.stdduration)": true,
+                              "(gogoproto.moretags)": "yaml:max_clock_drift"
+                            }
+                          },
+                          "frozenHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:frozen_height"
+                            }
+                          },
+                          "latestHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:latest_height"
+                            }
+                          },
+                          "proofSpecs": {
+                            "rule": "repeated",
+                            "type": "ics23.ProofSpec",
+                            "id": 8,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_specs"
+                            }
+                          },
+                          "upgradePath": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 9,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:upgrade_path"
+                            }
+                          },
+                          "allowUpdateAfterExpiry": {
+                            "type": "bool",
+                            "id": 10,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:allow_update_after_expiry"
+                            }
+                          },
+                          "allowUpdateAfterMisbehaviour": {
+                            "type": "bool",
+                            "id": 11,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:allow_update_after_misbehaviour"
+                            }
+                          }
+                        }
+                      },
+                      "ConsensusState": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "timestamp": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.stdtime)": true
+                            }
+                          },
+                          "root": {
+                            "type": "ibc.core.commitment.v1.MerkleRoot",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "nextValidatorsHash": {
+                            "type": "bytes",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.casttype)": "github.com/tendermint/tendermint/libs/bytes.HexBytes",
+                              "(gogoproto.moretags)": "yaml:next_validators_hash"
+                            }
+                          }
+                        }
+                      },
+                      "Misbehaviour": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "header_1": {
+                            "type": "Header",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.customname)": "Header1",
+                              "(gogoproto.moretags)": "yaml:header_1"
+                            }
+                          },
+                          "header_2": {
+                            "type": "Header",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.customname)": "Header2",
+                              "(gogoproto.moretags)": "yaml:header_2"
+                            }
+                          }
+                        }
+                      },
+                      "Header": {
+                        "fields": {
+                          "signedHeader": {
+                            "type": ".tendermint.types.SignedHeader",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.embed)": true,
+                              "(gogoproto.moretags)": "yaml:signed_header"
+                            }
+                          },
+                          "validatorSet": {
+                            "type": ".tendermint.types.ValidatorSet",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:validator_set"
+                            }
+                          },
+                          "trustedHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:trusted_height"
+                            }
+                          },
+                          "trustedValidators": {
+                            "type": ".tendermint.types.ValidatorSet",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:trusted_validators"
+                            }
+                          }
+                        }
+                      },
+                      "Fraction": {
+                        "fields": {
+                          "numerator": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "denominator": {
+                            "type": "uint64",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/annotations;annotations",
+              "java_multiple_files": true,
+              "java_outer_classname": "RoutingProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "routing": {
+                "type": "google.api.RoutingRule",
+                "id": 72295729,
+                "extend": "google.protobuf.MethodOptions"
+              },
+              "RoutingRule": {
+                "fields": {
+                  "routingParameters": {
+                    "rule": "repeated",
+                    "type": "RoutingParameter",
+                    "id": 2
+                  }
+                }
+              },
+              "RoutingParameter": {
+                "fields": {
+                  "field": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "pathTemplate": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

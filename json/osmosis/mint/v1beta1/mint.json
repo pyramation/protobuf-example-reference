@@ -1,0 +1,168 @@
+{
+  "package": "osmosis.mint.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/timestamp.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/duration.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "mint": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/mint/types"
+                },
+                "nested": {
+                  "Minter": {
+                    "fields": {
+                      "epochProvisions": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:epoch_provisions",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "WeightedAddress": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:address"
+                        }
+                      },
+                      "weight": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:weight",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DistributionProportions": {
+                    "fields": {
+                      "staking": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:staking",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "poolIncentives": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:pool_incentives",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "developerRewards": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:developer_rewards",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "communityPool": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:community_pool",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Params": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "mintDenom": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "genesisEpochProvisions": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:genesis_epoch_provisions",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "epochIdentifier": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:epoch_identifier"
+                        }
+                      },
+                      "reductionPeriodInEpochs": {
+                        "type": "int64",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:reduction_period_in_epochs"
+                        }
+                      },
+                      "reductionFactor": {
+                        "type": "string",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:reduction_factor",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "distributionProportions": {
+                        "type": "DistributionProportions",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "weightedDeveloperRewardsReceivers": {
+                        "rule": "repeated",
+                        "type": "WeightedAddress",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:developer_rewards_receiver",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "mintingRewardsDistributionStartEpoch": {
+                        "type": "int64",
+                        "id": 8,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:minting_rewards_distribution_start_epoch"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

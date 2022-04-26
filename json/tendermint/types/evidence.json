@@ -1,0 +1,114 @@
+{
+  "package": "tendermint.types",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/timestamp.proto",
+    "tendermint/types/types.proto",
+    "tendermint/types/validator.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "types": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/types"
+            },
+            "nested": {
+              "Evidence": {
+                "oneofs": {
+                  "sum": {
+                    "oneof": [
+                      "duplicateVoteEvidence",
+                      "lightClientAttackEvidence"
+                    ]
+                  }
+                },
+                "fields": {
+                  "duplicateVoteEvidence": {
+                    "type": "DuplicateVoteEvidence",
+                    "id": 1
+                  },
+                  "lightClientAttackEvidence": {
+                    "type": "LightClientAttackEvidence",
+                    "id": 2
+                  }
+                }
+              },
+              "DuplicateVoteEvidence": {
+                "fields": {
+                  "voteA": {
+                    "type": "tendermint.types.Vote",
+                    "id": 1
+                  },
+                  "voteB": {
+                    "type": "tendermint.types.Vote",
+                    "id": 2
+                  },
+                  "totalVotingPower": {
+                    "type": "int64",
+                    "id": 3
+                  },
+                  "validatorPower": {
+                    "type": "int64",
+                    "id": 4
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 5,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdtime)": true
+                    }
+                  }
+                }
+              },
+              "LightClientAttackEvidence": {
+                "fields": {
+                  "conflictingBlock": {
+                    "type": "tendermint.types.LightBlock",
+                    "id": 1
+                  },
+                  "commonHeight": {
+                    "type": "int64",
+                    "id": 2
+                  },
+                  "byzantineValidators": {
+                    "rule": "repeated",
+                    "type": "tendermint.types.Validator",
+                    "id": 3
+                  },
+                  "totalVotingPower": {
+                    "type": "int64",
+                    "id": 4
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 5,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdtime)": true
+                    }
+                  }
+                }
+              },
+              "EvidenceList": {
+                "fields": {
+                  "evidence": {
+                    "rule": "repeated",
+                    "type": "Evidence",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

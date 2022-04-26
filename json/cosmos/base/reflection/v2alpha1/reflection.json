@@ -1,0 +1,364 @@
+{
+  "package": "cosmos.base.reflection.v2alpha1",
+  "imports": [
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "reflection": {
+                "nested": {
+                  "v2alpha1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/server/grpc/reflection/v2alpha1"
+                    },
+                    "nested": {
+                      "AppDescriptor": {
+                        "fields": {
+                          "authn": {
+                            "type": "AuthnDescriptor",
+                            "id": 1
+                          },
+                          "chain": {
+                            "type": "ChainDescriptor",
+                            "id": 2
+                          },
+                          "codec": {
+                            "type": "CodecDescriptor",
+                            "id": 3
+                          },
+                          "configuration": {
+                            "type": "ConfigurationDescriptor",
+                            "id": 4
+                          },
+                          "queryServices": {
+                            "type": "QueryServicesDescriptor",
+                            "id": 5
+                          },
+                          "tx": {
+                            "type": "TxDescriptor",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "TxDescriptor": {
+                        "fields": {
+                          "fullname": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "msgs": {
+                            "rule": "repeated",
+                            "type": "MsgDescriptor",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "AuthnDescriptor": {
+                        "fields": {
+                          "signModes": {
+                            "rule": "repeated",
+                            "type": "SigningModeDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "SigningModeDescriptor": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "number": {
+                            "type": "int32",
+                            "id": 2
+                          },
+                          "authnInfoProviderMethodFullname": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "ChainDescriptor": {
+                        "fields": {
+                          "id": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "CodecDescriptor": {
+                        "fields": {
+                          "interfaces": {
+                            "rule": "repeated",
+                            "type": "InterfaceDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "InterfaceDescriptor": {
+                        "fields": {
+                          "fullname": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "interfaceAcceptingMessages": {
+                            "rule": "repeated",
+                            "type": "InterfaceAcceptingMessageDescriptor",
+                            "id": 2
+                          },
+                          "interfaceImplementers": {
+                            "rule": "repeated",
+                            "type": "InterfaceImplementerDescriptor",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "InterfaceImplementerDescriptor": {
+                        "fields": {
+                          "fullname": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "typeUrl": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "InterfaceAcceptingMessageDescriptor": {
+                        "fields": {
+                          "fullname": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "fieldDescriptorNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ConfigurationDescriptor": {
+                        "fields": {
+                          "bech32AccountAddressPrefix": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "MsgDescriptor": {
+                        "fields": {
+                          "msgTypeUrl": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ReflectionService": {
+                        "methods": {
+                          "GetAuthnDescriptor": {
+                            "requestType": "GetAuthnDescriptorRequest",
+                            "responseType": "GetAuthnDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/authn"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/authn"
+                                }
+                              }
+                            ]
+                          },
+                          "GetChainDescriptor": {
+                            "requestType": "GetChainDescriptorRequest",
+                            "responseType": "GetChainDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/chain"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/chain"
+                                }
+                              }
+                            ]
+                          },
+                          "GetCodecDescriptor": {
+                            "requestType": "GetCodecDescriptorRequest",
+                            "responseType": "GetCodecDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/codec"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/codec"
+                                }
+                              }
+                            ]
+                          },
+                          "GetConfigurationDescriptor": {
+                            "requestType": "GetConfigurationDescriptorRequest",
+                            "responseType": "GetConfigurationDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/configuration"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/configuration"
+                                }
+                              }
+                            ]
+                          },
+                          "GetQueryServicesDescriptor": {
+                            "requestType": "GetQueryServicesDescriptorRequest",
+                            "responseType": "GetQueryServicesDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/query_services"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/query_services"
+                                }
+                              }
+                            ]
+                          },
+                          "GetTxDescriptor": {
+                            "requestType": "GetTxDescriptorRequest",
+                            "responseType": "GetTxDescriptorResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "GetAuthnDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetAuthnDescriptorResponse": {
+                        "fields": {
+                          "authn": {
+                            "type": "AuthnDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetChainDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetChainDescriptorResponse": {
+                        "fields": {
+                          "chain": {
+                            "type": "ChainDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetCodecDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetCodecDescriptorResponse": {
+                        "fields": {
+                          "codec": {
+                            "type": "CodecDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetConfigurationDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetConfigurationDescriptorResponse": {
+                        "fields": {
+                          "config": {
+                            "type": "ConfigurationDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetQueryServicesDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetQueryServicesDescriptorResponse": {
+                        "fields": {
+                          "queries": {
+                            "type": "QueryServicesDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetTxDescriptorRequest": {
+                        "fields": {}
+                      },
+                      "GetTxDescriptorResponse": {
+                        "fields": {
+                          "tx": {
+                            "type": "TxDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryServicesDescriptor": {
+                        "fields": {
+                          "queryServices": {
+                            "rule": "repeated",
+                            "type": "QueryServiceDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryServiceDescriptor": {
+                        "fields": {
+                          "fullname": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "isModule": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "methods": {
+                            "rule": "repeated",
+                            "type": "QueryMethodDescriptor",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryMethodDescriptor": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "fullQueryPath": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

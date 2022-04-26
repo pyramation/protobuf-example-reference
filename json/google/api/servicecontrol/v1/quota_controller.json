@@ -1,0 +1,176 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/api/servicecontrol/v1/metric_value.proto",
+    "google/rpc/status.proto",
+    "google/api/client.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "QuotaControllerProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "QuotaController": {
+                        "options": {
+                          "(google.api.default_host)": "servicecontrol.googleapis.com",
+                          "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/servicecontrol"
+                        },
+                        "methods": {
+                          "AllocateQuota": {
+                            "requestType": "AllocateQuotaRequest",
+                            "responseType": "AllocateQuotaResponse",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}:allocateQuota",
+                              "(google.api.http).body": "*"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}:allocateQuota",
+                                  "body": "*"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "AllocateQuotaRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "allocateOperation": {
+                            "type": "QuotaOperation",
+                            "id": 2
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "QuotaOperation": {
+                        "fields": {
+                          "operationId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "methodName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "consumerId": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "labels": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 4
+                          },
+                          "quotaMetrics": {
+                            "rule": "repeated",
+                            "type": "MetricValueSet",
+                            "id": 5
+                          },
+                          "quotaMode": {
+                            "type": "QuotaMode",
+                            "id": 6
+                          }
+                        },
+                        "nested": {
+                          "QuotaMode": {
+                            "values": {
+                              "UNSPECIFIED": 0,
+                              "NORMAL": 1,
+                              "BEST_EFFORT": 2,
+                              "CHECK_ONLY": 3,
+                              "QUERY_ONLY": 4,
+                              "ADJUST_ONLY": 5
+                            }
+                          }
+                        }
+                      },
+                      "AllocateQuotaResponse": {
+                        "fields": {
+                          "operationId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "allocateErrors": {
+                            "rule": "repeated",
+                            "type": "QuotaError",
+                            "id": 2
+                          },
+                          "quotaMetrics": {
+                            "rule": "repeated",
+                            "type": "MetricValueSet",
+                            "id": 3
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "QuotaError": {
+                        "fields": {
+                          "code": {
+                            "type": "Code",
+                            "id": 1
+                          },
+                          "subject": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "description": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "status": {
+                            "type": "google.rpc.Status",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "Code": {
+                            "values": {
+                              "UNSPECIFIED": 0,
+                              "RESOURCE_EXHAUSTED": 8,
+                              "BILLING_NOT_ACTIVE": 107,
+                              "PROJECT_DELETED": 108,
+                              "API_KEY_INVALID": 105,
+                              "API_KEY_EXPIRED": 112
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

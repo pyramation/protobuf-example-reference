@@ -1,0 +1,314 @@
+{
+  "package": "google.api.serviceusage.v1",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/api/serviceusage/v1/resources.proto",
+    "google/longrunning/operations.proto",
+    "google/api/client.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "serviceusage": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceUsage.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/serviceusage/v1;serviceusage",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ServiceUsageProto",
+                      "java_package": "com.google.api.serviceusage.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceUsage\\V1",
+                      "ruby_package": "Google::Cloud::ServiceUsage::V1"
+                    },
+                    "nested": {
+                      "ServiceUsage": {
+                        "options": {
+                          "(google.api.default_host)": "serviceusage.googleapis.com",
+                          "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-platform.read-only,https://www.googleapis.com/auth/service.management"
+                        },
+                        "methods": {
+                          "EnableService": {
+                            "requestType": "EnableServiceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/{name=*/*/services/*}:enable",
+                              "(google.api.http).body": "*",
+                              "(google.longrunning.operation_info).response_type": "EnableServiceResponse",
+                              "(google.longrunning.operation_info).metadata_type": "OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/{name=*/*/services/*}:enable",
+                                  "body": "*"
+                                }
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "EnableServiceResponse",
+                                  "metadata_type": "OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "DisableService": {
+                            "requestType": "DisableServiceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/{name=*/*/services/*}:disable",
+                              "(google.api.http).body": "*",
+                              "(google.longrunning.operation_info).response_type": "DisableServiceResponse",
+                              "(google.longrunning.operation_info).metadata_type": "OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/{name=*/*/services/*}:disable",
+                                  "body": "*"
+                                }
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "DisableServiceResponse",
+                                  "metadata_type": "OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "GetService": {
+                            "requestType": "GetServiceRequest",
+                            "responseType": "Service",
+                            "options": {
+                              "(google.api.http).get": "/v1/{name=*/*/services/*}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/{name=*/*/services/*}"
+                                }
+                              }
+                            ]
+                          },
+                          "ListServices": {
+                            "requestType": "ListServicesRequest",
+                            "responseType": "ListServicesResponse",
+                            "options": {
+                              "(google.api.http).get": "/v1/{parent=*/*}/services"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/{parent=*/*}/services"
+                                }
+                              }
+                            ]
+                          },
+                          "BatchEnableServices": {
+                            "requestType": "BatchEnableServicesRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/{parent=*/*}/services:batchEnable",
+                              "(google.api.http).body": "*",
+                              "(google.longrunning.operation_info).response_type": "BatchEnableServicesResponse",
+                              "(google.longrunning.operation_info).metadata_type": "OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/{parent=*/*}/services:batchEnable",
+                                  "body": "*"
+                                }
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "BatchEnableServicesResponse",
+                                  "metadata_type": "OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "BatchGetServices": {
+                            "requestType": "BatchGetServicesRequest",
+                            "responseType": "BatchGetServicesResponse",
+                            "options": {
+                              "(google.api.http).get": "/v1/{parent=*/*}/services:batchGet"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/{parent=*/*}/services:batchGet"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "EnableServiceRequest": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "EnableServiceResponse": {
+                        "fields": {
+                          "service": {
+                            "type": "Service",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "DisableServiceRequest": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "disableDependentServices": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "checkIfServiceHasUsage": {
+                            "type": "CheckIfServiceHasUsage",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "CheckIfServiceHasUsage": {
+                            "values": {
+                              "CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED": 0,
+                              "SKIP": 1,
+                              "CHECK": 2
+                            }
+                          }
+                        }
+                      },
+                      "DisableServiceResponse": {
+                        "fields": {
+                          "service": {
+                            "type": "Service",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetServiceRequest": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ListServicesRequest": {
+                        "fields": {
+                          "parent": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "pageSize": {
+                            "type": "int32",
+                            "id": 2
+                          },
+                          "pageToken": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "filter": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "ListServicesResponse": {
+                        "fields": {
+                          "services": {
+                            "rule": "repeated",
+                            "type": "Service",
+                            "id": 1
+                          },
+                          "nextPageToken": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "BatchEnableServicesRequest": {
+                        "fields": {
+                          "parent": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "serviceIds": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "BatchEnableServicesResponse": {
+                        "fields": {
+                          "services": {
+                            "rule": "repeated",
+                            "type": "Service",
+                            "id": 1
+                          },
+                          "failures": {
+                            "rule": "repeated",
+                            "type": "EnableFailure",
+                            "id": 2
+                          }
+                        },
+                        "nested": {
+                          "EnableFailure": {
+                            "fields": {
+                              "serviceId": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "errorMessage": {
+                                "type": "string",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "BatchGetServicesRequest": {
+                        "fields": {
+                          "parent": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "names": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "BatchGetServicesResponse": {
+                        "fields": {
+                          "services": {
+                            "rule": "repeated",
+                            "type": "Service",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

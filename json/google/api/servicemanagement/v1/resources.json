@@ -1,0 +1,247 @@
+{
+  "package": "google.api.servicemanagement.v1",
+  "imports": [
+    "google/api/config_change.proto",
+    "google/api/field_behavior.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicemanagement": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceManagement.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicemanagement/v1;servicemanagement",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ResourcesProto",
+                      "java_package": "com.google.api.servicemanagement.v1",
+                      "objc_class_prefix": "GASM",
+                      "php_namespace": "Google\\Cloud\\ServiceManagement\\V1",
+                      "ruby_package": "Google::Cloud::ServiceManagement::V1"
+                    },
+                    "nested": {
+                      "ManagedService": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "producerProjectId": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "OperationMetadata": {
+                        "fields": {
+                          "resourceNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1
+                          },
+                          "steps": {
+                            "rule": "repeated",
+                            "type": "Step",
+                            "id": 2
+                          },
+                          "progressPercentage": {
+                            "type": "int32",
+                            "id": 3
+                          },
+                          "startTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "Step": {
+                            "fields": {
+                              "description": {
+                                "type": "string",
+                                "id": 2
+                              },
+                              "status": {
+                                "type": "Status",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "Status": {
+                            "values": {
+                              "STATUS_UNSPECIFIED": 0,
+                              "DONE": 1,
+                              "NOT_STARTED": 2,
+                              "IN_PROGRESS": 3,
+                              "FAILED": 4,
+                              "CANCELLED": 5
+                            }
+                          }
+                        }
+                      },
+                      "Diagnostic": {
+                        "fields": {
+                          "location": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "kind": {
+                            "type": "Kind",
+                            "id": 2
+                          },
+                          "message": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "Kind": {
+                            "values": {
+                              "WARNING": 0,
+                              "ERROR": 1
+                            }
+                          }
+                        }
+                      },
+                      "ConfigSource": {
+                        "fields": {
+                          "id": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "files": {
+                            "rule": "repeated",
+                            "type": "ConfigFile",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ConfigFile": {
+                        "fields": {
+                          "filePath": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "fileContents": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "fileType": {
+                            "type": "FileType",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "FileType": {
+                            "values": {
+                              "FILE_TYPE_UNSPECIFIED": 0,
+                              "SERVICE_CONFIG_YAML": 1,
+                              "OPEN_API_JSON": 2,
+                              "OPEN_API_YAML": 3,
+                              "FILE_DESCRIPTOR_SET_PROTO": 4,
+                              "PROTO_FILE": 6
+                            }
+                          }
+                        }
+                      },
+                      "ConfigRef": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ChangeReport": {
+                        "fields": {
+                          "configChanges": {
+                            "rule": "repeated",
+                            "type": "google.api.ConfigChange",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "Rollout": {
+                        "oneofs": {
+                          "strategy": {
+                            "oneof": [
+                              "trafficPercentStrategy",
+                              "deleteServiceStrategy"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "rolloutId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "OPTIONAL"
+                            }
+                          },
+                          "createTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 2
+                          },
+                          "createdBy": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "status": {
+                            "type": "RolloutStatus",
+                            "id": 4
+                          },
+                          "trafficPercentStrategy": {
+                            "type": "TrafficPercentStrategy",
+                            "id": 5
+                          },
+                          "deleteServiceStrategy": {
+                            "type": "DeleteServiceStrategy",
+                            "id": 200
+                          },
+                          "serviceName": {
+                            "type": "string",
+                            "id": 8
+                          }
+                        },
+                        "nested": {
+                          "TrafficPercentStrategy": {
+                            "fields": {
+                              "percentages": {
+                                "keyType": "string",
+                                "type": "double",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "DeleteServiceStrategy": {
+                            "fields": {}
+                          },
+                          "RolloutStatus": {
+                            "values": {
+                              "ROLLOUT_STATUS_UNSPECIFIED": 0,
+                              "IN_PROGRESS": 1,
+                              "SUCCESS": 2,
+                              "CANCELLED": 3,
+                              "FAILED": 4,
+                              "PENDING": 5,
+                              "FAILED_ROLLED_BACK": 6
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

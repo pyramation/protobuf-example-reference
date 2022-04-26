@@ -1,0 +1,82 @@
+{
+  "package": "cosmos_proto",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos_proto": {
+        "options": {
+          "go_package": "github.com/cosmos/cosmos-proto;cosmos_proto"
+        },
+        "nested": {
+          "implementsInterface": {
+            "rule": "repeated",
+            "type": "string",
+            "id": 93001,
+            "extend": "google.protobuf.MessageOptions"
+          },
+          "acceptsInterface": {
+            "type": "string",
+            "id": 93001,
+            "extend": "google.protobuf.FieldOptions"
+          },
+          "scalar": {
+            "type": "string",
+            "id": 93002,
+            "extend": "google.protobuf.FieldOptions"
+          },
+          "declareInterface": {
+            "rule": "repeated",
+            "type": "InterfaceDescriptor",
+            "id": 793021,
+            "extend": "google.protobuf.FileOptions"
+          },
+          "declareScalar": {
+            "rule": "repeated",
+            "type": "ScalarDescriptor",
+            "id": 793022,
+            "extend": "google.protobuf.FileOptions"
+          },
+          "InterfaceDescriptor": {
+            "fields": {
+              "name": {
+                "type": "string",
+                "id": 1
+              },
+              "description": {
+                "type": "string",
+                "id": 2
+              }
+            }
+          },
+          "ScalarDescriptor": {
+            "fields": {
+              "name": {
+                "type": "string",
+                "id": 1
+              },
+              "description": {
+                "type": "string",
+                "id": 2
+              },
+              "fieldType": {
+                "rule": "repeated",
+                "type": "ScalarType",
+                "id": 3
+              }
+            }
+          },
+          "ScalarType": {
+            "values": {
+              "SCALAR_TYPE_UNSPECIFIED": 0,
+              "SCALAR_TYPE_STRING": 1,
+              "SCALAR_TYPE_BYTES": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}

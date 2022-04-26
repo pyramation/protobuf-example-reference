@@ -1,0 +1,665 @@
+{
+  "package": "ibc.core.channel.v1",
+  "imports": [
+    "ibc/core/client/v1/client.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "ibc/core/channel/v1/channel.proto",
+    "google/api/annotations.proto",
+    "google/protobuf/any.proto",
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "channel": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/04-channel/types"
+                    },
+                    "nested": {
+                      "Query": {
+                        "methods": {
+                          "Channel": {
+                            "requestType": "QueryChannelRequest",
+                            "responseType": "QueryChannelResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "Channels": {
+                            "requestType": "QueryChannelsRequest",
+                            "responseType": "QueryChannelsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels"
+                                }
+                              }
+                            ]
+                          },
+                          "ConnectionChannels": {
+                            "requestType": "QueryConnectionChannelsRequest",
+                            "responseType": "QueryConnectionChannelsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/connections/{connection}/channels"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/connections/{connection}/channels"
+                                }
+                              }
+                            ]
+                          },
+                          "ChannelClientState": {
+                            "requestType": "QueryChannelClientStateRequest",
+                            "responseType": "QueryChannelClientStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/client_state"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/client_state"
+                                }
+                              }
+                            ]
+                          },
+                          "ChannelConsensusState": {
+                            "requestType": "QueryChannelConsensusStateRequest",
+                            "responseType": "QueryChannelConsensusStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}"
+                                }
+                              }
+                            ]
+                          },
+                          "PacketCommitment": {
+                            "requestType": "QueryPacketCommitmentRequest",
+                            "responseType": "QueryPacketCommitmentResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}"
+                                }
+                              }
+                            ]
+                          },
+                          "PacketCommitments": {
+                            "requestType": "QueryPacketCommitmentsRequest",
+                            "responseType": "QueryPacketCommitmentsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments"
+                                }
+                              }
+                            ]
+                          },
+                          "PacketReceipt": {
+                            "requestType": "QueryPacketReceiptRequest",
+                            "responseType": "QueryPacketReceiptResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}"
+                                }
+                              }
+                            ]
+                          },
+                          "PacketAcknowledgement": {
+                            "requestType": "QueryPacketAcknowledgementRequest",
+                            "responseType": "QueryPacketAcknowledgementResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}"
+                                }
+                              }
+                            ]
+                          },
+                          "PacketAcknowledgements": {
+                            "requestType": "QueryPacketAcknowledgementsRequest",
+                            "responseType": "QueryPacketAcknowledgementsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements"
+                                }
+                              }
+                            ]
+                          },
+                          "UnreceivedPackets": {
+                            "requestType": "QueryUnreceivedPacketsRequest",
+                            "responseType": "QueryUnreceivedPacketsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets"
+                                }
+                              }
+                            ]
+                          },
+                          "UnreceivedAcks": {
+                            "requestType": "QueryUnreceivedAcksRequest",
+                            "responseType": "QueryUnreceivedAcksResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks"
+                                }
+                              }
+                            ]
+                          },
+                          "NextSequenceReceive": {
+                            "requestType": "QueryNextSequenceReceiveRequest",
+                            "responseType": "QueryNextSequenceReceiveResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/next_sequence"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/next_sequence"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "QueryChannelRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryChannelResponse": {
+                        "fields": {
+                          "channel": {
+                            "type": "ibc.core.channel.v1.Channel",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryChannelsRequest": {
+                        "fields": {
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryChannelsResponse": {
+                        "fields": {
+                          "channels": {
+                            "rule": "repeated",
+                            "type": "ibc.core.channel.v1.IdentifiedChannel",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryConnectionChannelsRequest": {
+                        "fields": {
+                          "connection": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryConnectionChannelsResponse": {
+                        "fields": {
+                          "channels": {
+                            "rule": "repeated",
+                            "type": "ibc.core.channel.v1.IdentifiedChannel",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryChannelClientStateRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryChannelClientStateResponse": {
+                        "fields": {
+                          "identifiedClientState": {
+                            "type": "ibc.core.client.v1.IdentifiedClientState",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryChannelConsensusStateRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "revisionNumber": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "revisionHeight": {
+                            "type": "uint64",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "QueryChannelConsensusStateResponse": {
+                        "fields": {
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryPacketCommitmentRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryPacketCommitmentResponse": {
+                        "fields": {
+                          "commitment": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryPacketCommitmentsRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryPacketCommitmentsResponse": {
+                        "fields": {
+                          "commitments": {
+                            "rule": "repeated",
+                            "type": "ibc.core.channel.v1.PacketState",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryPacketReceiptRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryPacketReceiptResponse": {
+                        "fields": {
+                          "received": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryPacketAcknowledgementRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryPacketAcknowledgementResponse": {
+                        "fields": {
+                          "acknowledgement": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryPacketAcknowledgementsRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 3
+                          },
+                          "packetCommitmentSequences": {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "QueryPacketAcknowledgementsResponse": {
+                        "fields": {
+                          "acknowledgements": {
+                            "rule": "repeated",
+                            "type": "ibc.core.channel.v1.PacketState",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryUnreceivedPacketsRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "packetCommitmentSequences": {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryUnreceivedPacketsResponse": {
+                        "fields": {
+                          "sequences": {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryUnreceivedAcksRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "packetAckSequences": {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryUnreceivedAcksResponse": {
+                        "fields": {
+                          "sequences": {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryNextSequenceReceiveRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryNextSequenceReceiveResponse": {
+                        "fields": {
+                          "nextSequenceReceive": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

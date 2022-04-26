@@ -1,0 +1,82 @@
+{
+  "package": "cosmos.upgrade.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/upgrade/v1beta1/upgrade.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "upgrade": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/upgrade/types"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "SoftwareUpgrade": {
+                        "requestType": "MsgSoftwareUpgrade",
+                        "responseType": "MsgSoftwareUpgradeResponse"
+                      },
+                      "CancelUpgrade": {
+                        "requestType": "MsgCancelUpgrade",
+                        "responseType": "MsgCancelUpgradeResponse"
+                      }
+                    }
+                  },
+                  "MsgSoftwareUpgrade": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "authority"
+                    },
+                    "fields": {
+                      "authority": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "plan": {
+                        "type": "Plan",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgSoftwareUpgradeResponse": {
+                    "fields": {}
+                  },
+                  "MsgCancelUpgrade": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "authority"
+                    },
+                    "fields": {
+                      "authority": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCancelUpgradeResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

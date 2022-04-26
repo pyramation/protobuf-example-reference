@@ -1,0 +1,91 @@
+{
+  "package": "cosmos.base.reflection.v1beta1",
+  "imports": [
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "reflection": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/client/grpc/reflection"
+                    },
+                    "nested": {
+                      "ReflectionService": {
+                        "methods": {
+                          "ListAllInterfaces": {
+                            "requestType": "ListAllInterfacesRequest",
+                            "responseType": "ListAllInterfacesResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/interfaces"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/interfaces"
+                                }
+                              }
+                            ]
+                          },
+                          "ListImplementations": {
+                            "requestType": "ListImplementationsRequest",
+                            "responseType": "ListImplementationsResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "ListAllInterfacesRequest": {
+                        "fields": {}
+                      },
+                      "ListAllInterfacesResponse": {
+                        "fields": {
+                          "interfaceNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ListImplementationsRequest": {
+                        "fields": {
+                          "interfaceName": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ListImplementationsResponse": {
+                        "fields": {
+                          "implementationMessageNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

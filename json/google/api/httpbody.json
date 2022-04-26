@@ -1,0 +1,44 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "cc_enable_arenas": true,
+              "go_package": "google.golang.org/genproto/googleapis/api/httpbody;httpbody",
+              "java_multiple_files": true,
+              "java_outer_classname": "HttpBodyProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "HttpBody": {
+                "fields": {
+                  "contentType": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "data": {
+                    "type": "bytes",
+                    "id": 2
+                  },
+                  "extensions": {
+                    "rule": "repeated",
+                    "type": "google.protobuf.Any",
+                    "id": 3
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

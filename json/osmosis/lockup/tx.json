@@ -1,0 +1,131 @@
+{
+  "package": "osmosis.lockup",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "osmosis/lockup/lock.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "lockup": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/lockup/types"
+            },
+            "nested": {
+              "Msg": {
+                "methods": {
+                  "LockTokens": {
+                    "requestType": "MsgLockTokens",
+                    "responseType": "MsgLockTokensResponse"
+                  },
+                  "BeginUnlockingAll": {
+                    "requestType": "MsgBeginUnlockingAll",
+                    "responseType": "MsgBeginUnlockingAllResponse"
+                  },
+                  "BeginUnlocking": {
+                    "requestType": "MsgBeginUnlocking",
+                    "responseType": "MsgBeginUnlockingResponse"
+                  }
+                }
+              },
+              "MsgLockTokens": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.jsontag)": "duration,omitempty",
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  },
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "MsgLockTokensResponse": {
+                "fields": {
+                  "ID": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "MsgBeginUnlockingAll": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  }
+                }
+              },
+              "MsgBeginUnlockingAllResponse": {
+                "fields": {
+                  "unlocks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1
+                  }
+                }
+              },
+              "MsgBeginUnlocking": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "ID": {
+                    "type": "uint64",
+                    "id": 2
+                  },
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "MsgBeginUnlockingResponse": {
+                "fields": {
+                  "success": {
+                    "type": "bool",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

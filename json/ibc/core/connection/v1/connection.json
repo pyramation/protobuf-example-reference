@@ -1,0 +1,203 @@
+{
+  "package": "ibc.core.connection.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "ibc/core/commitment/v1/commitment.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "connection": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/03-connection/types"
+                    },
+                    "nested": {
+                      "ConnectionEnd": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "versions": {
+                            "rule": "repeated",
+                            "type": "Version",
+                            "id": 2
+                          },
+                          "state": {
+                            "type": "State",
+                            "id": 3
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "delayPeriod": {
+                            "type": "uint64",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:delay_period"
+                            }
+                          }
+                        }
+                      },
+                      "IdentifiedConnection": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "id": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:id"
+                            }
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "versions": {
+                            "rule": "repeated",
+                            "type": "Version",
+                            "id": 3
+                          },
+                          "state": {
+                            "type": "State",
+                            "id": 4
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "delayPeriod": {
+                            "type": "uint64",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:delay_period"
+                            }
+                          }
+                        }
+                      },
+                      "State": {
+                        "options": {
+                          "(gogoproto.goproto_enum_prefix)": false
+                        },
+                        "values": {
+                          "STATE_UNINITIALIZED_UNSPECIFIED": 0,
+                          "STATE_INIT": 1,
+                          "STATE_TRYOPEN": 2,
+                          "STATE_OPEN": 3
+                        }
+                      },
+                      "Counterparty": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "connectionId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_id"
+                            }
+                          },
+                          "prefix": {
+                            "type": "ibc.core.commitment.v1.MerklePrefix",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "ClientPaths": {
+                        "fields": {
+                          "paths": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "ConnectionPaths": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "paths": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "Version": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "identifier": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "features": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "Params": {
+                        "fields": {
+                          "maxExpectedTimePerBlock": {
+                            "type": "uint64",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:max_expected_time_per_block"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

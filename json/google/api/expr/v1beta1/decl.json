@@ -1,0 +1,112 @@
+{
+  "package": "google.api.expr.v1beta1",
+  "imports": [
+    "google/api/expr/v1beta1/expr.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1beta1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "DeclProto",
+                      "java_package": "com.google.api.expr.v1beta1"
+                    },
+                    "nested": {
+                      "Decl": {
+                        "oneofs": {
+                          "kind": {
+                            "oneof": [
+                              "ident",
+                              "function"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "id": {
+                            "type": "int32",
+                            "id": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "doc": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "ident": {
+                            "type": "IdentDecl",
+                            "id": 4
+                          },
+                          "function": {
+                            "type": "FunctionDecl",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "DeclType": {
+                        "fields": {
+                          "id": {
+                            "type": "int32",
+                            "id": 1
+                          },
+                          "type": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "typeParams": {
+                            "rule": "repeated",
+                            "type": "DeclType",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "IdentDecl": {
+                        "fields": {
+                          "type": {
+                            "type": "DeclType",
+                            "id": 3
+                          },
+                          "value": {
+                            "type": "Expr",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "FunctionDecl": {
+                        "fields": {
+                          "args": {
+                            "rule": "repeated",
+                            "type": "IdentDecl",
+                            "id": 1
+                          },
+                          "returnType": {
+                            "type": "DeclType",
+                            "id": 2
+                          },
+                          "receiverFunction": {
+                            "type": "bool",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "package": "cosmos.capability.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "capability": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/capability/types"
+                },
+                "nested": {
+                  "Capability": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "index": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "Owner": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "module": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "CapabilityOwners": {
+                    "fields": {
+                      "owners": {
+                        "rule": "repeated",
+                        "type": "Owner",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

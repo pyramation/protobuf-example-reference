@@ -1,0 +1,290 @@
+{
+  "package": "cosmos.distribution.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos/distribution/v1beta1/distribution.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "distribution": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/distribution/types",
+                  "(gogoproto.equal_all)": true
+                },
+                "nested": {
+                  "DelegatorWithdrawInfo": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "withdrawAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorOutstandingRewardsRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "outstandingRewards": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorAccumulatedCommissionRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "accumulated": {
+                        "type": "ValidatorAccumulatedCommission",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorHistoricalRewardsRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "period": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "rewards": {
+                        "type": "ValidatorHistoricalRewards",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorCurrentRewardsRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "rewards": {
+                        "type": "ValidatorCurrentRewards",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DelegatorStartingInfoRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "startingInfo": {
+                        "type": "DelegatorStartingInfo",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorSlashEventRecord": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "height": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "period": {
+                        "type": "uint64",
+                        "id": 3
+                      },
+                      "validatorSlashEvent": {
+                        "type": "ValidatorSlashEvent",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "GenesisState": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "feePool": {
+                        "type": "FeePool",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "delegatorWithdrawInfos": {
+                        "rule": "repeated",
+                        "type": "DelegatorWithdrawInfo",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "previousProposer": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "outstandingRewards": {
+                        "rule": "repeated",
+                        "type": "ValidatorOutstandingRewardsRecord",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "validatorAccumulatedCommissions": {
+                        "rule": "repeated",
+                        "type": "ValidatorAccumulatedCommissionRecord",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "validatorHistoricalRewards": {
+                        "rule": "repeated",
+                        "type": "ValidatorHistoricalRewardsRecord",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "validatorCurrentRewards": {
+                        "rule": "repeated",
+                        "type": "ValidatorCurrentRewardsRecord",
+                        "id": 8,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "delegatorStartingInfos": {
+                        "rule": "repeated",
+                        "type": "DelegatorStartingInfoRecord",
+                        "id": 9,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "validatorSlashEvents": {
+                        "rule": "repeated",
+                        "type": "ValidatorSlashEventRecord",
+                        "id": 10,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

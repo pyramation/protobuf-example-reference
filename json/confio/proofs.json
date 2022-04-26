@@ -1,0 +1,294 @@
+{
+  "package": "ics23",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ics23": {
+        "options": {
+          "go_package": "github.com/confio/ics23/go"
+        },
+        "nested": {
+          "HashOp": {
+            "values": {
+              "NO_HASH": 0,
+              "SHA256": 1,
+              "SHA512": 2,
+              "KECCAK": 3,
+              "RIPEMD160": 4,
+              "BITCOIN": 5
+            }
+          },
+          "LengthOp": {
+            "values": {
+              "NO_PREFIX": 0,
+              "VAR_PROTO": 1,
+              "VAR_RLP": 2,
+              "FIXED32_BIG": 3,
+              "FIXED32_LITTLE": 4,
+              "FIXED64_BIG": 5,
+              "FIXED64_LITTLE": 6,
+              "REQUIRE_32_BYTES": 7,
+              "REQUIRE_64_BYTES": 8
+            }
+          },
+          "ExistenceProof": {
+            "fields": {
+              "key": {
+                "type": "bytes",
+                "id": 1
+              },
+              "value": {
+                "type": "bytes",
+                "id": 2
+              },
+              "leaf": {
+                "type": "LeafOp",
+                "id": 3
+              },
+              "path": {
+                "rule": "repeated",
+                "type": "InnerOp",
+                "id": 4
+              }
+            }
+          },
+          "NonExistenceProof": {
+            "fields": {
+              "key": {
+                "type": "bytes",
+                "id": 1
+              },
+              "left": {
+                "type": "ExistenceProof",
+                "id": 2
+              },
+              "right": {
+                "type": "ExistenceProof",
+                "id": 3
+              }
+            }
+          },
+          "CommitmentProof": {
+            "oneofs": {
+              "proof": {
+                "oneof": [
+                  "exist",
+                  "nonexist",
+                  "batch",
+                  "compressed"
+                ]
+              }
+            },
+            "fields": {
+              "exist": {
+                "type": "ExistenceProof",
+                "id": 1
+              },
+              "nonexist": {
+                "type": "NonExistenceProof",
+                "id": 2
+              },
+              "batch": {
+                "type": "BatchProof",
+                "id": 3
+              },
+              "compressed": {
+                "type": "CompressedBatchProof",
+                "id": 4
+              }
+            }
+          },
+          "LeafOp": {
+            "fields": {
+              "hash": {
+                "type": "HashOp",
+                "id": 1
+              },
+              "prehashKey": {
+                "type": "HashOp",
+                "id": 2
+              },
+              "prehashValue": {
+                "type": "HashOp",
+                "id": 3
+              },
+              "length": {
+                "type": "LengthOp",
+                "id": 4
+              },
+              "prefix": {
+                "type": "bytes",
+                "id": 5
+              }
+            }
+          },
+          "InnerOp": {
+            "fields": {
+              "hash": {
+                "type": "HashOp",
+                "id": 1
+              },
+              "prefix": {
+                "type": "bytes",
+                "id": 2
+              },
+              "suffix": {
+                "type": "bytes",
+                "id": 3
+              }
+            }
+          },
+          "ProofSpec": {
+            "fields": {
+              "leafSpec": {
+                "type": "LeafOp",
+                "id": 1
+              },
+              "innerSpec": {
+                "type": "InnerSpec",
+                "id": 2
+              },
+              "maxDepth": {
+                "type": "int32",
+                "id": 3
+              },
+              "minDepth": {
+                "type": "int32",
+                "id": 4
+              }
+            }
+          },
+          "InnerSpec": {
+            "fields": {
+              "childOrder": {
+                "rule": "repeated",
+                "type": "int32",
+                "id": 1
+              },
+              "childSize": {
+                "type": "int32",
+                "id": 2
+              },
+              "minPrefixLength": {
+                "type": "int32",
+                "id": 3
+              },
+              "maxPrefixLength": {
+                "type": "int32",
+                "id": 4
+              },
+              "emptyChild": {
+                "type": "bytes",
+                "id": 5
+              },
+              "hash": {
+                "type": "HashOp",
+                "id": 6
+              }
+            }
+          },
+          "BatchProof": {
+            "fields": {
+              "entries": {
+                "rule": "repeated",
+                "type": "BatchEntry",
+                "id": 1
+              }
+            }
+          },
+          "BatchEntry": {
+            "oneofs": {
+              "proof": {
+                "oneof": [
+                  "exist",
+                  "nonexist"
+                ]
+              }
+            },
+            "fields": {
+              "exist": {
+                "type": "ExistenceProof",
+                "id": 1
+              },
+              "nonexist": {
+                "type": "NonExistenceProof",
+                "id": 2
+              }
+            }
+          },
+          "CompressedBatchProof": {
+            "fields": {
+              "entries": {
+                "rule": "repeated",
+                "type": "CompressedBatchEntry",
+                "id": 1
+              },
+              "lookupInners": {
+                "rule": "repeated",
+                "type": "InnerOp",
+                "id": 2
+              }
+            }
+          },
+          "CompressedBatchEntry": {
+            "oneofs": {
+              "proof": {
+                "oneof": [
+                  "exist",
+                  "nonexist"
+                ]
+              }
+            },
+            "fields": {
+              "exist": {
+                "type": "CompressedExistenceProof",
+                "id": 1
+              },
+              "nonexist": {
+                "type": "CompressedNonExistenceProof",
+                "id": 2
+              }
+            }
+          },
+          "CompressedExistenceProof": {
+            "fields": {
+              "key": {
+                "type": "bytes",
+                "id": 1
+              },
+              "value": {
+                "type": "bytes",
+                "id": 2
+              },
+              "leaf": {
+                "type": "LeafOp",
+                "id": 3
+              },
+              "path": {
+                "rule": "repeated",
+                "type": "int32",
+                "id": 4
+              }
+            }
+          },
+          "CompressedNonExistenceProof": {
+            "fields": {
+              "key": {
+                "type": "bytes",
+                "id": 1
+              },
+              "left": {
+                "type": "CompressedExistenceProof",
+                "id": 2
+              },
+              "right": {
+                "type": "CompressedExistenceProof",
+                "id": 3
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

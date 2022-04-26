@@ -1,0 +1,181 @@
+{
+  "package": "cosmos.base.snapshots.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "snapshots": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/snapshots/types"
+                    },
+                    "nested": {
+                      "Snapshot": {
+                        "fields": {
+                          "height": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "format": {
+                            "type": "uint32",
+                            "id": 2
+                          },
+                          "chunks": {
+                            "type": "uint32",
+                            "id": 3
+                          },
+                          "hash": {
+                            "type": "bytes",
+                            "id": 4
+                          },
+                          "metadata": {
+                            "type": "Metadata",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "Metadata": {
+                        "fields": {
+                          "chunkHashes": {
+                            "rule": "repeated",
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "SnapshotItem": {
+                        "oneofs": {
+                          "item": {
+                            "oneof": [
+                              "store",
+                              "iavl",
+                              "extension",
+                              "extensionPayload",
+                              "kv",
+                              "schema"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "store": {
+                            "type": "SnapshotStoreItem",
+                            "id": 1
+                          },
+                          "iavl": {
+                            "type": "SnapshotIAVLItem",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.customname)": "IAVL"
+                            }
+                          },
+                          "extension": {
+                            "type": "SnapshotExtensionMeta",
+                            "id": 3
+                          },
+                          "extensionPayload": {
+                            "type": "SnapshotExtensionPayload",
+                            "id": 4
+                          },
+                          "kv": {
+                            "type": "SnapshotKVItem",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.customname)": "KV"
+                            }
+                          },
+                          "schema": {
+                            "type": "SnapshotSchema",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "SnapshotStoreItem": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "SnapshotIAVLItem": {
+                        "fields": {
+                          "key": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "version": {
+                            "type": "int64",
+                            "id": 3
+                          },
+                          "height": {
+                            "type": "int32",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "SnapshotExtensionMeta": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "format": {
+                            "type": "uint32",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "SnapshotExtensionPayload": {
+                        "fields": {
+                          "payload": {
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "SnapshotKVItem": {
+                        "fields": {
+                          "key": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "SnapshotSchema": {
+                        "fields": {
+                          "keys": {
+                            "rule": "repeated",
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

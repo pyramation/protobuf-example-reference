@@ -1,0 +1,643 @@
+{
+  "package": "osmosis.lockup",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "google/api/annotations.proto",
+    "google/protobuf/timestamp.proto",
+    "google/protobuf/duration.proto",
+    "osmosis/lockup/lock.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "lockup": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/lockup/types"
+            },
+            "nested": {
+              "Query": {
+                "methods": {
+                  "ModuleBalance": {
+                    "requestType": "ModuleBalanceRequest",
+                    "responseType": "ModuleBalanceResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/module_balance"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/module_balance"
+                        }
+                      }
+                    ]
+                  },
+                  "ModuleLockedAmount": {
+                    "requestType": "ModuleLockedAmountRequest",
+                    "responseType": "ModuleLockedAmountResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/module_locked_amount"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/module_locked_amount"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountUnlockableCoins": {
+                    "requestType": "AccountUnlockableCoinsRequest",
+                    "responseType": "AccountUnlockableCoinsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_unlockable_coins/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_unlockable_coins/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountUnlockingCoins": {
+                    "requestType": "AccountUnlockingCoinsRequest",
+                    "responseType": "AccountUnlockingCoinsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_unlocking_coins/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_unlocking_coins/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedCoins": {
+                    "requestType": "AccountLockedCoinsRequest",
+                    "responseType": "AccountLockedCoinsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_coins/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_coins/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedPastTime": {
+                    "requestType": "AccountLockedPastTimeRequest",
+                    "responseType": "AccountLockedPastTimeResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_pasttime/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_pasttime/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedPastTimeNotUnlockingOnly": {
+                    "requestType": "AccountLockedPastTimeNotUnlockingOnlyRequest",
+                    "responseType": "AccountLockedPastTimeNotUnlockingOnlyResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_pasttime_not_unlocking_only/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_pasttime_not_unlocking_only/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountUnlockedBeforeTime": {
+                    "requestType": "AccountUnlockedBeforeTimeRequest",
+                    "responseType": "AccountUnlockedBeforeTimeResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_unlocked_before_time/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_unlocked_before_time/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedPastTimeDenom": {
+                    "requestType": "AccountLockedPastTimeDenomRequest",
+                    "responseType": "AccountLockedPastTimeDenomResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_pasttime_denom/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_pasttime_denom/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "LockedDenom": {
+                    "requestType": "LockedDenomRequest",
+                    "responseType": "LockedDenomResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/locked_denom"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/locked_denom"
+                        }
+                      }
+                    ]
+                  },
+                  "LockedByID": {
+                    "requestType": "LockedRequest",
+                    "responseType": "LockedResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/locked_by_id/{lock_id}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/locked_by_id/{lock_id}"
+                        }
+                      }
+                    ]
+                  },
+                  "SyntheticLockupsByLockupID": {
+                    "requestType": "SyntheticLockupsByLockupIDRequest",
+                    "responseType": "SyntheticLockupsByLockupIDResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/synthetic_lockups_by_lock_id/{lock_id}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/synthetic_lockups_by_lock_id/{lock_id}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedLongerDuration": {
+                    "requestType": "AccountLockedLongerDurationRequest",
+                    "responseType": "AccountLockedLongerDurationResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_longer_duration/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_longer_duration/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedLongerDurationNotUnlockingOnly": {
+                    "requestType": "AccountLockedLongerDurationNotUnlockingOnlyRequest",
+                    "responseType": "AccountLockedLongerDurationNotUnlockingOnlyResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_longer_duration_not_unlocking_only/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_longer_duration_not_unlocking_only/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "AccountLockedLongerDurationDenom": {
+                    "requestType": "AccountLockedLongerDurationDenomRequest",
+                    "responseType": "AccountLockedLongerDurationDenomResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/lockup/v1beta1/account_locked_longer_duration_denom/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/lockup/v1beta1/account_locked_longer_duration_denom/{owner}"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "ModuleBalanceRequest": {
+                "fields": {}
+              },
+              "ModuleBalanceResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "ModuleLockedAmountRequest": {
+                "fields": {}
+              },
+              "ModuleLockedAmountResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "AccountUnlockableCoinsRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  }
+                }
+              },
+              "AccountUnlockableCoinsResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "AccountUnlockingCoinsRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  }
+                }
+              },
+              "AccountUnlockingCoinsResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "AccountLockedCoinsRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  }
+                }
+              },
+              "AccountLockedCoinsResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "AccountLockedPastTimeRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:timestamp"
+                    }
+                  }
+                }
+              },
+              "AccountLockedPastTimeResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountLockedPastTimeNotUnlockingOnlyRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:timestamp"
+                    }
+                  }
+                }
+              },
+              "AccountLockedPastTimeNotUnlockingOnlyResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountUnlockedBeforeTimeRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:timestamp"
+                    }
+                  }
+                }
+              },
+              "AccountUnlockedBeforeTimeResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountLockedPastTimeDenomRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:timestamp"
+                    }
+                  },
+                  "denom": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "AccountLockedPastTimeDenomResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "LockedDenomRequest": {
+                "fields": {
+                  "denom": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  }
+                }
+              },
+              "LockedDenomResponse": {
+                "fields": {
+                  "amount": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                      "(gogoproto.moretags)": "yaml:amount",
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "LockedRequest": {
+                "fields": {
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "LockedResponse": {
+                "fields": {
+                  "lock": {
+                    "type": "PeriodLock",
+                    "id": 1
+                  }
+                }
+              },
+              "SyntheticLockupsByLockupIDRequest": {
+                "fields": {
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "SyntheticLockupsByLockupIDResponse": {
+                "fields": {
+                  "syntheticLocks": {
+                    "rule": "repeated",
+                    "type": "SyntheticLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountLockedLongerDurationRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  }
+                }
+              },
+              "AccountLockedLongerDurationResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountLockedLongerDurationNotUnlockingOnlyRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  }
+                }
+              },
+              "AccountLockedLongerDurationNotUnlockingOnlyResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "AccountLockedLongerDurationDenomRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  },
+                  "denom": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "AccountLockedLongerDurationDenomResponse": {
+                "fields": {
+                  "locks": {
+                    "rule": "repeated",
+                    "type": "PeriodLock",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

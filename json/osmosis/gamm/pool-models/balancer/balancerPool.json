@@ -1,0 +1,184 @@
+{
+  "package": "osmosis.gamm.v1beta1",
+  "imports": [
+    "cosmos_proto/cosmos.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "cosmos/auth/v1beta1/auth.proto",
+    "cosmos/base/v1beta1/coin.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "gamm": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/gamm/pool-models/balancer"
+                },
+                "nested": {
+                  "SmoothWeightChangeParams": {
+                    "fields": {
+                      "startTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.moretags)": "yaml:start_time"
+                        }
+                      },
+                      "duration": {
+                        "type": "google.protobuf.Duration",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.jsontag)": "duration,omitempty",
+                          "(gogoproto.moretags)": "yaml:duration"
+                        }
+                      },
+                      "initialPoolWeights": {
+                        "rule": "repeated",
+                        "type": "osmosis.gamm.v1beta1.PoolAsset",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:initial_pool_weights",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "targetPoolWeights": {
+                        "rule": "repeated",
+                        "type": "osmosis.gamm.v1beta1.PoolAsset",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:target_pool_weights",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "PoolParams": {
+                    "fields": {
+                      "swapFee": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:swap_fee",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "exitFee": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.moretags)": "yaml:exit_fee",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "smoothWeightChangeParams": {
+                        "type": "SmoothWeightChangeParams",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:smooth_weight_change_params",
+                          "(gogoproto.nullable)": true
+                        }
+                      }
+                    }
+                  },
+                  "PoolAsset": {
+                    "fields": {
+                      "token": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "weight": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:weight",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Pool": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false,
+                      "(cosmos_proto.implements_interface)": "PoolI"
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:address"
+                        }
+                      },
+                      "id": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "poolParams": {
+                        "type": "PoolParams",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:balancer_pool_params",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "futurePoolGovernor": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:future_pool_governor"
+                        }
+                      },
+                      "totalShares": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:total_shares",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "poolAssets": {
+                        "rule": "repeated",
+                        "type": "osmosis.gamm.v1beta1.PoolAsset",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_assets",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "totalWeight": {
+                        "type": "string",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:total_weight",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

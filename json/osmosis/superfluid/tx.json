@@ -1,0 +1,135 @@
+{
+  "package": "osmosis.superfluid",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "osmosis/superfluid/superfluid.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "superfluid": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/superfluid/types"
+            },
+            "nested": {
+              "Msg": {
+                "methods": {
+                  "SuperfluidDelegate": {
+                    "requestType": "MsgSuperfluidDelegate",
+                    "responseType": "MsgSuperfluidDelegateResponse"
+                  },
+                  "SuperfluidUndelegate": {
+                    "requestType": "MsgSuperfluidUndelegate",
+                    "responseType": "MsgSuperfluidUndelegateResponse"
+                  },
+                  "SuperfluidUnbondLock": {
+                    "requestType": "MsgSuperfluidUnbondLock",
+                    "responseType": "MsgSuperfluidUnbondLockResponse"
+                  },
+                  "LockAndSuperfluidDelegate": {
+                    "requestType": "MsgLockAndSuperfluidDelegate",
+                    "responseType": "MsgLockAndSuperfluidDelegateResponse"
+                  }
+                }
+              },
+              "MsgSuperfluidDelegate": {
+                "fields": {
+                  "sender": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:sender"
+                    }
+                  },
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 2
+                  },
+                  "valAddr": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "MsgSuperfluidDelegateResponse": {
+                "fields": {}
+              },
+              "MsgSuperfluidUndelegate": {
+                "fields": {
+                  "sender": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:sender"
+                    }
+                  },
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 2
+                  }
+                }
+              },
+              "MsgSuperfluidUndelegateResponse": {
+                "fields": {}
+              },
+              "MsgSuperfluidUnbondLock": {
+                "fields": {
+                  "sender": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:sender"
+                    }
+                  },
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 2
+                  }
+                }
+              },
+              "MsgSuperfluidUnbondLockResponse": {
+                "fields": {}
+              },
+              "MsgLockAndSuperfluidDelegate": {
+                "fields": {
+                  "sender": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:sender"
+                    }
+                  },
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  },
+                  "valAddr": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "MsgLockAndSuperfluidDelegateResponse": {
+                "fields": {
+                  "ID": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

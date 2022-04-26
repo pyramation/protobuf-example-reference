@@ -1,0 +1,68 @@
+{
+  "package": "cosmos.orm.v1alpha1",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "orm": {
+            "nested": {
+              "v1alpha1": {
+                "nested": {
+                  "moduleSchema": {
+                    "type": "ModuleSchemaDescriptor",
+                    "id": 104503792,
+                    "extend": "google.protobuf.MessageOptions"
+                  },
+                  "ModuleSchemaDescriptor": {
+                    "fields": {
+                      "schemaFile": {
+                        "rule": "repeated",
+                        "type": "FileEntry",
+                        "id": 1
+                      },
+                      "prefix": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    },
+                    "nested": {
+                      "FileEntry": {
+                        "fields": {
+                          "id": {
+                            "type": "uint32",
+                            "id": 1
+                          },
+                          "protoFileName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "storageType": {
+                            "type": "StorageType",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "StorageType": {
+                    "values": {
+                      "STORAGE_TYPE_DEFAULT_UNSPECIFIED": 0,
+                      "STORAGE_TYPE_MEMORY": 1,
+                      "STORAGE_TYPE_TRANSIENT": 2,
+                      "STORAGE_TYPE_INDEX": 3,
+                      "STORAGE_TYPE_COMMITMENT": 4
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

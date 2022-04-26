@@ -1,0 +1,136 @@
+{
+  "package": "cosmos.slashing.v1beta1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "cosmos/slashing/v1beta1/slashing.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "slashing": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/slashing/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/slashing/v1beta1/params"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/slashing/v1beta1/params"
+                            }
+                          }
+                        ]
+                      },
+                      "SigningInfo": {
+                        "requestType": "QuerySigningInfoRequest",
+                        "responseType": "QuerySigningInfoResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/slashing/v1beta1/signing_infos/{cons_address}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/slashing/v1beta1/signing_infos/{cons_address}"
+                            }
+                          }
+                        ]
+                      },
+                      "SigningInfos": {
+                        "requestType": "QuerySigningInfosRequest",
+                        "responseType": "QuerySigningInfosResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/slashing/v1beta1/signing_infos"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/slashing/v1beta1/signing_infos"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {}
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QuerySigningInfoRequest": {
+                    "fields": {
+                      "consAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QuerySigningInfoResponse": {
+                    "fields": {
+                      "valSigningInfo": {
+                        "type": "ValidatorSigningInfo",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QuerySigningInfosRequest": {
+                    "fields": {
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QuerySigningInfosResponse": {
+                    "fields": {
+                      "info": {
+                        "rule": "repeated",
+                        "type": "cosmos.slashing.v1beta1.ValidatorSigningInfo",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

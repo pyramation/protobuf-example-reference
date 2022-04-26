@@ -1,0 +1,61 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "SystemParameterProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "SystemParameters": {
+                "fields": {
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "SystemParameterRule",
+                    "id": 1
+                  }
+                }
+              },
+              "SystemParameterRule": {
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "parameters": {
+                    "rule": "repeated",
+                    "type": "SystemParameter",
+                    "id": 2
+                  }
+                }
+              },
+              "SystemParameter": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "httpHeader": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "urlQueryParameter": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "package": "google.protobuf",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "protobuf": {
+            "options": {
+              "csharp_namespace": "Google.Protobuf.WellKnownTypes",
+              "java_package": "com.google.protobuf",
+              "java_outer_classname": "FieldMaskProto",
+              "java_multiple_files": true,
+              "objc_class_prefix": "GPB",
+              "go_package": "types",
+              "cc_enable_arenas": true
+            },
+            "nested": {
+              "FieldMask": {
+                "fields": {
+                  "paths": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

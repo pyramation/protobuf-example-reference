@@ -1,0 +1,259 @@
+{
+  "package": "cosmos.tx.v1beta1",
+  "imports": [
+    "google/api/annotations.proto",
+    "cosmos/base/abci/v1beta1/abci.proto",
+    "cosmos/tx/v1beta1/tx.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "tendermint/types/block.proto",
+    "tendermint/types/types.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "tx": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/types/tx"
+                },
+                "nested": {
+                  "Service": {
+                    "methods": {
+                      "Simulate": {
+                        "requestType": "SimulateRequest",
+                        "responseType": "SimulateResponse",
+                        "options": {
+                          "(google.api.http).post": "/cosmos/tx/v1beta1/simulate",
+                          "(google.api.http).body": "*"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "post": "/cosmos/tx/v1beta1/simulate",
+                              "body": "*"
+                            }
+                          }
+                        ]
+                      },
+                      "GetTx": {
+                        "requestType": "GetTxRequest",
+                        "responseType": "GetTxResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/tx/v1beta1/txs/{hash}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/tx/v1beta1/txs/{hash}"
+                            }
+                          }
+                        ]
+                      },
+                      "BroadcastTx": {
+                        "requestType": "BroadcastTxRequest",
+                        "responseType": "BroadcastTxResponse",
+                        "options": {
+                          "(google.api.http).post": "/cosmos/tx/v1beta1/txs",
+                          "(google.api.http).body": "*"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "post": "/cosmos/tx/v1beta1/txs",
+                              "body": "*"
+                            }
+                          }
+                        ]
+                      },
+                      "GetTxsEvent": {
+                        "requestType": "GetTxsEventRequest",
+                        "responseType": "GetTxsEventResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/tx/v1beta1/txs"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/tx/v1beta1/txs"
+                            }
+                          }
+                        ]
+                      },
+                      "GetBlockWithTxs": {
+                        "requestType": "GetBlockWithTxsRequest",
+                        "responseType": "GetBlockWithTxsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/tx/v1beta1/txs/block/{height}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/tx/v1beta1/txs/block/{height}"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "GetTxsEventRequest": {
+                    "fields": {
+                      "events": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      },
+                      "orderBy": {
+                        "type": "OrderBy",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "OrderBy": {
+                    "values": {
+                      "ORDER_BY_UNSPECIFIED": 0,
+                      "ORDER_BY_ASC": 1,
+                      "ORDER_BY_DESC": 2
+                    }
+                  },
+                  "GetTxsEventResponse": {
+                    "fields": {
+                      "txs": {
+                        "rule": "repeated",
+                        "type": "cosmos.tx.v1beta1.Tx",
+                        "id": 1
+                      },
+                      "txResponses": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.abci.v1beta1.TxResponse",
+                        "id": 2
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "BroadcastTxRequest": {
+                    "fields": {
+                      "txBytes": {
+                        "type": "bytes",
+                        "id": 1
+                      },
+                      "mode": {
+                        "type": "BroadcastMode",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "BroadcastMode": {
+                    "values": {
+                      "BROADCAST_MODE_UNSPECIFIED": 0,
+                      "BROADCAST_MODE_BLOCK": 1,
+                      "BROADCAST_MODE_SYNC": 2,
+                      "BROADCAST_MODE_ASYNC": 3
+                    }
+                  },
+                  "BroadcastTxResponse": {
+                    "fields": {
+                      "txResponse": {
+                        "type": "cosmos.base.abci.v1beta1.TxResponse",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "SimulateRequest": {
+                    "fields": {
+                      "tx": {
+                        "type": "cosmos.tx.v1beta1.Tx",
+                        "id": 1,
+                        "options": {
+                          "deprecated": true
+                        }
+                      },
+                      "txBytes": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "SimulateResponse": {
+                    "fields": {
+                      "gasInfo": {
+                        "type": "cosmos.base.abci.v1beta1.GasInfo",
+                        "id": 1
+                      },
+                      "result": {
+                        "type": "cosmos.base.abci.v1beta1.Result",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "GetTxRequest": {
+                    "fields": {
+                      "hash": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "GetTxResponse": {
+                    "fields": {
+                      "tx": {
+                        "type": "cosmos.tx.v1beta1.Tx",
+                        "id": 1
+                      },
+                      "txResponse": {
+                        "type": "cosmos.base.abci.v1beta1.TxResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "GetBlockWithTxsRequest": {
+                    "fields": {
+                      "height": {
+                        "type": "int64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "GetBlockWithTxsResponse": {
+                    "fields": {
+                      "txs": {
+                        "rule": "repeated",
+                        "type": "cosmos.tx.v1beta1.Tx",
+                        "id": 1
+                      },
+                      "blockId": {
+                        "type": ".tendermint.types.BlockID",
+                        "id": 2
+                      },
+                      "block": {
+                        "type": ".tendermint.types.Block",
+                        "id": 3
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "package": "cosmos.distribution.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "distribution": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/distribution/types",
+                  "(gogoproto.equal_all)": true
+                },
+                "nested": {
+                  "Params": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "communityTax": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "baseProposerReward": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "bonusProposerReward": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "withdrawAddrEnabled": {
+                        "type": "bool",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "ValidatorHistoricalRewards": {
+                    "fields": {
+                      "cumulativeRewardRatio": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "referenceCount": {
+                        "type": "uint32",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "ValidatorCurrentRewards": {
+                    "fields": {
+                      "rewards": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "period": {
+                        "type": "uint64",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "ValidatorAccumulatedCommission": {
+                    "fields": {
+                      "commission": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorOutstandingRewards": {
+                    "fields": {
+                      "rewards": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorSlashEvent": {
+                    "fields": {
+                      "validatorPeriod": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "fraction": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ValidatorSlashEvents": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "validatorSlashEvents": {
+                        "rule": "repeated",
+                        "type": "ValidatorSlashEvent",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "FeePool": {
+                    "fields": {
+                      "communityPool": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins"
+                        }
+                      }
+                    }
+                  },
+                  "CommunityPoolSpendProposal": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "recipient": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "DelegatorStartingInfo": {
+                    "fields": {
+                      "previousPeriod": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "stake": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "height": {
+                        "type": "uint64",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.jsontag)": "creation_height"
+                        }
+                      }
+                    }
+                  },
+                  "DelegationDelegatorReward": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": true
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "reward": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.DecCoin",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.DecCoins",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "CommunityPoolSpendProposalWithDeposit": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": true
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "recipient": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "amount": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "deposit": {
+                        "type": "string",
+                        "id": 5
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

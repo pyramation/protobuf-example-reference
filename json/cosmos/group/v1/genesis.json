@@ -1,0 +1,67 @@
+{
+  "package": "cosmos.group.v1",
+  "imports": [
+    "cosmos/group/v1/types.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "group": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/group"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "groupSeq": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "groups": {
+                        "rule": "repeated",
+                        "type": "GroupInfo",
+                        "id": 2
+                      },
+                      "groupMembers": {
+                        "rule": "repeated",
+                        "type": "GroupMember",
+                        "id": 3
+                      },
+                      "groupPolicySeq": {
+                        "type": "uint64",
+                        "id": 4
+                      },
+                      "groupPolicies": {
+                        "rule": "repeated",
+                        "type": "GroupPolicyInfo",
+                        "id": 5
+                      },
+                      "proposalSeq": {
+                        "type": "uint64",
+                        "id": 6
+                      },
+                      "proposals": {
+                        "rule": "repeated",
+                        "type": "Proposal",
+                        "id": 7
+                      },
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 8
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

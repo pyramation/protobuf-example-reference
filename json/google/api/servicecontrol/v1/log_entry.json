@@ -1,0 +1,138 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/servicecontrol/v1/http_request.proto",
+    "google/logging/type/log_severity.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/struct.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "LogEntryProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "LogEntry": {
+                        "oneofs": {
+                          "payload": {
+                            "oneof": [
+                              "protoPayload",
+                              "textPayload",
+                              "structPayload"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 10
+                          },
+                          "timestamp": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 11
+                          },
+                          "severity": {
+                            "type": "google.logging.type.LogSeverity",
+                            "id": 12
+                          },
+                          "httpRequest": {
+                            "type": "HttpRequest",
+                            "id": 14
+                          },
+                          "trace": {
+                            "type": "string",
+                            "id": 15
+                          },
+                          "insertId": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "labels": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 13
+                          },
+                          "protoPayload": {
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          },
+                          "textPayload": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "structPayload": {
+                            "type": "google.protobuf.Struct",
+                            "id": 6
+                          },
+                          "operation": {
+                            "type": "LogEntryOperation",
+                            "id": 16
+                          },
+                          "sourceLocation": {
+                            "type": "LogEntrySourceLocation",
+                            "id": 17
+                          }
+                        }
+                      },
+                      "LogEntryOperation": {
+                        "fields": {
+                          "id": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "producer": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "first": {
+                            "type": "bool",
+                            "id": 3
+                          },
+                          "last": {
+                            "type": "bool",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "LogEntrySourceLocation": {
+                        "fields": {
+                          "file": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "line": {
+                            "type": "int64",
+                            "id": 2
+                          },
+                          "function": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

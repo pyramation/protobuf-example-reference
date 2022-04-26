@@ -1,0 +1,162 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/api/auth.proto",
+    "google/api/backend.proto",
+    "google/api/billing.proto",
+    "google/api/context.proto",
+    "google/api/control.proto",
+    "google/api/documentation.proto",
+    "google/api/endpoint.proto",
+    "google/api/http.proto",
+    "google/api/label.proto",
+    "google/api/log.proto",
+    "google/api/logging.proto",
+    "google/api/metric.proto",
+    "google/api/monitored_resource.proto",
+    "google/api/monitoring.proto",
+    "google/api/quota.proto",
+    "google/api/resource.proto",
+    "google/api/source_info.proto",
+    "google/api/system_parameter.proto",
+    "google/api/usage.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/api.proto",
+    "google/protobuf/type.proto",
+    "google/protobuf/wrappers.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "ServiceProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Service": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "producerProjectId": {
+                    "type": "string",
+                    "id": 22
+                  },
+                  "id": {
+                    "type": "string",
+                    "id": 33
+                  },
+                  "apis": {
+                    "rule": "repeated",
+                    "type": "google.protobuf.Api",
+                    "id": 3
+                  },
+                  "types": {
+                    "rule": "repeated",
+                    "type": "google.protobuf.Type",
+                    "id": 4
+                  },
+                  "enums": {
+                    "rule": "repeated",
+                    "type": "google.protobuf.Enum",
+                    "id": 5
+                  },
+                  "documentation": {
+                    "type": "Documentation",
+                    "id": 6
+                  },
+                  "backend": {
+                    "type": "Backend",
+                    "id": 8
+                  },
+                  "http": {
+                    "type": "Http",
+                    "id": 9
+                  },
+                  "quota": {
+                    "type": "Quota",
+                    "id": 10
+                  },
+                  "authentication": {
+                    "type": "Authentication",
+                    "id": 11
+                  },
+                  "context": {
+                    "type": "Context",
+                    "id": 12
+                  },
+                  "usage": {
+                    "type": "Usage",
+                    "id": 15
+                  },
+                  "endpoints": {
+                    "rule": "repeated",
+                    "type": "Endpoint",
+                    "id": 18
+                  },
+                  "control": {
+                    "type": "Control",
+                    "id": 21
+                  },
+                  "logs": {
+                    "rule": "repeated",
+                    "type": "LogDescriptor",
+                    "id": 23
+                  },
+                  "metrics": {
+                    "rule": "repeated",
+                    "type": "MetricDescriptor",
+                    "id": 24
+                  },
+                  "monitoredResources": {
+                    "rule": "repeated",
+                    "type": "MonitoredResourceDescriptor",
+                    "id": 25
+                  },
+                  "billing": {
+                    "type": "Billing",
+                    "id": 26
+                  },
+                  "logging": {
+                    "type": "Logging",
+                    "id": 27
+                  },
+                  "monitoring": {
+                    "type": "Monitoring",
+                    "id": 28
+                  },
+                  "systemParameters": {
+                    "type": "SystemParameters",
+                    "id": 29
+                  },
+                  "sourceInfo": {
+                    "type": "SourceInfo",
+                    "id": 37
+                  },
+                  "configVersion": {
+                    "type": "google.protobuf.UInt32Value",
+                    "id": 20,
+                    "options": {
+                      "deprecated": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

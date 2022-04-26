@@ -1,0 +1,32 @@
+{
+  "package": "google.protobuf",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "protobuf": {
+            "options": {
+              "csharp_namespace": "Google.Protobuf.WellKnownTypes",
+              "java_package": "com.google.protobuf",
+              "java_outer_classname": "SourceContextProto",
+              "java_multiple_files": true,
+              "objc_class_prefix": "GPB",
+              "go_package": "types"
+            },
+            "nested": {
+              "SourceContext": {
+                "fields": {
+                  "fileName": {
+                    "type": "string",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

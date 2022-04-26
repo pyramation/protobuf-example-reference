@@ -1,0 +1,75 @@
+{
+  "package": "cosmos.nft.v1beta1",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "nft": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/nft"
+                },
+                "nested": {
+                  "EventSend": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "sender": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "receiver": {
+                        "type": "string",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "EventMint": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "owner": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "EventBurn": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "owner": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "package": "cosmwasm.wasm.v1",
+  "imports": [
+    "cosmos/base/v1beta1/coin.proto",
+    "gogoproto/gogo.proto",
+    "cosmwasm/wasm/v1/types.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmwasm": {
+        "nested": {
+          "wasm": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/CosmWasm/wasmd/x/wasm/types",
+                  "(gogoproto.goproto_getters_all)": false
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "StoreCode": {
+                        "requestType": "MsgStoreCode",
+                        "responseType": "MsgStoreCodeResponse"
+                      },
+                      "InstantiateContract": {
+                        "requestType": "MsgInstantiateContract",
+                        "responseType": "MsgInstantiateContractResponse"
+                      },
+                      "ExecuteContract": {
+                        "requestType": "MsgExecuteContract",
+                        "responseType": "MsgExecuteContractResponse"
+                      },
+                      "MigrateContract": {
+                        "requestType": "MsgMigrateContract",
+                        "responseType": "MsgMigrateContractResponse"
+                      },
+                      "UpdateAdmin": {
+                        "requestType": "MsgUpdateAdmin",
+                        "responseType": "MsgUpdateAdminResponse"
+                      },
+                      "ClearAdmin": {
+                        "requestType": "MsgClearAdmin",
+                        "responseType": "MsgClearAdminResponse"
+                      }
+                    }
+                  },
+                  "MsgStoreCode": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "wasmByteCode": {
+                        "type": "bytes",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customname)": "WASMByteCode"
+                        }
+                      },
+                      "instantiatePermission": {
+                        "type": "AccessConfig",
+                        "id": 5
+                      }
+                    },
+                    "reserved": [
+                      [
+                        3,
+                        3
+                      ],
+                      [
+                        4,
+                        4
+                      ]
+                    ]
+                  },
+                  "MsgStoreCodeResponse": {
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      }
+                    }
+                  },
+                  "MsgInstantiateContract": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "admin": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      },
+                      "label": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "msg": {
+                        "type": "bytes",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      },
+                      "funds": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgInstantiateContractResponse": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "data": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "MsgExecuteContract": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "contract": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "msg": {
+                        "type": "bytes",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      },
+                      "funds": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgExecuteContractResponse": {
+                    "fields": {
+                      "data": {
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "MsgMigrateContract": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "contract": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      },
+                      "msg": {
+                        "type": "bytes",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      }
+                    }
+                  },
+                  "MsgMigrateContractResponse": {
+                    "fields": {
+                      "data": {
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "MsgUpdateAdmin": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "newAdmin": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "contract": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgUpdateAdminResponse": {
+                    "fields": {}
+                  },
+                  "MsgClearAdmin": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "contract": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgClearAdminResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

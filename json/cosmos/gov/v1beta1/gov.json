@@ -1,0 +1,337 @@
+{
+  "package": "cosmos.gov.v1beta1",
+  "imports": [
+    "cosmos/base/v1beta1/coin.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/timestamp.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/duration.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "gov": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1",
+                  "(gogoproto.goproto_stringer_all)": false,
+                  "(gogoproto.stringer_all)": false,
+                  "(gogoproto.goproto_getters_all)": false
+                },
+                "nested": {
+                  "VoteOption": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "VOTE_OPTION_UNSPECIFIED": 0,
+                      "VOTE_OPTION_YES": 1,
+                      "VOTE_OPTION_ABSTAIN": 2,
+                      "VOTE_OPTION_NO": 3,
+                      "VOTE_OPTION_NO_WITH_VETO": 4
+                    }
+                  },
+                  "WeightedVoteOption": {
+                    "fields": {
+                      "option": {
+                        "type": "VoteOption",
+                        "id": 1
+                      },
+                      "weight": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "TextProposal": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "Content",
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "Deposit": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.equal)": false
+                    },
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "depositor": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "Proposal": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "content": {
+                        "type": "google.protobuf.Any",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "Content"
+                        }
+                      },
+                      "status": {
+                        "type": "ProposalStatus",
+                        "id": 3
+                      },
+                      "finalTallyResult": {
+                        "type": "TallyResult",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "submitTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "depositEndTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "totalDeposit": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "votingStartTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 8,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "votingEndTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 9,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ProposalStatus": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "PROPOSAL_STATUS_UNSPECIFIED": 0,
+                      "PROPOSAL_STATUS_DEPOSIT_PERIOD": 1,
+                      "PROPOSAL_STATUS_VOTING_PERIOD": 2,
+                      "PROPOSAL_STATUS_PASSED": 3,
+                      "PROPOSAL_STATUS_REJECTED": 4,
+                      "PROPOSAL_STATUS_FAILED": 5
+                    }
+                  },
+                  "TallyResult": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "yes": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "abstain": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "no": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "noWithVeto": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Vote": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false,
+                      "(gogoproto.equal)": false
+                    },
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.jsontag)": "id"
+                        }
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "option": {
+                        "type": "VoteOption",
+                        "id": 3,
+                        "options": {
+                          "deprecated": true
+                        }
+                      },
+                      "options": {
+                        "rule": "repeated",
+                        "type": "WeightedVoteOption",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DepositParams": {
+                    "fields": {
+                      "minDeposit": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins",
+                          "(gogoproto.jsontag)": "min_deposit,omitempty"
+                        }
+                      },
+                      "maxDepositPeriod": {
+                        "type": "google.protobuf.Duration",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.jsontag)": "max_deposit_period,omitempty"
+                        }
+                      }
+                    }
+                  },
+                  "VotingParams": {
+                    "fields": {
+                      "votingPeriod": {
+                        "type": "google.protobuf.Duration",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.jsontag)": "voting_period,omitempty"
+                        }
+                      }
+                    }
+                  },
+                  "TallyParams": {
+                    "fields": {
+                      "quorum": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "quorum,omitempty"
+                        }
+                      },
+                      "threshold": {
+                        "type": "bytes",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "threshold,omitempty"
+                        }
+                      },
+                      "vetoThreshold": {
+                        "type": "bytes",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "veto_threshold,omitempty"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

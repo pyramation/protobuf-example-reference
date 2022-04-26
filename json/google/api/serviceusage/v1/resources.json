@@ -1,0 +1,127 @@
+{
+  "package": "google.api.serviceusage.v1",
+  "imports": [
+    "google/api/auth.proto",
+    "google/api/documentation.proto",
+    "google/api/endpoint.proto",
+    "google/api/monitored_resource.proto",
+    "google/api/monitoring.proto",
+    "google/api/quota.proto",
+    "google/api/usage.proto",
+    "google/protobuf/api.proto",
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "serviceusage": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceUsage.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/serviceusage/v1;serviceusage",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ResourcesProto",
+                      "java_package": "com.google.api.serviceusage.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceUsage\\V1",
+                      "ruby_package": "Google::Cloud::ServiceUsage::V1"
+                    },
+                    "nested": {
+                      "Service": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "parent": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "config": {
+                            "type": "ServiceConfig",
+                            "id": 2
+                          },
+                          "state": {
+                            "type": "State",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "State": {
+                        "values": {
+                          "STATE_UNSPECIFIED": 0,
+                          "DISABLED": 1,
+                          "ENABLED": 2
+                        }
+                      },
+                      "ServiceConfig": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "title": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "apis": {
+                            "rule": "repeated",
+                            "type": "google.protobuf.Api",
+                            "id": 3
+                          },
+                          "documentation": {
+                            "type": "google.api.Documentation",
+                            "id": 6
+                          },
+                          "quota": {
+                            "type": "google.api.Quota",
+                            "id": 10
+                          },
+                          "authentication": {
+                            "type": "google.api.Authentication",
+                            "id": 11
+                          },
+                          "usage": {
+                            "type": "google.api.Usage",
+                            "id": 15
+                          },
+                          "endpoints": {
+                            "rule": "repeated",
+                            "type": "google.api.Endpoint",
+                            "id": 18
+                          },
+                          "monitoredResources": {
+                            "rule": "repeated",
+                            "type": "google.api.MonitoredResourceDescriptor",
+                            "id": 25
+                          },
+                          "monitoring": {
+                            "type": "google.api.Monitoring",
+                            "id": 28
+                          }
+                        }
+                      },
+                      "OperationMetadata": {
+                        "fields": {
+                          "resourceNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

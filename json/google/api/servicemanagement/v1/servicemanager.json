@@ -1,0 +1,655 @@
+{
+  "package": "google.api.servicemanagement.v1",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/api/client.proto",
+    "google/api/field_behavior.proto",
+    "google/api/service.proto",
+    "google/api/servicemanagement/v1/resources.proto",
+    "google/longrunning/operations.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicemanagement": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceManagement.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicemanagement/v1;servicemanagement",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ServiceManagerProto",
+                      "java_package": "com.google.api.servicemanagement.v1",
+                      "objc_class_prefix": "GASM",
+                      "php_namespace": "Google\\Cloud\\ServiceManagement\\V1",
+                      "ruby_package": "Google::Cloud::ServiceManagement::V1"
+                    },
+                    "nested": {
+                      "ServiceManager": {
+                        "options": {
+                          "(google.api.default_host)": "servicemanagement.googleapis.com",
+                          "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-platform.read-only,https://www.googleapis.com/auth/service.management,https://www.googleapis.com/auth/service.management.readonly"
+                        },
+                        "methods": {
+                          "ListServices": {
+                            "requestType": "ListServicesRequest",
+                            "responseType": "ListServicesResponse",
+                            "options": {
+                              "(google.api.http).get": "/v1/services",
+                              "(google.api.method_signature)": "producer_project_id,consumer_id"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "producer_project_id,consumer_id"
+                              }
+                            ]
+                          },
+                          "GetService": {
+                            "requestType": "GetServiceRequest",
+                            "responseType": "ManagedService",
+                            "options": {
+                              "(google.api.http).get": "/v1/services/{service_name}",
+                              "(google.api.method_signature)": "service_name"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services/{service_name}"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name"
+                              }
+                            ]
+                          },
+                          "CreateService": {
+                            "requestType": "CreateServiceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/services",
+                              "(google.api.http).body": "service",
+                              "(google.api.method_signature)": "service",
+                              "(google.longrunning.operation_info).response_type": "google.api.servicemanagement.v1.ManagedService",
+                              "(google.longrunning.operation_info).metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services",
+                                  "body": "service"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service"
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "google.api.servicemanagement.v1.ManagedService",
+                                  "metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "DeleteService": {
+                            "requestType": "DeleteServiceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).delete": "/v1/services/{service_name}",
+                              "(google.api.method_signature)": "service_name",
+                              "(google.longrunning.operation_info).response_type": "google.protobuf.Empty",
+                              "(google.longrunning.operation_info).metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "delete": "/v1/services/{service_name}"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name"
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "google.protobuf.Empty",
+                                  "metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "UndeleteService": {
+                            "requestType": "UndeleteServiceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}:undelete",
+                              "(google.api.method_signature)": "service_name",
+                              "(google.longrunning.operation_info).response_type": "google.api.servicemanagement.v1.UndeleteServiceResponse",
+                              "(google.longrunning.operation_info).metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}:undelete"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name"
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "google.api.servicemanagement.v1.UndeleteServiceResponse",
+                                  "metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "ListServiceConfigs": {
+                            "requestType": "ListServiceConfigsRequest",
+                            "responseType": "ListServiceConfigsResponse",
+                            "options": {
+                              "(google.api.http).get": "/v1/services/{service_name}/configs",
+                              "(google.api.method_signature)": "service_name"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services/{service_name}/configs"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name"
+                              }
+                            ]
+                          },
+                          "GetServiceConfig": {
+                            "requestType": "GetServiceConfigRequest",
+                            "responseType": "google.api.Service",
+                            "options": {
+                              "(google.api.http).get": "/v1/services/{service_name}/configs/{config_id}",
+                              "(google.api.http).additional_bindings.get": "/v1/services/{service_name}/config",
+                              "(google.api.method_signature)": "service_name,config_id,view"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services/{service_name}/configs/{config_id}",
+                                  "additional_bindings": {
+                                    "get": "/v1/services/{service_name}/config"
+                                  }
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,config_id,view"
+                              }
+                            ]
+                          },
+                          "CreateServiceConfig": {
+                            "requestType": "CreateServiceConfigRequest",
+                            "responseType": "google.api.Service",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}/configs",
+                              "(google.api.http).body": "service_config",
+                              "(google.api.method_signature)": "service_name,service_config"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}/configs",
+                                  "body": "service_config"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,service_config"
+                              }
+                            ]
+                          },
+                          "SubmitConfigSource": {
+                            "requestType": "SubmitConfigSourceRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}/configs:submit",
+                              "(google.api.http).body": "*",
+                              "(google.api.method_signature)": "service_name,config_source,validate_only",
+                              "(google.longrunning.operation_info).response_type": "google.api.servicemanagement.v1.SubmitConfigSourceResponse",
+                              "(google.longrunning.operation_info).metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}/configs:submit",
+                                  "body": "*"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,config_source,validate_only"
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "google.api.servicemanagement.v1.SubmitConfigSourceResponse",
+                                  "metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "ListServiceRollouts": {
+                            "requestType": "ListServiceRolloutsRequest",
+                            "responseType": "ListServiceRolloutsResponse",
+                            "options": {
+                              "(google.api.http).get": "/v1/services/{service_name}/rollouts",
+                              "(google.api.method_signature)": "service_name,filter"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services/{service_name}/rollouts"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,filter"
+                              }
+                            ]
+                          },
+                          "GetServiceRollout": {
+                            "requestType": "GetServiceRolloutRequest",
+                            "responseType": "Rollout",
+                            "options": {
+                              "(google.api.http).get": "/v1/services/{service_name}/rollouts/{rollout_id}",
+                              "(google.api.method_signature)": "service_name,rollout_id"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/v1/services/{service_name}/rollouts/{rollout_id}"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,rollout_id"
+                              }
+                            ]
+                          },
+                          "CreateServiceRollout": {
+                            "requestType": "CreateServiceRolloutRequest",
+                            "responseType": "google.longrunning.Operation",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}/rollouts",
+                              "(google.api.http).body": "rollout",
+                              "(google.api.method_signature)": "service_name,rollout",
+                              "(google.longrunning.operation_info).response_type": "google.api.servicemanagement.v1.Rollout",
+                              "(google.longrunning.operation_info).metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}/rollouts",
+                                  "body": "rollout"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "service_name,rollout"
+                              },
+                              {
+                                "(google.longrunning.operation_info)": {
+                                  "response_type": "google.api.servicemanagement.v1.Rollout",
+                                  "metadata_type": "google.api.servicemanagement.v1.OperationMetadata"
+                                }
+                              }
+                            ]
+                          },
+                          "GenerateConfigReport": {
+                            "requestType": "GenerateConfigReportRequest",
+                            "responseType": "GenerateConfigReportResponse",
+                            "options": {
+                              "(google.api.http).post": "/v1/services:generateConfigReport",
+                              "(google.api.http).body": "*",
+                              "(google.api.method_signature)": "new_config,old_config"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services:generateConfigReport",
+                                  "body": "*"
+                                }
+                              },
+                              {
+                                "(google.api.method_signature)": "new_config,old_config"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "ListServicesRequest": {
+                        "fields": {
+                          "producerProjectId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "pageSize": {
+                            "type": "int32",
+                            "id": 5
+                          },
+                          "pageToken": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "consumerId": {
+                            "type": "string",
+                            "id": 7,
+                            "options": {
+                              "deprecated": true
+                            }
+                          }
+                        }
+                      },
+                      "ListServicesResponse": {
+                        "fields": {
+                          "services": {
+                            "rule": "repeated",
+                            "type": "ManagedService",
+                            "id": 1
+                          },
+                          "nextPageToken": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GetServiceRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "CreateServiceRequest": {
+                        "fields": {
+                          "service": {
+                            "type": "ManagedService",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "DeleteServiceRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "UndeleteServiceRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "UndeleteServiceResponse": {
+                        "fields": {
+                          "service": {
+                            "type": "ManagedService",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetServiceConfigRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "configId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "view": {
+                            "type": "ConfigView",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "ConfigView": {
+                            "values": {
+                              "BASIC": 0,
+                              "FULL": 1
+                            }
+                          }
+                        }
+                      },
+                      "ListServiceConfigsRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "pageToken": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "pageSize": {
+                            "type": "int32",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "ListServiceConfigsResponse": {
+                        "fields": {
+                          "serviceConfigs": {
+                            "rule": "repeated",
+                            "type": "google.api.Service",
+                            "id": 1
+                          },
+                          "nextPageToken": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "CreateServiceConfigRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "serviceConfig": {
+                            "type": "google.api.Service",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "SubmitConfigSourceRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "configSource": {
+                            "type": "ConfigSource",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "validateOnly": {
+                            "type": "bool",
+                            "id": 3,
+                            "options": {
+                              "(google.api.field_behavior)": "OPTIONAL"
+                            }
+                          }
+                        }
+                      },
+                      "SubmitConfigSourceResponse": {
+                        "fields": {
+                          "serviceConfig": {
+                            "type": "google.api.Service",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "CreateServiceRolloutRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "rollout": {
+                            "type": "Rollout",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "ListServiceRolloutsRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "pageToken": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "pageSize": {
+                            "type": "int32",
+                            "id": 3
+                          },
+                          "filter": {
+                            "type": "string",
+                            "id": 4,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "ListServiceRolloutsResponse": {
+                        "fields": {
+                          "rollouts": {
+                            "rule": "repeated",
+                            "type": "Rollout",
+                            "id": 1
+                          },
+                          "nextPageToken": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GetServiceRolloutRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "rolloutId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          }
+                        }
+                      },
+                      "GenerateConfigReportRequest": {
+                        "fields": {
+                          "newConfig": {
+                            "type": "google.protobuf.Any",
+                            "id": 1,
+                            "options": {
+                              "(google.api.field_behavior)": "REQUIRED"
+                            }
+                          },
+                          "oldConfig": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(google.api.field_behavior)": "OPTIONAL"
+                            }
+                          }
+                        }
+                      },
+                      "GenerateConfigReportResponse": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "id": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "changeReports": {
+                            "rule": "repeated",
+                            "type": "ChangeReport",
+                            "id": 3
+                          },
+                          "diagnostics": {
+                            "rule": "repeated",
+                            "type": "Diagnostic",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

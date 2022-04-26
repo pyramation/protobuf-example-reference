@@ -1,0 +1,110 @@
+{
+  "package": "cosmos.staking.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/staking/v1beta1/staking.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "staking": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/staking/types"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "lastTotalPower": {
+                        "type": "bytes",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "lastValidatorPowers": {
+                        "rule": "repeated",
+                        "type": "LastValidatorPower",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "validators": {
+                        "rule": "repeated",
+                        "type": "Validator",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "delegations": {
+                        "rule": "repeated",
+                        "type": "Delegation",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "unbondingDelegations": {
+                        "rule": "repeated",
+                        "type": "UnbondingDelegation",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "redelegations": {
+                        "rule": "repeated",
+                        "type": "Redelegation",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "exported": {
+                        "type": "bool",
+                        "id": 8
+                      }
+                    }
+                  },
+                  "LastValidatorPower": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "power": {
+                        "type": "int64",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

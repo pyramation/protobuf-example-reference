@@ -1,0 +1,336 @@
+{
+  "package": "cosmos.gov.v1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "google/api/annotations.proto",
+    "cosmos/gov/v1/gov.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "gov": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Proposal": {
+                        "requestType": "QueryProposalRequest",
+                        "responseType": "QueryProposalResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Proposals": {
+                        "requestType": "QueryProposalsRequest",
+                        "responseType": "QueryProposalsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals"
+                            }
+                          }
+                        ]
+                      },
+                      "Vote": {
+                        "requestType": "QueryVoteRequest",
+                        "responseType": "QueryVoteResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}"
+                            }
+                          }
+                        ]
+                      },
+                      "Votes": {
+                        "requestType": "QueryVotesRequest",
+                        "responseType": "QueryVotesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}/votes"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}/votes"
+                            }
+                          }
+                        ]
+                      },
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/params/{params_type}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/params/{params_type}"
+                            }
+                          }
+                        ]
+                      },
+                      "Deposit": {
+                        "requestType": "QueryDepositRequest",
+                        "responseType": "QueryDepositResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}"
+                            }
+                          }
+                        ]
+                      },
+                      "Deposits": {
+                        "requestType": "QueryDepositsRequest",
+                        "responseType": "QueryDepositsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}/deposits"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}/deposits"
+                            }
+                          }
+                        ]
+                      },
+                      "TallyResult": {
+                        "requestType": "QueryTallyResultRequest",
+                        "responseType": "QueryTallyResultResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/gov/v1/proposals/{proposal_id}/tally"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/gov/v1/proposals/{proposal_id}/tally"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryProposalRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryProposalResponse": {
+                    "fields": {
+                      "proposal": {
+                        "type": "Proposal",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryProposalsRequest": {
+                    "fields": {
+                      "proposalStatus": {
+                        "type": "ProposalStatus",
+                        "id": 1
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "depositor": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "QueryProposalsResponse": {
+                    "fields": {
+                      "proposals": {
+                        "rule": "repeated",
+                        "type": "Proposal",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVoteRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryVoteResponse": {
+                    "fields": {
+                      "vote": {
+                        "type": "Vote",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryVotesRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVotesResponse": {
+                    "fields": {
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {
+                      "paramsType": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "votingParams": {
+                        "type": "VotingParams",
+                        "id": 1
+                      },
+                      "depositParams": {
+                        "type": "DepositParams",
+                        "id": 2
+                      },
+                      "tallyParams": {
+                        "type": "TallyParams",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "QueryDepositRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "depositor": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryDepositResponse": {
+                    "fields": {
+                      "deposit": {
+                        "type": "Deposit",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryDepositsRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDepositsResponse": {
+                    "fields": {
+                      "deposits": {
+                        "rule": "repeated",
+                        "type": "Deposit",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryTallyResultRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryTallyResultResponse": {
+                    "fields": {
+                      "tally": {
+                        "type": "TallyResult",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "package": "cosmos.distribution.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "distribution": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/distribution/types",
+                  "(gogoproto.equal_all)": true
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "SetWithdrawAddress": {
+                        "requestType": "MsgSetWithdrawAddress",
+                        "responseType": "MsgSetWithdrawAddressResponse"
+                      },
+                      "WithdrawDelegatorReward": {
+                        "requestType": "MsgWithdrawDelegatorReward",
+                        "responseType": "MsgWithdrawDelegatorRewardResponse"
+                      },
+                      "WithdrawValidatorCommission": {
+                        "requestType": "MsgWithdrawValidatorCommission",
+                        "responseType": "MsgWithdrawValidatorCommissionResponse"
+                      },
+                      "FundCommunityPool": {
+                        "requestType": "MsgFundCommunityPool",
+                        "responseType": "MsgFundCommunityPoolResponse"
+                      }
+                    }
+                  },
+                  "MsgSetWithdrawAddress": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "delegator_address",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "withdrawAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgSetWithdrawAddressResponse": {
+                    "fields": {}
+                  },
+                  "MsgWithdrawDelegatorReward": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "delegator_address",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgWithdrawDelegatorRewardResponse": {
+                    "fields": {
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgWithdrawValidatorCommission": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "validator_address",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgWithdrawValidatorCommissionResponse": {
+                    "fields": {
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgFundCommunityPool": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "depositor",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "depositor": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgFundCommunityPoolResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

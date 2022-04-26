@@ -1,0 +1,54 @@
+{
+  "package": "cosmos.base.kv.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "kv": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/types/kv"
+                    },
+                    "nested": {
+                      "Pairs": {
+                        "fields": {
+                          "pairs": {
+                            "rule": "repeated",
+                            "type": "Pair",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "Pair": {
+                        "fields": {
+                          "key": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

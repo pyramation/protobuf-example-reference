@@ -1,0 +1,89 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "BackendProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Backend": {
+                "fields": {
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "BackendRule",
+                    "id": 1
+                  }
+                }
+              },
+              "BackendRule": {
+                "oneofs": {
+                  "authentication": {
+                    "oneof": [
+                      "jwtAudience",
+                      "disableAuth"
+                    ]
+                  }
+                },
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "address": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "deadline": {
+                    "type": "double",
+                    "id": 3
+                  },
+                  "minDeadline": {
+                    "type": "double",
+                    "id": 4
+                  },
+                  "operationDeadline": {
+                    "type": "double",
+                    "id": 5
+                  },
+                  "pathTranslation": {
+                    "type": "PathTranslation",
+                    "id": 6
+                  },
+                  "jwtAudience": {
+                    "type": "string",
+                    "id": 7
+                  },
+                  "disableAuth": {
+                    "type": "bool",
+                    "id": 8
+                  },
+                  "protocol": {
+                    "type": "string",
+                    "id": 9
+                  }
+                },
+                "nested": {
+                  "PathTranslation": {
+                    "values": {
+                      "PATH_TRANSLATION_UNSPECIFIED": 0,
+                      "CONSTANT_ADDRESS": 1,
+                      "APPEND_PATH_TO_ADDRESS": 2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

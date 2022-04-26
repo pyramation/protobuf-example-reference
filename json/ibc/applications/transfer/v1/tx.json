@@ -1,0 +1,95 @@
+{
+  "package": "ibc.applications.transfer.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "ibc/core/client/v1/client.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "applications": {
+            "nested": {
+              "transfer": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
+                    },
+                    "nested": {
+                      "Msg": {
+                        "methods": {
+                          "Transfer": {
+                            "requestType": "MsgTransfer",
+                            "responseType": "MsgTransferResponse"
+                          }
+                        }
+                      },
+                      "MsgTransfer": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "sourcePort": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:source_port"
+                            }
+                          },
+                          "sourceChannel": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:source_channel"
+                            }
+                          },
+                          "token": {
+                            "type": "cosmos.base.v1beta1.Coin",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "sender": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "receiver": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "timeoutHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:timeout_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "timeoutTimestamp": {
+                            "type": "uint64",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:timeout_timestamp"
+                            }
+                          }
+                        }
+                      },
+                      "MsgTransferResponse": {
+                        "fields": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

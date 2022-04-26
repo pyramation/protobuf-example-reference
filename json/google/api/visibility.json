@@ -1,0 +1,78 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "cc_enable_arenas": true,
+              "go_package": "google.golang.org/genproto/googleapis/api/visibility;visibility",
+              "java_multiple_files": true,
+              "java_outer_classname": "VisibilityProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "enumVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.EnumOptions"
+              },
+              "valueVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.EnumValueOptions"
+              },
+              "fieldVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.FieldOptions"
+              },
+              "messageVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.MessageOptions"
+              },
+              "methodVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.MethodOptions"
+              },
+              "apiVisibility": {
+                "type": "google.api.VisibilityRule",
+                "id": 72295727,
+                "extend": "google.protobuf.ServiceOptions"
+              },
+              "Visibility": {
+                "fields": {
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "VisibilityRule",
+                    "id": 1
+                  }
+                }
+              },
+              "VisibilityRule": {
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "restriction": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

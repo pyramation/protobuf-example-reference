@@ -1,0 +1,214 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/api/client.proto",
+    "google/api/servicecontrol/v1/check_error.proto",
+    "google/api/servicecontrol/v1/operation.proto",
+    "google/protobuf/timestamp.proto",
+    "google/rpc/status.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ServiceControllerProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "objc_class_prefix": "GASC",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "ServiceController": {
+                        "options": {
+                          "(google.api.default_host)": "servicecontrol.googleapis.com",
+                          "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/servicecontrol"
+                        },
+                        "methods": {
+                          "Check": {
+                            "requestType": "CheckRequest",
+                            "responseType": "CheckResponse",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}:check",
+                              "(google.api.http).body": "*"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}:check",
+                                  "body": "*"
+                                }
+                              }
+                            ]
+                          },
+                          "Report": {
+                            "requestType": "ReportRequest",
+                            "responseType": "ReportResponse",
+                            "options": {
+                              "(google.api.http).post": "/v1/services/{service_name}:report",
+                              "(google.api.http).body": "*"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v1/services/{service_name}:report",
+                                  "body": "*"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "CheckRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "operation": {
+                            "type": "Operation",
+                            "id": 2
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "CheckResponse": {
+                        "fields": {
+                          "operationId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "checkErrors": {
+                            "rule": "repeated",
+                            "type": "CheckError",
+                            "id": 2
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "serviceRolloutId": {
+                            "type": "string",
+                            "id": 11
+                          },
+                          "checkInfo": {
+                            "type": "CheckInfo",
+                            "id": 6
+                          }
+                        },
+                        "nested": {
+                          "CheckInfo": {
+                            "fields": {
+                              "unusedArguments": {
+                                "rule": "repeated",
+                                "type": "string",
+                                "id": 1
+                              },
+                              "consumerInfo": {
+                                "type": "ConsumerInfo",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "ConsumerInfo": {
+                            "fields": {
+                              "projectNumber": {
+                                "type": "int64",
+                                "id": 1
+                              },
+                              "type": {
+                                "type": "ConsumerType",
+                                "id": 2
+                              },
+                              "consumerNumber": {
+                                "type": "int64",
+                                "id": 3
+                              }
+                            },
+                            "nested": {
+                              "ConsumerType": {
+                                "values": {
+                                  "CONSUMER_TYPE_UNSPECIFIED": 0,
+                                  "PROJECT": 1,
+                                  "FOLDER": 2,
+                                  "ORGANIZATION": 3,
+                                  "SERVICE_SPECIFIC": 4
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ReportRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "operations": {
+                            "rule": "repeated",
+                            "type": "Operation",
+                            "id": 2
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "ReportResponse": {
+                        "fields": {
+                          "reportErrors": {
+                            "rule": "repeated",
+                            "type": "ReportError",
+                            "id": 1
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "serviceRolloutId": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        },
+                        "nested": {
+                          "ReportError": {
+                            "fields": {
+                              "operationId": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "status": {
+                                "type": "google.rpc.Status",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

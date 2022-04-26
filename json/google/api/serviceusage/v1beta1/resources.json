@@ -1,0 +1,308 @@
+{
+  "package": "google.api.serviceusage.v1beta1",
+  "imports": [
+    "google/api/auth.proto",
+    "google/api/documentation.proto",
+    "google/api/endpoint.proto",
+    "google/api/monitored_resource.proto",
+    "google/api/monitoring.proto",
+    "google/api/quota.proto",
+    "google/api/usage.proto",
+    "google/protobuf/api.proto",
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "serviceusage": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "csharp_namespace": "Google.Api.ServiceUsage.V1Beta1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/serviceusage/v1beta1;serviceusage",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ResourcesProto",
+                      "java_package": "com.google.api.serviceusage.v1beta1",
+                      "php_namespace": "Google\\Api\\ServiceUsage\\V1beta1",
+                      "ruby_package": "Google::Api::ServiceUsage::V1beta1"
+                    },
+                    "nested": {
+                      "Service": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "parent": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "config": {
+                            "type": "ServiceConfig",
+                            "id": 2
+                          },
+                          "state": {
+                            "type": "State",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "State": {
+                        "values": {
+                          "STATE_UNSPECIFIED": 0,
+                          "DISABLED": 1,
+                          "ENABLED": 2
+                        }
+                      },
+                      "ServiceConfig": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "title": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "apis": {
+                            "rule": "repeated",
+                            "type": "google.protobuf.Api",
+                            "id": 3
+                          },
+                          "documentation": {
+                            "type": "google.api.Documentation",
+                            "id": 6
+                          },
+                          "quota": {
+                            "type": "google.api.Quota",
+                            "id": 10
+                          },
+                          "authentication": {
+                            "type": "google.api.Authentication",
+                            "id": 11
+                          },
+                          "usage": {
+                            "type": "google.api.Usage",
+                            "id": 15
+                          },
+                          "endpoints": {
+                            "rule": "repeated",
+                            "type": "google.api.Endpoint",
+                            "id": 18
+                          },
+                          "monitoredResources": {
+                            "rule": "repeated",
+                            "type": "google.api.MonitoredResourceDescriptor",
+                            "id": 25
+                          },
+                          "monitoring": {
+                            "type": "google.api.Monitoring",
+                            "id": 28
+                          }
+                        }
+                      },
+                      "OperationMetadata": {
+                        "fields": {
+                          "resourceNames": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ConsumerQuotaMetric": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "metric": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "displayName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "consumerQuotaLimits": {
+                            "rule": "repeated",
+                            "type": "ConsumerQuotaLimit",
+                            "id": 3
+                          },
+                          "descendantConsumerQuotaLimits": {
+                            "rule": "repeated",
+                            "type": "ConsumerQuotaLimit",
+                            "id": 6
+                          },
+                          "unit": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "ConsumerQuotaLimit": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "metric": {
+                            "type": "string",
+                            "id": 8
+                          },
+                          "unit": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "isPrecise": {
+                            "type": "bool",
+                            "id": 3
+                          },
+                          "allowsAdminOverrides": {
+                            "type": "bool",
+                            "id": 7
+                          },
+                          "quotaBuckets": {
+                            "rule": "repeated",
+                            "type": "QuotaBucket",
+                            "id": 9
+                          }
+                        }
+                      },
+                      "QuotaView": {
+                        "values": {
+                          "QUOTA_VIEW_UNSPECIFIED": 0,
+                          "BASIC": 1,
+                          "FULL": 2
+                        }
+                      },
+                      "QuotaBucket": {
+                        "fields": {
+                          "effectiveLimit": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "defaultLimit": {
+                            "type": "int64",
+                            "id": 2
+                          },
+                          "producerOverride": {
+                            "type": "QuotaOverride",
+                            "id": 3
+                          },
+                          "consumerOverride": {
+                            "type": "QuotaOverride",
+                            "id": 4
+                          },
+                          "adminOverride": {
+                            "type": "QuotaOverride",
+                            "id": 5
+                          },
+                          "dimensions": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "QuotaOverride": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "overrideValue": {
+                            "type": "int64",
+                            "id": 2
+                          },
+                          "dimensions": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 3
+                          },
+                          "metric": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "unit": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "adminOverrideAncestor": {
+                            "type": "string",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "OverrideInlineSource": {
+                        "fields": {
+                          "overrides": {
+                            "rule": "repeated",
+                            "type": "QuotaOverride",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QuotaSafetyCheck": {
+                        "values": {
+                          "QUOTA_SAFETY_CHECK_UNSPECIFIED": 0,
+                          "LIMIT_DECREASE_BELOW_USAGE": 1,
+                          "LIMIT_DECREASE_PERCENTAGE_TOO_HIGH": 2
+                        }
+                      },
+                      "AdminQuotaPolicy": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "policyValue": {
+                            "type": "int64",
+                            "id": 2
+                          },
+                          "dimensions": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 3
+                          },
+                          "metric": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "unit": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "container": {
+                            "type": "string",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "ServiceIdentity": {
+                        "fields": {
+                          "email": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "uniqueId": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "package": "ibc.core.connection.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "ibc/core/client/v1/client.proto",
+    "ibc/core/connection/v1/connection.proto",
+    "google/api/annotations.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "connection": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/03-connection/types"
+                    },
+                    "nested": {
+                      "Query": {
+                        "methods": {
+                          "Connection": {
+                            "requestType": "QueryConnectionRequest",
+                            "responseType": "QueryConnectionResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/connection/v1/connections/{connection_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/connection/v1/connections/{connection_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "Connections": {
+                            "requestType": "QueryConnectionsRequest",
+                            "responseType": "QueryConnectionsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/connection/v1/connections"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/connection/v1/connections"
+                                }
+                              }
+                            ]
+                          },
+                          "ClientConnections": {
+                            "requestType": "QueryClientConnectionsRequest",
+                            "responseType": "QueryClientConnectionsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/connection/v1/client_connections/{client_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/connection/v1/client_connections/{client_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "ConnectionClientState": {
+                            "requestType": "QueryConnectionClientStateRequest",
+                            "responseType": "QueryConnectionClientStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/connection/v1/connections/{connection_id}/client_state"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/connection/v1/connections/{connection_id}/client_state"
+                                }
+                              }
+                            ]
+                          },
+                          "ConnectionConsensusState": {
+                            "requestType": "QueryConnectionConsensusStateRequest",
+                            "responseType": "QueryConnectionConsensusStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/connection/v1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/connection/v1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "QueryConnectionRequest": {
+                        "fields": {
+                          "connectionId": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryConnectionResponse": {
+                        "fields": {
+                          "connection": {
+                            "type": "ibc.core.connection.v1.ConnectionEnd",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryConnectionsRequest": {
+                        "fields": {
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryConnectionsResponse": {
+                        "fields": {
+                          "connections": {
+                            "rule": "repeated",
+                            "type": "ibc.core.connection.v1.IdentifiedConnection",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          },
+                          "height": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryClientConnectionsRequest": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryClientConnectionsResponse": {
+                        "fields": {
+                          "connectionPaths": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryConnectionClientStateRequest": {
+                        "fields": {
+                          "connectionId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_id"
+                            }
+                          }
+                        }
+                      },
+                      "QueryConnectionClientStateResponse": {
+                        "fields": {
+                          "identifiedClientState": {
+                            "type": "ibc.core.client.v1.IdentifiedClientState",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryConnectionConsensusStateRequest": {
+                        "fields": {
+                          "connectionId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_id"
+                            }
+                          },
+                          "revisionNumber": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "revisionHeight": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "QueryConnectionConsensusStateResponse": {
+                        "fields": {
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

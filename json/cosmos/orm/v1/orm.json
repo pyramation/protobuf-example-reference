@@ -1,0 +1,86 @@
+{
+  "package": "cosmos.orm.v1",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "orm": {
+            "nested": {
+              "v1": {
+                "nested": {
+                  "table": {
+                    "type": "TableDescriptor",
+                    "id": 104503790,
+                    "extend": "google.protobuf.MessageOptions"
+                  },
+                  "singleton": {
+                    "type": "SingletonDescriptor",
+                    "id": 104503791,
+                    "extend": "google.protobuf.MessageOptions"
+                  },
+                  "TableDescriptor": {
+                    "fields": {
+                      "primaryKey": {
+                        "type": "PrimaryKeyDescriptor",
+                        "id": 1
+                      },
+                      "index": {
+                        "rule": "repeated",
+                        "type": "SecondaryIndexDescriptor",
+                        "id": 2
+                      },
+                      "id": {
+                        "type": "uint32",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "PrimaryKeyDescriptor": {
+                    "fields": {
+                      "fields": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "autoIncrement": {
+                        "type": "bool",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "SecondaryIndexDescriptor": {
+                    "fields": {
+                      "fields": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "uint32",
+                        "id": 2
+                      },
+                      "unique": {
+                        "type": "bool",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "SingletonDescriptor": {
+                    "fields": {
+                      "id": {
+                        "type": "uint32",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

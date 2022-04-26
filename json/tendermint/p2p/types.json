@@ -1,0 +1,151 @@
+{
+  "package": "tendermint.p2p",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "p2p": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/p2p"
+            },
+            "nested": {
+              "ProtocolVersion": {
+                "fields": {
+                  "p2p": {
+                    "type": "uint64",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.customname)": "P2P"
+                    }
+                  },
+                  "block": {
+                    "type": "uint64",
+                    "id": 2
+                  },
+                  "app": {
+                    "type": "uint64",
+                    "id": 3
+                  }
+                }
+              },
+              "NodeInfo": {
+                "fields": {
+                  "protocolVersion": {
+                    "type": "ProtocolVersion",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "nodeId": {
+                    "type": "string",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.customname)": "NodeID"
+                    }
+                  },
+                  "listenAddr": {
+                    "type": "string",
+                    "id": 3
+                  },
+                  "network": {
+                    "type": "string",
+                    "id": 4
+                  },
+                  "version": {
+                    "type": "string",
+                    "id": 5
+                  },
+                  "channels": {
+                    "type": "bytes",
+                    "id": 6
+                  },
+                  "moniker": {
+                    "type": "string",
+                    "id": 7
+                  },
+                  "other": {
+                    "type": "NodeInfoOther",
+                    "id": 8,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "NodeInfoOther": {
+                "fields": {
+                  "txIndex": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "rpcAddress": {
+                    "type": "string",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.customname)": "RPCAddress"
+                    }
+                  }
+                }
+              },
+              "PeerInfo": {
+                "fields": {
+                  "id": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.customname)": "ID"
+                    }
+                  },
+                  "addressInfo": {
+                    "rule": "repeated",
+                    "type": "PeerAddressInfo",
+                    "id": 2
+                  },
+                  "lastConnected": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.stdtime)": true
+                    }
+                  }
+                }
+              },
+              "PeerAddressInfo": {
+                "fields": {
+                  "address": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "lastDialSuccess": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.stdtime)": true
+                    }
+                  },
+                  "lastDialFailure": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.stdtime)": true
+                    }
+                  },
+                  "dialFailures": {
+                    "type": "uint32",
+                    "id": 4
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "package": "cosmos.nft.v1beta1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "google/api/annotations.proto",
+    "cosmos/nft/v1beta1/nft.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "nft": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/nft"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Balance": {
+                        "requestType": "QueryBalanceRequest",
+                        "responseType": "QueryBalanceResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/balance/{owner}/{class_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/balance/{owner}/{class_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Owner": {
+                        "requestType": "QueryOwnerRequest",
+                        "responseType": "QueryOwnerResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/owner/{class_id}/{id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/owner/{class_id}/{id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Supply": {
+                        "requestType": "QuerySupplyRequest",
+                        "responseType": "QuerySupplyResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/supply/{class_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/supply/{class_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "NFTs": {
+                        "requestType": "QueryNFTsRequest",
+                        "responseType": "QueryNFTsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/nfts"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/nfts"
+                            }
+                          }
+                        ]
+                      },
+                      "NFT": {
+                        "requestType": "QueryNFTRequest",
+                        "responseType": "QueryNFTResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/nfts/{class_id}/{id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/nfts/{class_id}/{id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Class": {
+                        "requestType": "QueryClassRequest",
+                        "responseType": "QueryClassResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/classes/{class_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/classes/{class_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Classes": {
+                        "requestType": "QueryClassesRequest",
+                        "responseType": "QueryClassesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/nft/v1beta1/classes"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/nft/v1beta1/classes"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryBalanceRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "owner": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryBalanceResponse": {
+                    "fields": {
+                      "amount": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryOwnerRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryOwnerResponse": {
+                    "fields": {
+                      "owner": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QuerySupplyRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QuerySupplyResponse": {
+                    "fields": {
+                      "amount": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryNFTsRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "owner": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "QueryNFTsResponse": {
+                    "fields": {
+                      "nfts": {
+                        "rule": "repeated",
+                        "type": "cosmos.nft.v1beta1.NFT",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryNFTRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryNFTResponse": {
+                    "fields": {
+                      "nft": {
+                        "type": "cosmos.nft.v1beta1.NFT",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryClassRequest": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryClassResponse": {
+                    "fields": {
+                      "class": {
+                        "type": "cosmos.nft.v1beta1.Class",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryClassesRequest": {
+                    "fields": {
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryClassesResponse": {
+                    "fields": {
+                      "classes": {
+                        "rule": "repeated",
+                        "type": "cosmos.nft.v1beta1.Class",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "package": "ibc.core.channel.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "ibc/core/client/v1/client.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "channel": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/04-channel/types"
+                    },
+                    "nested": {
+                      "Channel": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "state": {
+                            "type": "State",
+                            "id": 1
+                          },
+                          "ordering": {
+                            "type": "Order",
+                            "id": 2
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "connectionHops": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_hops"
+                            }
+                          },
+                          "version": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "IdentifiedChannel": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "state": {
+                            "type": "State",
+                            "id": 1
+                          },
+                          "ordering": {
+                            "type": "Order",
+                            "id": 2
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "connectionHops": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_hops"
+                            }
+                          },
+                          "version": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "portId": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 7
+                          }
+                        }
+                      },
+                      "State": {
+                        "options": {
+                          "(gogoproto.goproto_enum_prefix)": false
+                        },
+                        "values": {
+                          "STATE_UNINITIALIZED_UNSPECIFIED": 0,
+                          "STATE_INIT": 1,
+                          "STATE_TRYOPEN": 2,
+                          "STATE_OPEN": 3,
+                          "STATE_CLOSED": 4
+                        }
+                      },
+                      "Order": {
+                        "options": {
+                          "(gogoproto.goproto_enum_prefix)": false
+                        },
+                        "values": {
+                          "ORDER_NONE_UNSPECIFIED": 0,
+                          "ORDER_UNORDERED": 1,
+                          "ORDER_ORDERED": 2
+                        }
+                      },
+                      "Counterparty": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:port_id"
+                            }
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:channel_id"
+                            }
+                          }
+                        }
+                      },
+                      "Packet": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "sourcePort": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:source_port"
+                            }
+                          },
+                          "sourceChannel": {
+                            "type": "string",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:source_channel"
+                            }
+                          },
+                          "destinationPort": {
+                            "type": "string",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:destination_port"
+                            }
+                          },
+                          "destinationChannel": {
+                            "type": "string",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:destination_channel"
+                            }
+                          },
+                          "data": {
+                            "type": "bytes",
+                            "id": 6
+                          },
+                          "timeoutHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:timeout_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "timeoutTimestamp": {
+                            "type": "uint64",
+                            "id": 8,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:timeout_timestamp"
+                            }
+                          }
+                        }
+                      },
+                      "PacketState": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:port_id"
+                            }
+                          },
+                          "channelId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:channel_id"
+                            }
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "data": {
+                            "type": "bytes",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "Acknowledgement": {
+                        "oneofs": {
+                          "response": {
+                            "oneof": [
+                              "result",
+                              "error"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "result": {
+                            "type": "bytes",
+                            "id": 21
+                          },
+                          "error": {
+                            "type": "string",
+                            "id": 22
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

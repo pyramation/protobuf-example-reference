@@ -1,0 +1,243 @@
+{
+  "package": "cosmwasm.wasm.v1",
+  "imports": [
+    "cosmos_proto/cosmos.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmwasm": {
+        "nested": {
+          "wasm": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/CosmWasm/wasmd/x/wasm/types",
+                  "(gogoproto.goproto_getters_all)": false,
+                  "(gogoproto.equal_all)": true
+                },
+                "nested": {
+                  "AccessType": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false,
+                      "(gogoproto.goproto_enum_stringer)": false
+                    },
+                    "values": {
+                      "ACCESS_TYPE_UNSPECIFIED": 0,
+                      "ACCESS_TYPE_NOBODY": 1,
+                      "ACCESS_TYPE_ONLY_ADDRESS": 2,
+                      "ACCESS_TYPE_EVERYBODY": 3
+                    }
+                  },
+                  "AccessTypeParam": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": true
+                    },
+                    "fields": {
+                      "value": {
+                        "type": "AccessType",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:value"
+                        }
+                      }
+                    }
+                  },
+                  "AccessConfig": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": true
+                    },
+                    "fields": {
+                      "permission": {
+                        "type": "AccessType",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:permission"
+                        }
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:address"
+                        }
+                      }
+                    }
+                  },
+                  "Params": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "codeUploadAccess": {
+                        "type": "AccessConfig",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.moretags)": "yaml:code_upload_access"
+                        }
+                      },
+                      "instantiateDefaultPermission": {
+                        "type": "AccessType",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:instantiate_default_permission"
+                        }
+                      },
+                      "maxWasmCodeSize": {
+                        "type": "uint64",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:max_wasm_code_size"
+                        }
+                      }
+                    }
+                  },
+                  "CodeInfo": {
+                    "fields": {
+                      "codeHash": {
+                        "type": "bytes",
+                        "id": 1
+                      },
+                      "creator": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "instantiateConfig": {
+                        "type": "AccessConfig",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    },
+                    "reserved": [
+                      [
+                        3,
+                        3
+                      ],
+                      [
+                        4,
+                        4
+                      ]
+                    ]
+                  },
+                  "ContractInfo": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      },
+                      "creator": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "admin": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "label": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "created": {
+                        "type": "AbsoluteTxPosition",
+                        "id": 5
+                      },
+                      "ibcPortId": {
+                        "type": "string",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.customname)": "IBCPortID"
+                        }
+                      },
+                      "extension": {
+                        "type": "google.protobuf.Any",
+                        "id": 7,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "ContractInfoExtension"
+                        }
+                      }
+                    }
+                  },
+                  "ContractCodeHistoryOperationType": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED": 0,
+                      "CONTRACT_CODE_HISTORY_OPERATION_TYPE_INIT": 1,
+                      "CONTRACT_CODE_HISTORY_OPERATION_TYPE_MIGRATE": 2,
+                      "CONTRACT_CODE_HISTORY_OPERATION_TYPE_GENESIS": 3
+                    }
+                  },
+                  "ContractCodeHistoryEntry": {
+                    "fields": {
+                      "operation": {
+                        "type": "ContractCodeHistoryOperationType",
+                        "id": 1
+                      },
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      },
+                      "updated": {
+                        "type": "AbsoluteTxPosition",
+                        "id": 3
+                      },
+                      "msg": {
+                        "type": "bytes",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      }
+                    }
+                  },
+                  "AbsoluteTxPosition": {
+                    "fields": {
+                      "blockHeight": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "txIndex": {
+                        "type": "uint64",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "Model": {
+                    "fields": {
+                      "key": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.casttype)": "github.com/tendermint/tendermint/libs/bytes.HexBytes"
+                        }
+                      },
+                      "value": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

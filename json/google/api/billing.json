@@ -1,0 +1,50 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/api/metric.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "BillingProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Billing": {
+                "fields": {
+                  "consumerDestinations": {
+                    "rule": "repeated",
+                    "type": "BillingDestination",
+                    "id": 8
+                  }
+                },
+                "nested": {
+                  "BillingDestination": {
+                    "fields": {
+                      "monitoredResource": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "metrics": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

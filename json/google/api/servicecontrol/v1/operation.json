@@ -1,0 +1,96 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/servicecontrol/v1/log_entry.proto",
+    "google/api/servicecontrol/v1/metric_value.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "OperationProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "Operation": {
+                        "fields": {
+                          "operationId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "operationName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "consumerId": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "startTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 4
+                          },
+                          "endTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 5
+                          },
+                          "labels": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 6
+                          },
+                          "metricValueSets": {
+                            "rule": "repeated",
+                            "type": "MetricValueSet",
+                            "id": 7
+                          },
+                          "logEntries": {
+                            "rule": "repeated",
+                            "type": "LogEntry",
+                            "id": 8
+                          },
+                          "importance": {
+                            "type": "Importance",
+                            "id": 11
+                          },
+                          "extensions": {
+                            "rule": "repeated",
+                            "type": "google.protobuf.Any",
+                            "id": 16
+                          }
+                        },
+                        "nested": {
+                          "Importance": {
+                            "values": {
+                              "LOW": 0,
+                              "HIGH": 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

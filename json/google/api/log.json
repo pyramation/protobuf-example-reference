@@ -1,0 +1,47 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/api/label.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "LogProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "LogDescriptor": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "labels": {
+                    "rule": "repeated",
+                    "type": "LabelDescriptor",
+                    "id": 2
+                  },
+                  "description": {
+                    "type": "string",
+                    "id": 3
+                  },
+                  "displayName": {
+                    "type": "string",
+                    "id": 4
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

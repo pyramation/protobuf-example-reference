@@ -1,0 +1,152 @@
+{
+  "package": "cosmos.vesting.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/vesting/v1beta1/vesting.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "vesting": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "CreateVestingAccount": {
+                        "requestType": "MsgCreateVestingAccount",
+                        "responseType": "MsgCreateVestingAccountResponse"
+                      },
+                      "CreatePermanentLockedAccount": {
+                        "requestType": "MsgCreatePermanentLockedAccount",
+                        "responseType": "MsgCreatePermanentLockedAccountResponse"
+                      },
+                      "CreatePeriodicVestingAccount": {
+                        "requestType": "MsgCreatePeriodicVestingAccount",
+                        "responseType": "MsgCreatePeriodicVestingAccountResponse"
+                      }
+                    }
+                  },
+                  "MsgCreateVestingAccount": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "from_address",
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "fromAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "toAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "endTime": {
+                        "type": "int64",
+                        "id": 4
+                      },
+                      "delayed": {
+                        "type": "bool",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "MsgCreateVestingAccountResponse": {
+                    "fields": {}
+                  },
+                  "MsgCreatePermanentLockedAccount": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "fromAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:from_address"
+                        }
+                      },
+                      "toAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:to_address"
+                        }
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreatePermanentLockedAccountResponse": {
+                    "fields": {}
+                  },
+                  "MsgCreatePeriodicVestingAccount": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "from_address",
+                      "(gogoproto.equal)": false
+                    },
+                    "fields": {
+                      "fromAddress": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "toAddress": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "startTime": {
+                        "type": "int64",
+                        "id": 3
+                      },
+                      "vestingPeriods": {
+                        "rule": "repeated",
+                        "type": "Period",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreatePeriodicVestingAccountResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

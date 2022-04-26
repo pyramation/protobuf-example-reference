@@ -1,0 +1,377 @@
+{
+  "package": "ibc.lightclients.solomachine.v1",
+  "imports": [
+    "ibc/core/connection/v1/connection.proto",
+    "ibc/core/channel/v1/channel.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "lightclients": {
+            "nested": {
+              "solomachine": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/02-client/legacy/v100"
+                    },
+                    "nested": {
+                      "ClientState": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "frozenSequence": {
+                            "type": "uint64",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:frozen_sequence"
+                            }
+                          },
+                          "consensusState": {
+                            "type": "ConsensusState",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_state"
+                            }
+                          },
+                          "allowUpdateAfterProposal": {
+                            "type": "bool",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:allow_update_after_proposal"
+                            }
+                          }
+                        }
+                      },
+                      "ConsensusState": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "publicKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:public_key"
+                            }
+                          },
+                          "diversifier": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "timestamp": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Header": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "timestamp": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "signature": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "newPublicKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:new_public_key"
+                            }
+                          },
+                          "newDiversifier": {
+                            "type": "string",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:new_diversifier"
+                            }
+                          }
+                        }
+                      },
+                      "Misbehaviour": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "signatureOne": {
+                            "type": "SignatureAndData",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:signature_one"
+                            }
+                          },
+                          "signatureTwo": {
+                            "type": "SignatureAndData",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:signature_two"
+                            }
+                          }
+                        }
+                      },
+                      "SignatureAndData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "signature": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "dataType": {
+                            "type": "DataType",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:data_type"
+                            }
+                          },
+                          "data": {
+                            "type": "bytes",
+                            "id": 3
+                          },
+                          "timestamp": {
+                            "type": "uint64",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "TimestampedSignatureData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "signatureData": {
+                            "type": "bytes",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:signature_data"
+                            }
+                          },
+                          "timestamp": {
+                            "type": "uint64",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "SignBytes": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "timestamp": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "diversifier": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "dataType": {
+                            "type": "DataType",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:data_type"
+                            }
+                          },
+                          "data": {
+                            "type": "bytes",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "DataType": {
+                        "options": {
+                          "(gogoproto.goproto_enum_prefix)": false
+                        },
+                        "values": {
+                          "DATA_TYPE_UNINITIALIZED_UNSPECIFIED": 0,
+                          "DATA_TYPE_CLIENT_STATE": 1,
+                          "DATA_TYPE_CONSENSUS_STATE": 2,
+                          "DATA_TYPE_CONNECTION_STATE": 3,
+                          "DATA_TYPE_CHANNEL_STATE": 4,
+                          "DATA_TYPE_PACKET_COMMITMENT": 5,
+                          "DATA_TYPE_PACKET_ACKNOWLEDGEMENT": 6,
+                          "DATA_TYPE_PACKET_RECEIPT_ABSENCE": 7,
+                          "DATA_TYPE_NEXT_SEQUENCE_RECV": 8,
+                          "DATA_TYPE_HEADER": 9
+                        }
+                      },
+                      "HeaderData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "newPubKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:new_pub_key"
+                            }
+                          },
+                          "newDiversifier": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:new_diversifier"
+                            }
+                          }
+                        }
+                      },
+                      "ClientStateData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          }
+                        }
+                      },
+                      "ConsensusStateData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_state"
+                            }
+                          }
+                        }
+                      },
+                      "ConnectionStateData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "connection": {
+                            "type": "ibc.core.connection.v1.ConnectionEnd",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ChannelStateData": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "channel": {
+                            "type": "ibc.core.channel.v1.Channel",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "PacketCommitmentData": {
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "commitment": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "PacketAcknowledgementData": {
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "acknowledgement": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "PacketReceiptAbsenceData": {
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "NextSequenceRecvData": {
+                        "fields": {
+                          "path": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "nextSeqRecv": {
+                            "type": "uint64",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:next_seq_recv"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

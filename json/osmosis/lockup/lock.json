@@ -1,0 +1,138 @@
+{
+  "package": "osmosis.lockup",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "cosmos/base/v1beta1/coin.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "lockup": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/lockup/types"
+            },
+            "nested": {
+              "PeriodLock": {
+                "fields": {
+                  "ID": {
+                    "type": "uint64",
+                    "id": 1
+                  },
+                  "owner": {
+                    "type": "string",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.jsontag)": "duration,omitempty",
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  },
+                  "endTime": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 4,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:end_time"
+                    }
+                  },
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 5,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "LockQueryType": {
+                "options": {
+                  "(gogoproto.goproto_enum_prefix)": false
+                },
+                "values": {
+                  "ByDuration": 0,
+                  "ByTime": 1
+                }
+              },
+              "QueryCondition": {
+                "fields": {
+                  "lockQueryType": {
+                    "type": "LockQueryType",
+                    "id": 1
+                  },
+                  "denom": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  },
+                  "timestamp": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 4,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:timestamp"
+                    }
+                  }
+                }
+              },
+              "SyntheticLock": {
+                "fields": {
+                  "underlyingLockId": {
+                    "type": "uint64",
+                    "id": 1
+                  },
+                  "synthDenom": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "endTime": {
+                    "type": "google.protobuf.Timestamp",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.stdtime)": true,
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.moretags)": "yaml:end_time"
+                    }
+                  },
+                  "duration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 4,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.jsontag)": "duration,omitempty",
+                      "(gogoproto.moretags)": "yaml:duration"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

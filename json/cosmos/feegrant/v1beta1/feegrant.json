@@ -1,0 +1,147 @@
+{
+  "package": "cosmos.feegrant.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "google/protobuf/timestamp.proto",
+    "google/protobuf/duration.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "feegrant": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/feegrant"
+                },
+                "nested": {
+                  "BasicAllowance": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "FeeAllowanceI"
+                    },
+                    "fields": {
+                      "spendLimit": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "expiration": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  },
+                  "PeriodicAllowance": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "FeeAllowanceI"
+                    },
+                    "fields": {
+                      "basic": {
+                        "type": "BasicAllowance",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "period": {
+                        "type": "google.protobuf.Duration",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "periodSpendLimit": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "periodCanSpend": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "periodReset": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "AllowedMsgAllowance": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(cosmos_proto.implements_interface)": "FeeAllowanceI"
+                    },
+                    "fields": {
+                      "allowance": {
+                        "type": "google.protobuf.Any",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "FeeAllowanceI"
+                        }
+                      },
+                      "allowedMessages": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "Grant": {
+                    "fields": {
+                      "granter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "grantee": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "allowance": {
+                        "type": "google.protobuf.Any",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "FeeAllowanceI"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

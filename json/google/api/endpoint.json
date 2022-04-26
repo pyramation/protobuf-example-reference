@@ -1,0 +1,47 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "EndpointProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Endpoint": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "aliases": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 2,
+                    "options": {
+                      "deprecated": true
+                    }
+                  },
+                  "target": {
+                    "type": "string",
+                    "id": 101
+                  },
+                  "allowCors": {
+                    "type": "bool",
+                    "id": 5
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

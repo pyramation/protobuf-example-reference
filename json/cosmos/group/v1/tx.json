@@ -1,0 +1,534 @@
+{
+  "package": "cosmos.group.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto",
+    "google/protobuf/any.proto",
+    "cosmos/group/v1/types.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "group": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/group"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "CreateGroup": {
+                        "requestType": "MsgCreateGroup",
+                        "responseType": "MsgCreateGroupResponse"
+                      },
+                      "UpdateGroupMembers": {
+                        "requestType": "MsgUpdateGroupMembers",
+                        "responseType": "MsgUpdateGroupMembersResponse"
+                      },
+                      "UpdateGroupAdmin": {
+                        "requestType": "MsgUpdateGroupAdmin",
+                        "responseType": "MsgUpdateGroupAdminResponse"
+                      },
+                      "UpdateGroupMetadata": {
+                        "requestType": "MsgUpdateGroupMetadata",
+                        "responseType": "MsgUpdateGroupMetadataResponse"
+                      },
+                      "CreateGroupPolicy": {
+                        "requestType": "MsgCreateGroupPolicy",
+                        "responseType": "MsgCreateGroupPolicyResponse"
+                      },
+                      "CreateGroupWithPolicy": {
+                        "requestType": "MsgCreateGroupWithPolicy",
+                        "responseType": "MsgCreateGroupWithPolicyResponse"
+                      },
+                      "UpdateGroupPolicyAdmin": {
+                        "requestType": "MsgUpdateGroupPolicyAdmin",
+                        "responseType": "MsgUpdateGroupPolicyAdminResponse"
+                      },
+                      "UpdateGroupPolicyDecisionPolicy": {
+                        "requestType": "MsgUpdateGroupPolicyDecisionPolicy",
+                        "responseType": "MsgUpdateGroupPolicyDecisionPolicyResponse"
+                      },
+                      "UpdateGroupPolicyMetadata": {
+                        "requestType": "MsgUpdateGroupPolicyMetadata",
+                        "responseType": "MsgUpdateGroupPolicyMetadataResponse"
+                      },
+                      "SubmitProposal": {
+                        "requestType": "MsgSubmitProposal",
+                        "responseType": "MsgSubmitProposalResponse"
+                      },
+                      "WithdrawProposal": {
+                        "requestType": "MsgWithdrawProposal",
+                        "responseType": "MsgWithdrawProposalResponse"
+                      },
+                      "Vote": {
+                        "requestType": "MsgVote",
+                        "responseType": "MsgVoteResponse"
+                      },
+                      "Exec": {
+                        "requestType": "MsgExec",
+                        "responseType": "MsgExecResponse"
+                      },
+                      "LeaveGroup": {
+                        "requestType": "MsgLeaveGroup",
+                        "responseType": "MsgLeaveGroupResponse"
+                      }
+                    }
+                  },
+                  "MsgCreateGroup": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "members": {
+                        "rule": "repeated",
+                        "type": "Member",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgCreateGroupResponse": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupMembers": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "memberUpdates": {
+                        "rule": "repeated",
+                        "type": "Member",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupMembersResponse": {
+                    "fields": {}
+                  },
+                  "MsgUpdateGroupAdmin": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "newAdmin": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupAdminResponse": {
+                    "fields": {}
+                  },
+                  "MsgUpdateGroupMetadata": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupMetadataResponse": {
+                    "fields": {}
+                  },
+                  "MsgCreateGroupPolicy": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin",
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "decisionPolicy": {
+                        "type": "google.protobuf.Any",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "DecisionPolicy"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreateGroupPolicyResponse": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupPolicyAdmin": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "newAdmin": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreateGroupWithPolicy": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "members": {
+                        "rule": "repeated",
+                        "type": "Member",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "groupMetadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "groupPolicyMetadata": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "groupPolicyAsAdmin": {
+                        "type": "bool",
+                        "id": 5
+                      },
+                      "decisionPolicy": {
+                        "type": "google.protobuf.Any",
+                        "id": 6,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "DecisionPolicy"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreateGroupWithPolicyResponse": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "groupPolicyAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupPolicyAdminResponse": {
+                    "fields": {}
+                  },
+                  "MsgUpdateGroupPolicyDecisionPolicy": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin",
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "decisionPolicy": {
+                        "type": "google.protobuf.Any",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "DecisionPolicy"
+                        }
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupPolicyDecisionPolicyResponse": {
+                    "fields": {}
+                  },
+                  "MsgUpdateGroupPolicyMetadata": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "admin"
+                    },
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgUpdateGroupPolicyMetadataResponse": {
+                    "fields": {}
+                  },
+                  "Exec": {
+                    "values": {
+                      "EXEC_UNSPECIFIED": 0,
+                      "EXEC_TRY": 1
+                    }
+                  },
+                  "MsgSubmitProposal": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "proposers",
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "proposers": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 2
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "messages": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 4
+                      },
+                      "exec": {
+                        "type": "Exec",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "MsgSubmitProposalResponse": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "MsgWithdrawProposal": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgWithdrawProposalResponse": {
+                    "fields": {}
+                  },
+                  "MsgVote": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "voter"
+                    },
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "option": {
+                        "type": "VoteOption",
+                        "id": 3
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "exec": {
+                        "type": "Exec",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "MsgVoteResponse": {
+                    "fields": {}
+                  },
+                  "MsgExec": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "signer"
+                    },
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "signer": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "MsgExecResponse": {
+                    "fields": {}
+                  },
+                  "MsgLeaveGroup": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "address"
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "MsgLeaveGroupResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

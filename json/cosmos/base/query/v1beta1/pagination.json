@@ -1,0 +1,63 @@
+{
+  "package": "cosmos.base.query.v1beta1",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "query": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/types/query"
+                    },
+                    "nested": {
+                      "PageRequest": {
+                        "fields": {
+                          "key": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "offset": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "limit": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "countTotal": {
+                            "type": "bool",
+                            "id": 4
+                          },
+                          "reverse": {
+                            "type": "bool",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "PageResponse": {
+                        "fields": {
+                          "nextKey": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "total": {
+                            "type": "uint64",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

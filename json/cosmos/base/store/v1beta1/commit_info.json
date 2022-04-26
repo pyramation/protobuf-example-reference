@@ -1,0 +1,76 @@
+{
+  "package": "cosmos.base.store.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "store": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/store/types"
+                    },
+                    "nested": {
+                      "CommitInfo": {
+                        "fields": {
+                          "version": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "storeInfos": {
+                            "rule": "repeated",
+                            "type": "StoreInfo",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "StoreInfo": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "commitId": {
+                            "type": "CommitID",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "CommitID": {
+                        "options": {
+                          "(gogoproto.goproto_stringer)": false
+                        },
+                        "fields": {
+                          "version": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "hash": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

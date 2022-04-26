@@ -1,0 +1,302 @@
+{
+  "package": "ibc.core.connection.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "ibc/core/client/v1/client.proto",
+    "ibc/core/connection/v1/connection.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "connection": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/03-connection/types"
+                    },
+                    "nested": {
+                      "Msg": {
+                        "methods": {
+                          "ConnectionOpenInit": {
+                            "requestType": "MsgConnectionOpenInit",
+                            "responseType": "MsgConnectionOpenInitResponse"
+                          },
+                          "ConnectionOpenTry": {
+                            "requestType": "MsgConnectionOpenTry",
+                            "responseType": "MsgConnectionOpenTryResponse"
+                          },
+                          "ConnectionOpenAck": {
+                            "requestType": "MsgConnectionOpenAck",
+                            "responseType": "MsgConnectionOpenAckResponse"
+                          },
+                          "ConnectionOpenConfirm": {
+                            "requestType": "MsgConnectionOpenConfirm",
+                            "responseType": "MsgConnectionOpenConfirmResponse"
+                          }
+                        }
+                      },
+                      "MsgConnectionOpenInit": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "version": {
+                            "type": "Version",
+                            "id": 3
+                          },
+                          "delayPeriod": {
+                            "type": "uint64",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:delay_period"
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "MsgConnectionOpenInitResponse": {
+                        "fields": {}
+                      },
+                      "MsgConnectionOpenTry": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "previousConnectionId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:previous_connection_id"
+                            }
+                          },
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          },
+                          "counterparty": {
+                            "type": "Counterparty",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "delayPeriod": {
+                            "type": "uint64",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:delay_period"
+                            }
+                          },
+                          "counterpartyVersions": {
+                            "rule": "repeated",
+                            "type": "Version",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:counterparty_versions"
+                            }
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "proofInit": {
+                            "type": "bytes",
+                            "id": 8,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_init"
+                            }
+                          },
+                          "proofClient": {
+                            "type": "bytes",
+                            "id": 9,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_client"
+                            }
+                          },
+                          "proofConsensus": {
+                            "type": "bytes",
+                            "id": 10,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_consensus"
+                            }
+                          },
+                          "consensusHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 11,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 12
+                          }
+                        }
+                      },
+                      "MsgConnectionOpenTryResponse": {
+                        "fields": {}
+                      },
+                      "MsgConnectionOpenAck": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "connectionId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_id"
+                            }
+                          },
+                          "counterpartyConnectionId": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:counterparty_connection_id"
+                            }
+                          },
+                          "version": {
+                            "type": "Version",
+                            "id": 3
+                          },
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "proofTry": {
+                            "type": "bytes",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_try"
+                            }
+                          },
+                          "proofClient": {
+                            "type": "bytes",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_client"
+                            }
+                          },
+                          "proofConsensus": {
+                            "type": "bytes",
+                            "id": 8,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_consensus"
+                            }
+                          },
+                          "consensusHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 9,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 10
+                          }
+                        }
+                      },
+                      "MsgConnectionOpenAckResponse": {
+                        "fields": {}
+                      },
+                      "MsgConnectionOpenConfirm": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "connectionId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:connection_id"
+                            }
+                          },
+                          "proofAck": {
+                            "type": "bytes",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_ack"
+                            }
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_height",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "MsgConnectionOpenConfirmResponse": {
+                        "fields": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "package": "google.api.expr.v1beta1",
+  "imports": [
+    "google/protobuf/any.proto",
+    "google/protobuf/struct.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1beta1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ValueProto",
+                      "java_package": "com.google.api.expr.v1beta1"
+                    },
+                    "nested": {
+                      "Value": {
+                        "oneofs": {
+                          "kind": {
+                            "oneof": [
+                              "nullValue",
+                              "boolValue",
+                              "int64Value",
+                              "uint64Value",
+                              "doubleValue",
+                              "stringValue",
+                              "bytesValue",
+                              "enumValue",
+                              "objectValue",
+                              "mapValue",
+                              "listValue",
+                              "typeValue"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "nullValue": {
+                            "type": "google.protobuf.NullValue",
+                            "id": 1
+                          },
+                          "boolValue": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "int64Value": {
+                            "type": "int64",
+                            "id": 3
+                          },
+                          "uint64Value": {
+                            "type": "uint64",
+                            "id": 4
+                          },
+                          "doubleValue": {
+                            "type": "double",
+                            "id": 5
+                          },
+                          "stringValue": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "bytesValue": {
+                            "type": "bytes",
+                            "id": 7
+                          },
+                          "enumValue": {
+                            "type": "EnumValue",
+                            "id": 9
+                          },
+                          "objectValue": {
+                            "type": "google.protobuf.Any",
+                            "id": 10
+                          },
+                          "mapValue": {
+                            "type": "MapValue",
+                            "id": 11
+                          },
+                          "listValue": {
+                            "type": "ListValue",
+                            "id": 12
+                          },
+                          "typeValue": {
+                            "type": "string",
+                            "id": 15
+                          }
+                        }
+                      },
+                      "EnumValue": {
+                        "fields": {
+                          "type": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "int32",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ListValue": {
+                        "fields": {
+                          "values": {
+                            "rule": "repeated",
+                            "type": "Value",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "MapValue": {
+                        "fields": {
+                          "entries": {
+                            "rule": "repeated",
+                            "type": "Entry",
+                            "id": 1
+                          }
+                        },
+                        "nested": {
+                          "Entry": {
+                            "fields": {
+                              "key": {
+                                "type": "Value",
+                                "id": 1
+                              },
+                              "value": {
+                                "type": "Value",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

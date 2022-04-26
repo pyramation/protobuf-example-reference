@@ -1,0 +1,60 @@
+{
+  "package": "cosmos.nft.v1beta1",
+  "imports": [
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "nft": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/nft"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "Send": {
+                        "requestType": "MsgSend",
+                        "responseType": "MsgSendResponse"
+                      }
+                    }
+                  },
+                  "MsgSend": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "sender"
+                    },
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "sender": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "receiver": {
+                        "type": "string",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "MsgSendResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

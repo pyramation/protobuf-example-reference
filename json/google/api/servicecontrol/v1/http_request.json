@@ -1,0 +1,100 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/protobuf/duration.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "HttpRequestProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "HttpRequest": {
+                        "fields": {
+                          "requestMethod": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "requestUrl": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "requestSize": {
+                            "type": "int64",
+                            "id": 3
+                          },
+                          "status": {
+                            "type": "int32",
+                            "id": 4
+                          },
+                          "responseSize": {
+                            "type": "int64",
+                            "id": 5
+                          },
+                          "userAgent": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "remoteIp": {
+                            "type": "string",
+                            "id": 7
+                          },
+                          "serverIp": {
+                            "type": "string",
+                            "id": 13
+                          },
+                          "referer": {
+                            "type": "string",
+                            "id": 8
+                          },
+                          "latency": {
+                            "type": "google.protobuf.Duration",
+                            "id": 14
+                          },
+                          "cacheLookup": {
+                            "type": "bool",
+                            "id": 11
+                          },
+                          "cacheHit": {
+                            "type": "bool",
+                            "id": 9
+                          },
+                          "cacheValidatedWithOriginServer": {
+                            "type": "bool",
+                            "id": 10
+                          },
+                          "cacheFillBytes": {
+                            "type": "int64",
+                            "id": 12
+                          },
+                          "protocol": {
+                            "type": "string",
+                            "id": 15
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

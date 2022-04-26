@@ -1,0 +1,356 @@
+{
+  "package": "osmosis.incentives",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "google/protobuf/duration.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "osmosis/incentives/gauge.proto",
+    "osmosis/lockup/lock.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "incentives": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/incentives/types"
+            },
+            "nested": {
+              "Query": {
+                "methods": {
+                  "ModuleToDistributeCoins": {
+                    "requestType": "ModuleToDistributeCoinsRequest",
+                    "responseType": "ModuleToDistributeCoinsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/module_to_distribute_coins"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/module_to_distribute_coins"
+                        }
+                      }
+                    ]
+                  },
+                  "ModuleDistributedCoins": {
+                    "requestType": "ModuleDistributedCoinsRequest",
+                    "responseType": "ModuleDistributedCoinsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/module_distributed_coins"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/module_distributed_coins"
+                        }
+                      }
+                    ]
+                  },
+                  "GaugeByID": {
+                    "requestType": "GaugeByIDRequest",
+                    "responseType": "GaugeByIDResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/gauge_by_id/{id}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/gauge_by_id/{id}"
+                        }
+                      }
+                    ]
+                  },
+                  "Gauges": {
+                    "requestType": "GaugesRequest",
+                    "responseType": "GaugesResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/gauges"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/gauges"
+                        }
+                      }
+                    ]
+                  },
+                  "ActiveGauges": {
+                    "requestType": "ActiveGaugesRequest",
+                    "responseType": "ActiveGaugesResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/active_gauges"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/active_gauges"
+                        }
+                      }
+                    ]
+                  },
+                  "ActiveGaugesPerDenom": {
+                    "requestType": "ActiveGaugesPerDenomRequest",
+                    "responseType": "ActiveGaugesPerDenomResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/active_gauges_per_denom"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/active_gauges_per_denom"
+                        }
+                      }
+                    ]
+                  },
+                  "UpcomingGauges": {
+                    "requestType": "UpcomingGaugesRequest",
+                    "responseType": "UpcomingGaugesResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/upcoming_gauges"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/upcoming_gauges"
+                        }
+                      }
+                    ]
+                  },
+                  "RewardsEst": {
+                    "requestType": "RewardsEstRequest",
+                    "responseType": "RewardsEstResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/rewards_est/{owner}"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/rewards_est/{owner}"
+                        }
+                      }
+                    ]
+                  },
+                  "LockableDurations": {
+                    "requestType": "QueryLockableDurationsRequest",
+                    "responseType": "QueryLockableDurationsResponse",
+                    "options": {
+                      "(google.api.http).get": "/osmosis/incentives/v1beta1/lockable_durations"
+                    },
+                    "parsedOptions": [
+                      {
+                        "(google.api.http)": {
+                          "get": "/osmosis/incentives/v1beta1/lockable_durations"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "ModuleToDistributeCoinsRequest": {
+                "fields": {}
+              },
+              "ModuleToDistributeCoinsResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "ModuleDistributedCoinsRequest": {
+                "fields": {}
+              },
+              "ModuleDistributedCoinsResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "GaugeByIDRequest": {
+                "fields": {
+                  "id": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "GaugeByIDResponse": {
+                "fields": {
+                  "gauge": {
+                    "type": "Gauge",
+                    "id": 1
+                  }
+                }
+              },
+              "GaugesRequest": {
+                "fields": {
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageRequest",
+                    "id": 1
+                  }
+                }
+              },
+              "GaugesResponse": {
+                "fields": {
+                  "data": {
+                    "rule": "repeated",
+                    "type": "Gauge",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageResponse",
+                    "id": 2
+                  }
+                }
+              },
+              "ActiveGaugesRequest": {
+                "fields": {
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageRequest",
+                    "id": 1
+                  }
+                }
+              },
+              "ActiveGaugesResponse": {
+                "fields": {
+                  "data": {
+                    "rule": "repeated",
+                    "type": "Gauge",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageResponse",
+                    "id": 2
+                  }
+                }
+              },
+              "ActiveGaugesPerDenomRequest": {
+                "fields": {
+                  "denom": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageRequest",
+                    "id": 2
+                  }
+                }
+              },
+              "ActiveGaugesPerDenomResponse": {
+                "fields": {
+                  "data": {
+                    "rule": "repeated",
+                    "type": "Gauge",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageResponse",
+                    "id": 2
+                  }
+                }
+              },
+              "UpcomingGaugesRequest": {
+                "fields": {
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageRequest",
+                    "id": 1
+                  }
+                }
+              },
+              "UpcomingGaugesResponse": {
+                "fields": {
+                  "data": {
+                    "rule": "repeated",
+                    "type": "Gauge",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "pagination": {
+                    "type": "cosmos.base.query.v1beta1.PageResponse",
+                    "id": 2
+                  }
+                }
+              },
+              "RewardsEstRequest": {
+                "fields": {
+                  "owner": {
+                    "type": "string",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:owner"
+                    }
+                  },
+                  "lockIds": {
+                    "rule": "repeated",
+                    "type": "uint64",
+                    "id": 2
+                  },
+                  "endEpoch": {
+                    "type": "int64",
+                    "id": 3
+                  }
+                }
+              },
+              "RewardsEstResponse": {
+                "fields": {
+                  "coins": {
+                    "rule": "repeated",
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                    }
+                  }
+                }
+              },
+              "QueryLockableDurationsRequest": {
+                "fields": {}
+              },
+              "QueryLockableDurationsResponse": {
+                "fields": {
+                  "lockableDurations": {
+                    "rule": "repeated",
+                    "type": "google.protobuf.Duration",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdduration)": true,
+                      "(gogoproto.moretags)": "yaml:lockable_durations"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "ConsumerProto",
+              "java_package": "com.google.api"
+            },
+            "nested": {
+              "ProjectProperties": {
+                "fields": {
+                  "properties": {
+                    "rule": "repeated",
+                    "type": "Property",
+                    "id": 1
+                  }
+                }
+              },
+              "Property": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "type": {
+                    "type": "PropertyType",
+                    "id": 2
+                  },
+                  "description": {
+                    "type": "string",
+                    "id": 3
+                  }
+                },
+                "nested": {
+                  "PropertyType": {
+                    "values": {
+                      "UNSPECIFIED": 0,
+                      "INT64": 1,
+                      "BOOL": 2,
+                      "STRING": 3,
+                      "DOUBLE": 4
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

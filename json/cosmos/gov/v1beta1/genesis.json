@@ -1,0 +1,83 @@
+{
+  "package": "cosmos.gov.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/gov/v1beta1/gov.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "gov": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "startingProposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "deposits": {
+                        "rule": "repeated",
+                        "type": "Deposit",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.castrepeated)": "Deposits",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.castrepeated)": "Votes",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "proposals": {
+                        "rule": "repeated",
+                        "type": "Proposal",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.castrepeated)": "Proposals",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "depositParams": {
+                        "type": "DepositParams",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "votingParams": {
+                        "type": "VotingParams",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tallyParams": {
+                        "type": "TallyParams",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

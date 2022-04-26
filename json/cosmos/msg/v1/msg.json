@@ -1,0 +1,32 @@
+{
+  "package": "cosmos.msg.v1",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "msg": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/types/msgservice"
+                },
+                "nested": {
+                  "signer": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 11110000,
+                    "extend": "google.protobuf.MessageOptions"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "package": "ibc.applications.transfer.v2",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "applications": {
+            "nested": {
+              "transfer": {
+                "nested": {
+                  "v2": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
+                    },
+                    "nested": {
+                      "FungibleTokenPacketData": {
+                        "fields": {
+                          "denom": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "amount": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "sender": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "receiver": {
+                            "type": "string",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

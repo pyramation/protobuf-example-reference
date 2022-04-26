@@ -1,0 +1,75 @@
+{
+  "package": "tendermint.types",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "tendermint/crypto/keys.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "types": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/types"
+            },
+            "nested": {
+              "ValidatorSet": {
+                "fields": {
+                  "validators": {
+                    "rule": "repeated",
+                    "type": "Validator",
+                    "id": 1
+                  },
+                  "proposer": {
+                    "type": "Validator",
+                    "id": 2
+                  },
+                  "totalVotingPower": {
+                    "type": "int64",
+                    "id": 3
+                  }
+                }
+              },
+              "Validator": {
+                "fields": {
+                  "address": {
+                    "type": "bytes",
+                    "id": 1
+                  },
+                  "pubKey": {
+                    "type": "tendermint.crypto.PublicKey",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "votingPower": {
+                    "type": "int64",
+                    "id": 3
+                  },
+                  "proposerPriority": {
+                    "type": "int64",
+                    "id": 4
+                  }
+                }
+              },
+              "SimpleValidator": {
+                "fields": {
+                  "pubKey": {
+                    "type": "tendermint.crypto.PublicKey",
+                    "id": 1
+                  },
+                  "votingPower": {
+                    "type": "int64",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

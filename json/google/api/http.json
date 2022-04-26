@@ -1,0 +1,106 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "cc_enable_arenas": true,
+              "go_package": "google.golang.org/genproto/googleapis/api/annotations;annotations",
+              "java_multiple_files": true,
+              "java_outer_classname": "HttpProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Http": {
+                "fields": {
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "HttpRule",
+                    "id": 1
+                  },
+                  "fullyDecodeReservedExpansion": {
+                    "type": "bool",
+                    "id": 2
+                  }
+                }
+              },
+              "HttpRule": {
+                "oneofs": {
+                  "pattern": {
+                    "oneof": [
+                      "get",
+                      "put",
+                      "post",
+                      "delete",
+                      "patch",
+                      "custom"
+                    ]
+                  }
+                },
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "get": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "put": {
+                    "type": "string",
+                    "id": 3
+                  },
+                  "post": {
+                    "type": "string",
+                    "id": 4
+                  },
+                  "delete": {
+                    "type": "string",
+                    "id": 5
+                  },
+                  "patch": {
+                    "type": "string",
+                    "id": 6
+                  },
+                  "custom": {
+                    "type": "CustomHttpPattern",
+                    "id": 8
+                  },
+                  "body": {
+                    "type": "string",
+                    "id": 7
+                  },
+                  "responseBody": {
+                    "type": "string",
+                    "id": 12
+                  },
+                  "additionalBindings": {
+                    "rule": "repeated",
+                    "type": "HttpRule",
+                    "id": 11
+                  }
+                }
+              },
+              "CustomHttpPattern": {
+                "fields": {
+                  "kind": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "path": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

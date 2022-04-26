@@ -1,0 +1,101 @@
+{
+  "package": "cosmos.evidence.v1beta1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "evidence": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/evidence/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Evidence": {
+                        "requestType": "QueryEvidenceRequest",
+                        "responseType": "QueryEvidenceResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/evidence/v1beta1/evidence/{evidence_hash}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/evidence/v1beta1/evidence/{evidence_hash}"
+                            }
+                          }
+                        ]
+                      },
+                      "AllEvidence": {
+                        "requestType": "QueryAllEvidenceRequest",
+                        "responseType": "QueryAllEvidenceResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/evidence/v1beta1/evidence"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/evidence/v1beta1/evidence"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryEvidenceRequest": {
+                    "fields": {
+                      "evidenceHash": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.casttype)": "github.com/tendermint/tendermint/libs/bytes.HexBytes"
+                        }
+                      }
+                    }
+                  },
+                  "QueryEvidenceResponse": {
+                    "fields": {
+                      "evidence": {
+                        "type": "google.protobuf.Any",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAllEvidenceRequest": {
+                    "fields": {
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAllEvidenceResponse": {
+                    "fields": {
+                      "evidence": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

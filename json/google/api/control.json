@@ -1,0 +1,31 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "ControlProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Control": {
+                "fields": {
+                  "environment": {
+                    "type": "string",
+                    "id": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

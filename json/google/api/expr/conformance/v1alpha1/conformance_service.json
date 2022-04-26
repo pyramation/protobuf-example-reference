@@ -1,0 +1,196 @@
+{
+  "package": "google.api.expr.conformance.v1alpha1",
+  "imports": [
+    "google/api/expr/v1alpha1/checked.proto",
+    "google/api/expr/v1alpha1/eval.proto",
+    "google/api/expr/v1alpha1/syntax.proto",
+    "google/rpc/status.proto",
+    "google/api/client.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "conformance": {
+                    "nested": {
+                      "v1alpha1": {
+                        "options": {
+                          "cc_enable_arenas": true,
+                          "go_package": "google.golang.org/genproto/googleapis/api/expr/conformance/v1alpha1;confpb",
+                          "java_multiple_files": true,
+                          "java_outer_classname": "ConformanceServiceProto",
+                          "java_package": "com.google.api.expr.conformance.v1alpha1"
+                        },
+                        "nested": {
+                          "ConformanceService": {
+                            "options": {
+                              "(google.api.default_host)": "cel.googleapis.com"
+                            },
+                            "methods": {
+                              "Parse": {
+                                "requestType": "ParseRequest",
+                                "responseType": "ParseResponse"
+                              },
+                              "Check": {
+                                "requestType": "CheckRequest",
+                                "responseType": "CheckResponse"
+                              },
+                              "Eval": {
+                                "requestType": "EvalRequest",
+                                "responseType": "EvalResponse"
+                              }
+                            }
+                          },
+                          "ParseRequest": {
+                            "fields": {
+                              "celSource": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "syntaxVersion": {
+                                "type": "string",
+                                "id": 2
+                              },
+                              "sourceLocation": {
+                                "type": "string",
+                                "id": 3
+                              },
+                              "disableMacros": {
+                                "type": "bool",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "ParseResponse": {
+                            "fields": {
+                              "parsedExpr": {
+                                "type": "google.api.expr.v1alpha1.ParsedExpr",
+                                "id": 1
+                              },
+                              "issues": {
+                                "rule": "repeated",
+                                "type": "google.rpc.Status",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "CheckRequest": {
+                            "fields": {
+                              "parsedExpr": {
+                                "type": "google.api.expr.v1alpha1.ParsedExpr",
+                                "id": 1
+                              },
+                              "typeEnv": {
+                                "rule": "repeated",
+                                "type": "google.api.expr.v1alpha1.Decl",
+                                "id": 2
+                              },
+                              "container": {
+                                "type": "string",
+                                "id": 3
+                              },
+                              "noStdEnv": {
+                                "type": "bool",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "CheckResponse": {
+                            "fields": {
+                              "checkedExpr": {
+                                "type": "google.api.expr.v1alpha1.CheckedExpr",
+                                "id": 1
+                              },
+                              "issues": {
+                                "rule": "repeated",
+                                "type": "google.rpc.Status",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "EvalRequest": {
+                            "oneofs": {
+                              "exprKind": {
+                                "oneof": [
+                                  "parsedExpr",
+                                  "checkedExpr"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "parsedExpr": {
+                                "type": "google.api.expr.v1alpha1.ParsedExpr",
+                                "id": 1
+                              },
+                              "checkedExpr": {
+                                "type": "google.api.expr.v1alpha1.CheckedExpr",
+                                "id": 2
+                              },
+                              "bindings": {
+                                "keyType": "string",
+                                "type": "google.api.expr.v1alpha1.ExprValue",
+                                "id": 3
+                              },
+                              "container": {
+                                "type": "string",
+                                "id": 4
+                              }
+                            }
+                          },
+                          "EvalResponse": {
+                            "fields": {
+                              "result": {
+                                "type": "google.api.expr.v1alpha1.ExprValue",
+                                "id": 1
+                              },
+                              "issues": {
+                                "rule": "repeated",
+                                "type": "google.rpc.Status",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "IssueDetails": {
+                            "fields": {
+                              "severity": {
+                                "type": "Severity",
+                                "id": 1
+                              },
+                              "position": {
+                                "type": "google.api.expr.v1alpha1.SourcePosition",
+                                "id": 2
+                              },
+                              "id": {
+                                "type": "int64",
+                                "id": 3
+                              }
+                            },
+                            "nested": {
+                              "Severity": {
+                                "values": {
+                                  "SEVERITY_UNSPECIFIED": 0,
+                                  "DEPRECATION": 1,
+                                  "WARNING": 2,
+                                  "ERROR": 3
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

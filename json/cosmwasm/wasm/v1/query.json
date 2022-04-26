@@ -1,0 +1,431 @@
+{
+  "package": "cosmwasm.wasm.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmwasm/wasm/v1/types.proto",
+    "google/api/annotations.proto",
+    "cosmos/base/query/v1beta1/pagination.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmwasm": {
+        "nested": {
+          "wasm": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/CosmWasm/wasmd/x/wasm/types",
+                  "(gogoproto.goproto_getters_all)": false,
+                  "(gogoproto.equal_all)": false
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "ContractInfo": {
+                        "requestType": "QueryContractInfoRequest",
+                        "responseType": "QueryContractInfoResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/contract/{address}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/contract/{address}"
+                            }
+                          }
+                        ]
+                      },
+                      "ContractHistory": {
+                        "requestType": "QueryContractHistoryRequest",
+                        "responseType": "QueryContractHistoryResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/contract/{address}/history"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/contract/{address}/history"
+                            }
+                          }
+                        ]
+                      },
+                      "ContractsByCode": {
+                        "requestType": "QueryContractsByCodeRequest",
+                        "responseType": "QueryContractsByCodeResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/code/{code_id}/contracts"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/code/{code_id}/contracts"
+                            }
+                          }
+                        ]
+                      },
+                      "AllContractState": {
+                        "requestType": "QueryAllContractStateRequest",
+                        "responseType": "QueryAllContractStateResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/contract/{address}/state"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/contract/{address}/state"
+                            }
+                          }
+                        ]
+                      },
+                      "RawContractState": {
+                        "requestType": "QueryRawContractStateRequest",
+                        "responseType": "QueryRawContractStateResponse",
+                        "options": {
+                          "(google.api.http).get": "/wasm/v1/contract/{address}/raw/{query_data}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/wasm/v1/contract/{address}/raw/{query_data}"
+                            }
+                          }
+                        ]
+                      },
+                      "SmartContractState": {
+                        "requestType": "QuerySmartContractStateRequest",
+                        "responseType": "QuerySmartContractStateResponse",
+                        "options": {
+                          "(google.api.http).get": "/wasm/v1/contract/{address}/smart/{query_data}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/wasm/v1/contract/{address}/smart/{query_data}"
+                            }
+                          }
+                        ]
+                      },
+                      "Code": {
+                        "requestType": "QueryCodeRequest",
+                        "responseType": "QueryCodeResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/code/{code_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/code/{code_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "Codes": {
+                        "requestType": "QueryCodesRequest",
+                        "responseType": "QueryCodesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/code"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/code"
+                            }
+                          }
+                        ]
+                      },
+                      "PinnedCodes": {
+                        "requestType": "QueryPinnedCodesRequest",
+                        "responseType": "QueryPinnedCodesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmwasm/wasm/v1/codes/pinned"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmwasm/wasm/v1/codes/pinned"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryContractInfoRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryContractInfoResponse": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "contractInfo": {
+                        "type": "ContractInfo",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.embed)": true,
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": ""
+                        }
+                      }
+                    }
+                  },
+                  "QueryContractHistoryRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryContractHistoryResponse": {
+                    "fields": {
+                      "entries": {
+                        "rule": "repeated",
+                        "type": "ContractCodeHistoryEntry",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryContractsByCodeRequest": {
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryContractsByCodeResponse": {
+                    "fields": {
+                      "contracts": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryAllContractStateRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryAllContractStateResponse": {
+                    "fields": {
+                      "models": {
+                        "rule": "repeated",
+                        "type": "Model",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryRawContractStateRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "queryData": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryRawContractStateResponse": {
+                    "fields": {
+                      "data": {
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QuerySmartContractStateRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "queryData": {
+                        "type": "bytes",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      }
+                    }
+                  },
+                  "QuerySmartContractStateResponse": {
+                    "fields": {
+                      "data": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.casttype)": "RawContractMessage"
+                        }
+                      }
+                    }
+                  },
+                  "QueryCodeRequest": {
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "CodeInfoResponse": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID",
+                          "(gogoproto.jsontag)": "id"
+                        }
+                      },
+                      "creator": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "dataHash": {
+                        "type": "bytes",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.casttype)": "github.com/tendermint/tendermint/libs/bytes.HexBytes"
+                        }
+                      }
+                    },
+                    "reserved": [
+                      [
+                        4,
+                        4
+                      ],
+                      [
+                        5,
+                        5
+                      ]
+                    ]
+                  },
+                  "QueryCodeResponse": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "codeInfo": {
+                        "type": "CodeInfoResponse",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true,
+                          "(gogoproto.jsontag)": ""
+                        }
+                      },
+                      "data": {
+                        "type": "bytes",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.jsontag)": "data"
+                        }
+                      }
+                    }
+                  },
+                  "QueryCodesRequest": {
+                    "fields": {
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryCodesResponse": {
+                    "fields": {
+                      "codeInfos": {
+                        "rule": "repeated",
+                        "type": "CodeInfoResponse",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryPinnedCodesRequest": {
+                    "fields": {
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryPinnedCodesResponse": {
+                    "fields": {
+                      "codeIds": {
+                        "rule": "repeated",
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.customname)": "CodeIDs"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

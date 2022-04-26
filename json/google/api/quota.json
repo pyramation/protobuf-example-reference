@@ -1,0 +1,95 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "QuotaProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Quota": {
+                "fields": {
+                  "limits": {
+                    "rule": "repeated",
+                    "type": "QuotaLimit",
+                    "id": 3
+                  },
+                  "metricRules": {
+                    "rule": "repeated",
+                    "type": "MetricRule",
+                    "id": 4
+                  }
+                }
+              },
+              "MetricRule": {
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "metricCosts": {
+                    "keyType": "string",
+                    "type": "int64",
+                    "id": 2
+                  }
+                }
+              },
+              "QuotaLimit": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 6
+                  },
+                  "description": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "defaultLimit": {
+                    "type": "int64",
+                    "id": 3
+                  },
+                  "maxLimit": {
+                    "type": "int64",
+                    "id": 4
+                  },
+                  "freeTier": {
+                    "type": "int64",
+                    "id": 7
+                  },
+                  "duration": {
+                    "type": "string",
+                    "id": 5
+                  },
+                  "metric": {
+                    "type": "string",
+                    "id": 8
+                  },
+                  "unit": {
+                    "type": "string",
+                    "id": 9
+                  },
+                  "values": {
+                    "keyType": "string",
+                    "type": "int64",
+                    "id": 10
+                  },
+                  "displayName": {
+                    "type": "string",
+                    "id": 12
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "package": "google.api.expr.v1alpha1",
+  "imports": [
+    "google/protobuf/duration.proto",
+    "google/protobuf/struct.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1alpha1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1alpha1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "SyntaxProto",
+                      "java_package": "com.google.api.expr.v1alpha1"
+                    },
+                    "nested": {
+                      "ParsedExpr": {
+                        "fields": {
+                          "expr": {
+                            "type": "Expr",
+                            "id": 2
+                          },
+                          "sourceInfo": {
+                            "type": "SourceInfo",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Expr": {
+                        "oneofs": {
+                          "exprKind": {
+                            "oneof": [
+                              "constExpr",
+                              "identExpr",
+                              "selectExpr",
+                              "callExpr",
+                              "listExpr",
+                              "structExpr",
+                              "comprehensionExpr"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "id": {
+                            "type": "int64",
+                            "id": 2
+                          },
+                          "constExpr": {
+                            "type": "Constant",
+                            "id": 3
+                          },
+                          "identExpr": {
+                            "type": "Ident",
+                            "id": 4
+                          },
+                          "selectExpr": {
+                            "type": "Select",
+                            "id": 5
+                          },
+                          "callExpr": {
+                            "type": "Call",
+                            "id": 6
+                          },
+                          "listExpr": {
+                            "type": "CreateList",
+                            "id": 7
+                          },
+                          "structExpr": {
+                            "type": "CreateStruct",
+                            "id": 8
+                          },
+                          "comprehensionExpr": {
+                            "type": "Comprehension",
+                            "id": 9
+                          }
+                        },
+                        "nested": {
+                          "Ident": {
+                            "fields": {
+                              "name": {
+                                "type": "string",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "Select": {
+                            "fields": {
+                              "operand": {
+                                "type": "Expr",
+                                "id": 1
+                              },
+                              "field": {
+                                "type": "string",
+                                "id": 2
+                              },
+                              "testOnly": {
+                                "type": "bool",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "Call": {
+                            "fields": {
+                              "target": {
+                                "type": "Expr",
+                                "id": 1
+                              },
+                              "function": {
+                                "type": "string",
+                                "id": 2
+                              },
+                              "args": {
+                                "rule": "repeated",
+                                "type": "Expr",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "CreateList": {
+                            "fields": {
+                              "elements": {
+                                "rule": "repeated",
+                                "type": "Expr",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "CreateStruct": {
+                            "fields": {
+                              "messageName": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "entries": {
+                                "rule": "repeated",
+                                "type": "Entry",
+                                "id": 2
+                              }
+                            },
+                            "nested": {
+                              "Entry": {
+                                "oneofs": {
+                                  "keyKind": {
+                                    "oneof": [
+                                      "fieldKey",
+                                      "mapKey"
+                                    ]
+                                  }
+                                },
+                                "fields": {
+                                  "id": {
+                                    "type": "int64",
+                                    "id": 1
+                                  },
+                                  "fieldKey": {
+                                    "type": "string",
+                                    "id": 2
+                                  },
+                                  "mapKey": {
+                                    "type": "Expr",
+                                    "id": 3
+                                  },
+                                  "value": {
+                                    "type": "Expr",
+                                    "id": 4
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comprehension": {
+                            "fields": {
+                              "iterVar": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "iterRange": {
+                                "type": "Expr",
+                                "id": 2
+                              },
+                              "accuVar": {
+                                "type": "string",
+                                "id": 3
+                              },
+                              "accuInit": {
+                                "type": "Expr",
+                                "id": 4
+                              },
+                              "loopCondition": {
+                                "type": "Expr",
+                                "id": 5
+                              },
+                              "loopStep": {
+                                "type": "Expr",
+                                "id": 6
+                              },
+                              "result": {
+                                "type": "Expr",
+                                "id": 7
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Constant": {
+                        "oneofs": {
+                          "constantKind": {
+                            "oneof": [
+                              "nullValue",
+                              "boolValue",
+                              "int64Value",
+                              "uint64Value",
+                              "doubleValue",
+                              "stringValue",
+                              "bytesValue",
+                              "durationValue",
+                              "timestampValue"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "nullValue": {
+                            "type": "google.protobuf.NullValue",
+                            "id": 1
+                          },
+                          "boolValue": {
+                            "type": "bool",
+                            "id": 2
+                          },
+                          "int64Value": {
+                            "type": "int64",
+                            "id": 3
+                          },
+                          "uint64Value": {
+                            "type": "uint64",
+                            "id": 4
+                          },
+                          "doubleValue": {
+                            "type": "double",
+                            "id": 5
+                          },
+                          "stringValue": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "bytesValue": {
+                            "type": "bytes",
+                            "id": 7
+                          },
+                          "durationValue": {
+                            "type": "google.protobuf.Duration",
+                            "id": 8,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "timestampValue": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 9,
+                            "options": {
+                              "deprecated": true
+                            }
+                          }
+                        }
+                      },
+                      "SourceInfo": {
+                        "fields": {
+                          "syntaxVersion": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "location": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "lineOffsets": {
+                            "rule": "repeated",
+                            "type": "int32",
+                            "id": 3
+                          },
+                          "positions": {
+                            "keyType": "int64",
+                            "type": "int32",
+                            "id": 4
+                          },
+                          "macroCalls": {
+                            "keyType": "int64",
+                            "type": "Expr",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "SourcePosition": {
+                        "fields": {
+                          "location": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "offset": {
+                            "type": "int32",
+                            "id": 2
+                          },
+                          "line": {
+                            "type": "int32",
+                            "id": 3
+                          },
+                          "column": {
+                            "type": "int32",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

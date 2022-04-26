@@ -1,0 +1,170 @@
+{
+  "package": "cosmos.vesting.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos/auth/v1beta1/auth.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "vesting": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
+                },
+                "nested": {
+                  "BaseVestingAccount": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "baseAccount": {
+                        "type": "cosmos.auth.v1beta1.BaseAccount",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true
+                        }
+                      },
+                      "originalVesting": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "delegatedFree": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "delegatedVesting": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "endTime": {
+                        "type": "int64",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "ContinuousVestingAccount": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "baseVestingAccount": {
+                        "type": "BaseVestingAccount",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true
+                        }
+                      },
+                      "startTime": {
+                        "type": "int64",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "DelayedVestingAccount": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "baseVestingAccount": {
+                        "type": "BaseVestingAccount",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true
+                        }
+                      }
+                    }
+                  },
+                  "Period": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "length": {
+                        "type": "int64",
+                        "id": 1
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "PeriodicVestingAccount": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "baseVestingAccount": {
+                        "type": "BaseVestingAccount",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true
+                        }
+                      },
+                      "startTime": {
+                        "type": "int64",
+                        "id": 2
+                      },
+                      "vestingPeriods": {
+                        "rule": "repeated",
+                        "type": "Period",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "PermanentLockedAccount": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "baseVestingAccount": {
+                        "type": "BaseVestingAccount",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

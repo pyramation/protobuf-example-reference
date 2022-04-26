@@ -1,0 +1,290 @@
+{
+  "package": "cosmos.tx.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/crypto/multisig/v1beta1/multisig.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos/tx/signing/v1beta1/signing.proto",
+    "google/protobuf/any.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "tx": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/types/tx"
+                },
+                "nested": {
+                  "Tx": {
+                    "fields": {
+                      "body": {
+                        "type": "TxBody",
+                        "id": 1
+                      },
+                      "authInfo": {
+                        "type": "AuthInfo",
+                        "id": 2
+                      },
+                      "signatures": {
+                        "rule": "repeated",
+                        "type": "bytes",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "TxRaw": {
+                    "fields": {
+                      "bodyBytes": {
+                        "type": "bytes",
+                        "id": 1
+                      },
+                      "authInfoBytes": {
+                        "type": "bytes",
+                        "id": 2
+                      },
+                      "signatures": {
+                        "rule": "repeated",
+                        "type": "bytes",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "SignDoc": {
+                    "fields": {
+                      "bodyBytes": {
+                        "type": "bytes",
+                        "id": 1
+                      },
+                      "authInfoBytes": {
+                        "type": "bytes",
+                        "id": 2
+                      },
+                      "chainId": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "accountNumber": {
+                        "type": "uint64",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "SignDocDirectAux": {
+                    "fields": {
+                      "bodyBytes": {
+                        "type": "bytes",
+                        "id": 1
+                      },
+                      "publicKey": {
+                        "type": "google.protobuf.Any",
+                        "id": 2
+                      },
+                      "chainId": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "accountNumber": {
+                        "type": "uint64",
+                        "id": 4
+                      },
+                      "sequence": {
+                        "type": "uint64",
+                        "id": 5
+                      },
+                      "tip": {
+                        "type": "Tip",
+                        "id": 6
+                      }
+                    }
+                  },
+                  "TxBody": {
+                    "fields": {
+                      "messages": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 1
+                      },
+                      "memo": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "timeoutHeight": {
+                        "type": "uint64",
+                        "id": 3
+                      },
+                      "extensionOptions": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 1023
+                      },
+                      "nonCriticalExtensionOptions": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 2047
+                      }
+                    }
+                  },
+                  "AuthInfo": {
+                    "fields": {
+                      "signerInfos": {
+                        "rule": "repeated",
+                        "type": "SignerInfo",
+                        "id": 1
+                      },
+                      "fee": {
+                        "type": "Fee",
+                        "id": 2
+                      },
+                      "tip": {
+                        "type": "Tip",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "SignerInfo": {
+                    "fields": {
+                      "publicKey": {
+                        "type": "google.protobuf.Any",
+                        "id": 1
+                      },
+                      "modeInfo": {
+                        "type": "ModeInfo",
+                        "id": 2
+                      },
+                      "sequence": {
+                        "type": "uint64",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "ModeInfo": {
+                    "oneofs": {
+                      "sum": {
+                        "oneof": [
+                          "single",
+                          "multi"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "single": {
+                        "type": "Single",
+                        "id": 1
+                      },
+                      "multi": {
+                        "type": "Multi",
+                        "id": 2
+                      }
+                    },
+                    "nested": {
+                      "Single": {
+                        "fields": {
+                          "mode": {
+                            "type": "cosmos.tx.signing.v1beta1.SignMode",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "Multi": {
+                        "fields": {
+                          "bitarray": {
+                            "type": "cosmos.crypto.multisig.v1beta1.CompactBitArray",
+                            "id": 1
+                          },
+                          "modeInfos": {
+                            "rule": "repeated",
+                            "type": "ModeInfo",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Fee": {
+                    "fields": {
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "gasLimit": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "payer": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "granter": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "Tip": {
+                    "fields": {
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      },
+                      "tipper": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "AuxSignerData": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "signDoc": {
+                        "type": "SignDocDirectAux",
+                        "id": 2
+                      },
+                      "mode": {
+                        "type": "cosmos.tx.signing.v1beta1.SignMode",
+                        "id": 3
+                      },
+                      "sig": {
+                        "type": "bytes",
+                        "id": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

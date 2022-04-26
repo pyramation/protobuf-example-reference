@@ -1,0 +1,119 @@
+{
+  "package": "ibc.core.client.v1",
+  "imports": [
+    "ibc/core/client/v1/client.proto",
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "client": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/02-client/types"
+                    },
+                    "nested": {
+                      "GenesisState": {
+                        "fields": {
+                          "clients": {
+                            "rule": "repeated",
+                            "type": "IdentifiedClientState",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.castrepeated)": "IdentifiedClientStates"
+                            }
+                          },
+                          "clientsConsensus": {
+                            "rule": "repeated",
+                            "type": "ClientConsensusStates",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.castrepeated)": "ClientsConsensusStates",
+                              "(gogoproto.moretags)": "yaml:clients_consensus"
+                            }
+                          },
+                          "clientsMetadata": {
+                            "rule": "repeated",
+                            "type": "IdentifiedGenesisMetadata",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:clients_metadata"
+                            }
+                          },
+                          "params": {
+                            "type": "Params",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "createLocalhost": {
+                            "type": "bool",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:create_localhost"
+                            }
+                          },
+                          "nextClientSequence": {
+                            "type": "uint64",
+                            "id": 6,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:next_client_sequence"
+                            }
+                          }
+                        }
+                      },
+                      "GenesisMetadata": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "key": {
+                            "type": "bytes",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "IdentifiedGenesisMetadata": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "clientMetadata": {
+                            "rule": "repeated",
+                            "type": "GenesisMetadata",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.moretags)": "yaml:client_metadata"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

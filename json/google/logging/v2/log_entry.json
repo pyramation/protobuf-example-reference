@@ -1,0 +1,242 @@
+{
+  "package": "google.logging.v2",
+  "imports": [
+    "google/api/field_behavior.proto",
+    "google/api/monitored_resource.proto",
+    "google/api/resource.proto",
+    "google/logging/type/http_request.proto",
+    "google/logging/type/log_severity.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/struct.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "logging": {
+            "nested": {
+              "v2": {
+                "options": {
+                  "cc_enable_arenas": true,
+                  "csharp_namespace": "Google.Cloud.Logging.V2",
+                  "go_package": "google.golang.org/genproto/googleapis/logging/v2;logging",
+                  "java_multiple_files": true,
+                  "java_outer_classname": "LogEntryProto",
+                  "java_package": "com.google.logging.v2",
+                  "php_namespace": "Google\\Cloud\\Logging\\V2",
+                  "ruby_package": "Google::Cloud::Logging::V2"
+                },
+                "nested": {
+                  "LogEntry": {
+                    "options": {
+                      "(google.api.resource).type": "logging.googleapis.com/Log",
+                      "(google.api.resource).pattern": "billingAccounts/{billing_account}/logs/{log}",
+                      "(google.api.resource).name_field": "log_name"
+                    },
+                    "oneofs": {
+                      "payload": {
+                        "oneof": [
+                          "protoPayload",
+                          "textPayload",
+                          "jsonPayload"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "logName": {
+                        "type": "string",
+                        "id": 12,
+                        "options": {
+                          "(google.api.field_behavior)": "REQUIRED"
+                        }
+                      },
+                      "resource": {
+                        "type": "google.api.MonitoredResource",
+                        "id": 8,
+                        "options": {
+                          "(google.api.field_behavior)": "REQUIRED"
+                        }
+                      },
+                      "protoPayload": {
+                        "type": "google.protobuf.Any",
+                        "id": 2
+                      },
+                      "textPayload": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "jsonPayload": {
+                        "type": "google.protobuf.Struct",
+                        "id": 6
+                      },
+                      "timestamp": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 9,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "receiveTimestamp": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 24,
+                        "options": {
+                          "(google.api.field_behavior)": "OUTPUT_ONLY"
+                        }
+                      },
+                      "severity": {
+                        "type": "google.logging.type.LogSeverity",
+                        "id": 10,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "insertId": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "httpRequest": {
+                        "type": "google.logging.type.HttpRequest",
+                        "id": 7,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "labels": {
+                        "keyType": "string",
+                        "type": "string",
+                        "id": 11,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "operation": {
+                        "type": "LogEntryOperation",
+                        "id": 15,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "trace": {
+                        "type": "string",
+                        "id": 22,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "spanId": {
+                        "type": "string",
+                        "id": 27,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "traceSampled": {
+                        "type": "bool",
+                        "id": 30,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "sourceLocation": {
+                        "type": "LogEntrySourceLocation",
+                        "id": 23,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "split": {
+                        "type": "LogSplit",
+                        "id": 35,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      }
+                    }
+                  },
+                  "LogEntryOperation": {
+                    "fields": {
+                      "id": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "producer": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "first": {
+                        "type": "bool",
+                        "id": 3,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "last": {
+                        "type": "bool",
+                        "id": 4,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      }
+                    }
+                  },
+                  "LogEntrySourceLocation": {
+                    "fields": {
+                      "file": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "line": {
+                        "type": "int64",
+                        "id": 2,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      },
+                      "function": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(google.api.field_behavior)": "OPTIONAL"
+                        }
+                      }
+                    }
+                  },
+                  "LogSplit": {
+                    "fields": {
+                      "uid": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "index": {
+                        "type": "int32",
+                        "id": 2
+                      },
+                      "totalSplits": {
+                        "type": "int32",
+                        "id": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "package": "tendermint.types",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "types": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/types",
+              "(gogoproto.equal_all)": true
+            },
+            "nested": {
+              "ConsensusParams": {
+                "fields": {
+                  "block": {
+                    "type": "BlockParams",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "evidence": {
+                    "type": "EvidenceParams",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "validator": {
+                    "type": "ValidatorParams",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  },
+                  "version": {
+                    "type": "VersionParams",
+                    "id": 4,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "BlockParams": {
+                "fields": {
+                  "maxBytes": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "maxGas": {
+                    "type": "int64",
+                    "id": 2
+                  },
+                  "timeIotaMs": {
+                    "type": "int64",
+                    "id": 3
+                  }
+                }
+              },
+              "EvidenceParams": {
+                "fields": {
+                  "maxAgeNumBlocks": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "maxAgeDuration": {
+                    "type": "google.protobuf.Duration",
+                    "id": 2,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.stdduration)": true
+                    }
+                  },
+                  "maxBytes": {
+                    "type": "int64",
+                    "id": 3
+                  }
+                }
+              },
+              "ValidatorParams": {
+                "options": {
+                  "(gogoproto.populate)": true,
+                  "(gogoproto.equal)": true
+                },
+                "fields": {
+                  "pubKeyTypes": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 1
+                  }
+                }
+              },
+              "VersionParams": {
+                "options": {
+                  "(gogoproto.populate)": true,
+                  "(gogoproto.equal)": true
+                },
+                "fields": {
+                  "appVersion": {
+                    "type": "uint64",
+                    "id": 1
+                  }
+                }
+              },
+              "HashedParams": {
+                "fields": {
+                  "blockMaxBytes": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "blockMaxGas": {
+                    "type": "int64",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "package": "osmosis.poolincentives.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "osmosis/pool-incentives/v1beta1/incentives.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "poolincentives": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/pool-incentives/types"
+                },
+                "nested": {
+                  "ReplacePoolIncentivesProposal": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "records": {
+                        "rule": "repeated",
+                        "type": "DistrRecord",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "UpdatePoolIncentivesProposal": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "records": {
+                        "rule": "repeated",
+                        "type": "DistrRecord",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

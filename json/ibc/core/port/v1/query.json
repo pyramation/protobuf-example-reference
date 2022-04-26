@@ -1,0 +1,74 @@
+{
+  "package": "ibc.core.port.v1",
+  "imports": [
+    "ibc/core/channel/v1/channel.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "port": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/05-port/types"
+                    },
+                    "nested": {
+                      "Query": {
+                        "methods": {
+                          "AppVersion": {
+                            "requestType": "QueryAppVersionRequest",
+                            "responseType": "QueryAppVersionResponse"
+                          }
+                        }
+                      },
+                      "QueryAppVersionRequest": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "connectionId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "ordering": {
+                            "type": "ibc.core.channel.v1.Order",
+                            "id": 3
+                          },
+                          "counterparty": {
+                            "type": "ibc.core.channel.v1.Counterparty",
+                            "id": 4
+                          },
+                          "proposedVersion": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "QueryAppVersionResponse": {
+                        "fields": {
+                          "portId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "version": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

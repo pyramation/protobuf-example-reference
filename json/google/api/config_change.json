@@ -1,0 +1,64 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/configchange;configchange",
+              "java_multiple_files": true,
+              "java_outer_classname": "ConfigChangeProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "ConfigChange": {
+                "fields": {
+                  "element": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "oldValue": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "newValue": {
+                    "type": "string",
+                    "id": 3
+                  },
+                  "changeType": {
+                    "type": "ChangeType",
+                    "id": 4
+                  },
+                  "advices": {
+                    "rule": "repeated",
+                    "type": "Advice",
+                    "id": 5
+                  }
+                }
+              },
+              "Advice": {
+                "fields": {
+                  "description": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              },
+              "ChangeType": {
+                "values": {
+                  "CHANGE_TYPE_UNSPECIFIED": 0,
+                  "ADDED": 1,
+                  "REMOVED": 2,
+                  "MODIFIED": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

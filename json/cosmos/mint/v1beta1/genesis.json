@@ -1,0 +1,45 @@
+{
+  "package": "cosmos.mint.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/mint/v1beta1/mint.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "mint": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/mint/types"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "minter": {
+                        "type": "Minter",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "params": {
+                        "type": "Params",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

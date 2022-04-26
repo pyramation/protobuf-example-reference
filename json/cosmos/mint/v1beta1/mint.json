@@ -1,0 +1,100 @@
+{
+  "package": "cosmos.mint.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "mint": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/mint/types"
+                },
+                "nested": {
+                  "Minter": {
+                    "fields": {
+                      "inflation": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "annualProvisions": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Params": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "mintDenom": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "inflationRateChange": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "inflationMax": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "inflationMin": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "goalBonded": {
+                        "type": "string",
+                        "id": 5,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "blocksPerYear": {
+                        "type": "uint64",
+                        "id": 6
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

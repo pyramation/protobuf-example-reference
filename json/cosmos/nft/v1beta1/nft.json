@@ -1,0 +1,82 @@
+{
+  "package": "cosmos.nft.v1beta1",
+  "imports": [
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "nft": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/nft"
+                },
+                "nested": {
+                  "Class": {
+                    "fields": {
+                      "id": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "symbol": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "uri": {
+                        "type": "string",
+                        "id": 5
+                      },
+                      "uriHash": {
+                        "type": "string",
+                        "id": 6
+                      },
+                      "data": {
+                        "type": "google.protobuf.Any",
+                        "id": 7
+                      }
+                    }
+                  },
+                  "NFT": {
+                    "fields": {
+                      "classId": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "id": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "uri": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "uriHash": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "data": {
+                        "type": "google.protobuf.Any",
+                        "id": 10
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

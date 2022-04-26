@@ -1,0 +1,639 @@
+{
+  "package": "cosmos.staking.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "tendermint/types/types.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "staking": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/staking/types"
+                },
+                "nested": {
+                  "HistoricalInfo": {
+                    "fields": {
+                      "header": {
+                        "type": "tendermint.types.Header",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "valset": {
+                        "rule": "repeated",
+                        "type": "Validator",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "CommissionRates": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "rate": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "maxRate": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "maxChangeRate": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Commission": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "commissionRates": {
+                        "type": "CommissionRates",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.embed)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "updateTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  },
+                  "Description": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "moniker": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "identity": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "website": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "securityContact": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "details": {
+                        "type": "string",
+                        "id": 5
+                      }
+                    }
+                  },
+                  "Validator": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_stringer)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "operatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "consensusPubkey": {
+                        "type": "google.protobuf.Any",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "cosmos.crypto.PubKey"
+                        }
+                      },
+                      "jailed": {
+                        "type": "bool",
+                        "id": 3
+                      },
+                      "status": {
+                        "type": "BondStatus",
+                        "id": 4
+                      },
+                      "tokens": {
+                        "type": "string",
+                        "id": 5,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "delegatorShares": {
+                        "type": "string",
+                        "id": 6,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "description": {
+                        "type": "Description",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "unbondingHeight": {
+                        "type": "int64",
+                        "id": 8
+                      },
+                      "unbondingTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 9,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      },
+                      "commission": {
+                        "type": "Commission",
+                        "id": 10,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "minSelfDelegation": {
+                        "type": "string",
+                        "id": 11,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "BondStatus": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "BOND_STATUS_UNSPECIFIED": 0,
+                      "BOND_STATUS_UNBONDED": 1,
+                      "BOND_STATUS_UNBONDING": 2,
+                      "BOND_STATUS_BONDED": 3
+                    }
+                  },
+                  "ValAddresses": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false,
+                      "(gogoproto.stringer)": true
+                    },
+                    "fields": {
+                      "addresses": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "DVPair": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "DVPairs": {
+                    "fields": {
+                      "pairs": {
+                        "rule": "repeated",
+                        "type": "DVPair",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DVVTriplet": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorSrcAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorDstAddress": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "DVVTriplets": {
+                    "fields": {
+                      "triplets": {
+                        "rule": "repeated",
+                        "type": "DVVTriplet",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Delegation": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "shares": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "UnbondingDelegation": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "entries": {
+                        "rule": "repeated",
+                        "type": "UnbondingDelegationEntry",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "UnbondingDelegationEntry": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "creationHeight": {
+                        "type": "int64",
+                        "id": 1
+                      },
+                      "completionTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      },
+                      "initialBalance": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "balance": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "RedelegationEntry": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "creationHeight": {
+                        "type": "int64",
+                        "id": 1
+                      },
+                      "completionTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      },
+                      "initialBalance": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "sharesDst": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Redelegation": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegatorAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorSrcAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorDstAddress": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "entries": {
+                        "rule": "repeated",
+                        "type": "RedelegationEntry",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Params": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "unbondingTime": {
+                        "type": "google.protobuf.Duration",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdduration)": true
+                        }
+                      },
+                      "maxValidators": {
+                        "type": "uint32",
+                        "id": 2
+                      },
+                      "maxEntries": {
+                        "type": "uint32",
+                        "id": 3
+                      },
+                      "historicalEntries": {
+                        "type": "uint32",
+                        "id": 4
+                      },
+                      "bondDenom": {
+                        "type": "string",
+                        "id": 5
+                      },
+                      "minCommissionRate": {
+                        "type": "string",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:min_commission_rate",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DelegationResponse": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "delegation": {
+                        "type": "Delegation",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "balance": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "RedelegationEntryResponse": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "redelegationEntry": {
+                        "type": "RedelegationEntry",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "balance": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "RedelegationResponse": {
+                    "options": {
+                      "(gogoproto.equal)": false
+                    },
+                    "fields": {
+                      "redelegation": {
+                        "type": "Redelegation",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "entries": {
+                        "rule": "repeated",
+                        "type": "RedelegationEntryResponse",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Pool": {
+                    "options": {
+                      "(gogoproto.description)": true,
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "notBondedTokens": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "not_bonded_tokens"
+                        }
+                      },
+                      "bondedTokens": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "bonded_tokens"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

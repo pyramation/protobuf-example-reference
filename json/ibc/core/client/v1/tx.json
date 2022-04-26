@@ -1,0 +1,182 @@
+{
+  "package": "ibc.core.client.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "client": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/02-client/types"
+                    },
+                    "nested": {
+                      "Msg": {
+                        "methods": {
+                          "CreateClient": {
+                            "requestType": "MsgCreateClient",
+                            "responseType": "MsgCreateClientResponse"
+                          },
+                          "UpdateClient": {
+                            "requestType": "MsgUpdateClient",
+                            "responseType": "MsgUpdateClientResponse"
+                          },
+                          "UpgradeClient": {
+                            "requestType": "MsgUpgradeClient",
+                            "responseType": "MsgUpgradeClientResponse"
+                          },
+                          "SubmitMisbehaviour": {
+                            "requestType": "MsgSubmitMisbehaviour",
+                            "responseType": "MsgSubmitMisbehaviourResponse"
+                          }
+                        }
+                      },
+                      "MsgCreateClient": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          },
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_state"
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "MsgCreateClientResponse": {
+                        "fields": {}
+                      },
+                      "MsgUpdateClient": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "header": {
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "MsgUpdateClientResponse": {
+                        "fields": {}
+                      },
+                      "MsgUpgradeClient": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_state"
+                            }
+                          },
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:consensus_state"
+                            }
+                          },
+                          "proofUpgradeClient": {
+                            "type": "bytes",
+                            "id": 4,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_upgrade_client"
+                            }
+                          },
+                          "proofUpgradeConsensusState": {
+                            "type": "bytes",
+                            "id": 5,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:proof_upgrade_consensus_state"
+                            }
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 6
+                          }
+                        }
+                      },
+                      "MsgUpgradeClientResponse": {
+                        "fields": {}
+                      },
+                      "MsgSubmitMisbehaviour": {
+                        "options": {
+                          "(gogoproto.equal)": false,
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:client_id"
+                            }
+                          },
+                          "misbehaviour": {
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          },
+                          "signer": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "MsgSubmitMisbehaviourResponse": {
+                        "fields": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "package": "cosmos.base.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/types",
+                  "(gogoproto.goproto_stringer_all)": false,
+                  "(gogoproto.stringer_all)": false
+                },
+                "nested": {
+                  "Coin": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "denom": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "amount": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DecCoin": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "denom": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "amount": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "IntProto": {
+                    "fields": {
+                      "int": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Int",
+                          "(gogoproto.customtype)": "Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DecProto": {
+                    "fields": {
+                      "dec": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.Dec",
+                          "(gogoproto.customtype)": "Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

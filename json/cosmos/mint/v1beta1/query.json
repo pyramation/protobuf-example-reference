@@ -1,0 +1,118 @@
+{
+  "package": "cosmos.mint.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "cosmos/mint/v1beta1/mint.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "mint": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/mint/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/mint/v1beta1/params"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/mint/v1beta1/params"
+                            }
+                          }
+                        ]
+                      },
+                      "Inflation": {
+                        "requestType": "QueryInflationRequest",
+                        "responseType": "QueryInflationResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/mint/v1beta1/inflation"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/mint/v1beta1/inflation"
+                            }
+                          }
+                        ]
+                      },
+                      "AnnualProvisions": {
+                        "requestType": "QueryAnnualProvisionsRequest",
+                        "responseType": "QueryAnnualProvisionsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/mint/v1beta1/annual_provisions"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/mint/v1beta1/annual_provisions"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {}
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryInflationRequest": {
+                    "fields": {}
+                  },
+                  "QueryInflationResponse": {
+                    "fields": {
+                      "inflation": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryAnnualProvisionsRequest": {
+                    "fields": {}
+                  },
+                  "QueryAnnualProvisionsResponse": {
+                    "fields": {
+                      "annualProvisions": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

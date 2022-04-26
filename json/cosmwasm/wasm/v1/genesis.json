@@ -1,0 +1,166 @@
+{
+  "package": "cosmwasm.wasm.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmwasm/wasm/v1/types.proto",
+    "cosmwasm/wasm/v1/tx.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmwasm": {
+        "nested": {
+          "wasm": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/CosmWasm/wasmd/x/wasm/types"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "codes": {
+                        "rule": "repeated",
+                        "type": "Code",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "codes,omitempty"
+                        }
+                      },
+                      "contracts": {
+                        "rule": "repeated",
+                        "type": "Contract",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "contracts,omitempty"
+                        }
+                      },
+                      "sequences": {
+                        "rule": "repeated",
+                        "type": "Sequence",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "sequences,omitempty"
+                        }
+                      },
+                      "genMsgs": {
+                        "rule": "repeated",
+                        "type": "GenMsgs",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.jsontag)": "gen_msgs,omitempty"
+                        }
+                      }
+                    },
+                    "nested": {
+                      "GenMsgs": {
+                        "oneofs": {
+                          "sum": {
+                            "oneof": [
+                              "storeCode",
+                              "instantiateContract",
+                              "executeContract"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "storeCode": {
+                            "type": "MsgStoreCode",
+                            "id": 1
+                          },
+                          "instantiateContract": {
+                            "type": "MsgInstantiateContract",
+                            "id": 2
+                          },
+                          "executeContract": {
+                            "type": "MsgExecuteContract",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Code": {
+                    "fields": {
+                      "codeId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "CodeID"
+                        }
+                      },
+                      "codeInfo": {
+                        "type": "CodeInfo",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "codeBytes": {
+                        "type": "bytes",
+                        "id": 3
+                      },
+                      "pinned": {
+                        "type": "bool",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "Contract": {
+                    "fields": {
+                      "contractAddress": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "contractInfo": {
+                        "type": "ContractInfo",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "contractState": {
+                        "rule": "repeated",
+                        "type": "Model",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "Sequence": {
+                    "fields": {
+                      "idKey": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "IDKey"
+                        }
+                      },
+                      "value": {
+                        "type": "uint64",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

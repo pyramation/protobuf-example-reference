@@ -1,0 +1,89 @@
+{
+  "package": "osmosis.mint.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "osmosis/mint/v1beta1/mint.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "mint": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/mint/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/osmosis/mint/v1beta1/params"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/osmosis/mint/v1beta1/params"
+                            }
+                          }
+                        ]
+                      },
+                      "EpochProvisions": {
+                        "requestType": "QueryEpochProvisionsRequest",
+                        "responseType": "QueryEpochProvisionsResponse",
+                        "options": {
+                          "(google.api.http).get": "/osmosis/mint/v1beta1/epoch_provisions"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/osmosis/mint/v1beta1/epoch_provisions"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {}
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryEpochProvisionsRequest": {
+                    "fields": {}
+                  },
+                  "QueryEpochProvisionsResponse": {
+                    "fields": {
+                      "epochProvisions": {
+                        "type": "bytes",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

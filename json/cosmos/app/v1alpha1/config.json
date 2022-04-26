@@ -1,0 +1,44 @@
+{
+  "package": "cosmos.app.v1alpha1",
+  "imports": [
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "app": {
+            "nested": {
+              "v1alpha1": {
+                "nested": {
+                  "Config": {
+                    "fields": {
+                      "modules": {
+                        "rule": "repeated",
+                        "type": "ModuleConfig",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "ModuleConfig": {
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "config": {
+                        "type": "google.protobuf.Any",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

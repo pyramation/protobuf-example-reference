@@ -1,0 +1,135 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/distribution.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "DistributionProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "Distribution": {
+                        "oneofs": {
+                          "bucketOption": {
+                            "oneof": [
+                              "linearBuckets",
+                              "exponentialBuckets",
+                              "explicitBuckets"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "count": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "mean": {
+                            "type": "double",
+                            "id": 2
+                          },
+                          "minimum": {
+                            "type": "double",
+                            "id": 3
+                          },
+                          "maximum": {
+                            "type": "double",
+                            "id": 4
+                          },
+                          "sumOfSquaredDeviation": {
+                            "type": "double",
+                            "id": 5
+                          },
+                          "bucketCounts": {
+                            "rule": "repeated",
+                            "type": "int64",
+                            "id": 6
+                          },
+                          "linearBuckets": {
+                            "type": "LinearBuckets",
+                            "id": 7
+                          },
+                          "exponentialBuckets": {
+                            "type": "ExponentialBuckets",
+                            "id": 8
+                          },
+                          "explicitBuckets": {
+                            "type": "ExplicitBuckets",
+                            "id": 9
+                          },
+                          "exemplars": {
+                            "rule": "repeated",
+                            "type": "google.api.Distribution.Exemplar",
+                            "id": 10
+                          }
+                        },
+                        "nested": {
+                          "LinearBuckets": {
+                            "fields": {
+                              "numFiniteBuckets": {
+                                "type": "int32",
+                                "id": 1
+                              },
+                              "width": {
+                                "type": "double",
+                                "id": 2
+                              },
+                              "offset": {
+                                "type": "double",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "ExponentialBuckets": {
+                            "fields": {
+                              "numFiniteBuckets": {
+                                "type": "int32",
+                                "id": 1
+                              },
+                              "growthFactor": {
+                                "type": "double",
+                                "id": 2
+                              },
+                              "scale": {
+                                "type": "double",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "ExplicitBuckets": {
+                            "fields": {
+                              "bounds": {
+                                "rule": "repeated",
+                                "type": "double",
+                                "id": 1
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

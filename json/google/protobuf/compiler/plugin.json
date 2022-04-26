@@ -1,0 +1,107 @@
+{
+  "package": "google.protobuf.compiler",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto2",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "protobuf": {
+            "nested": {
+              "compiler": {
+                "options": {
+                  "java_package": "com.google.protobuf.compiler",
+                  "java_outer_classname": "PluginProtos",
+                  "go_package": "plugin_go"
+                },
+                "nested": {
+                  "Version": {
+                    "fields": {
+                      "major": {
+                        "type": "int32",
+                        "id": 1
+                      },
+                      "minor": {
+                        "type": "int32",
+                        "id": 2
+                      },
+                      "patch": {
+                        "type": "int32",
+                        "id": 3
+                      },
+                      "suffix": {
+                        "type": "string",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "CodeGeneratorRequest": {
+                    "fields": {
+                      "fileToGenerate": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 1
+                      },
+                      "parameter": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "protoFile": {
+                        "rule": "repeated",
+                        "type": "FileDescriptorProto",
+                        "id": 15,
+                        "options": {
+                          "packed": false
+                        }
+                      },
+                      "compilerVersion": {
+                        "type": "Version",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "CodeGeneratorResponse": {
+                    "fields": {
+                      "error": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "file": {
+                        "rule": "repeated",
+                        "type": "File",
+                        "id": 15,
+                        "options": {
+                          "packed": false
+                        }
+                      }
+                    },
+                    "nested": {
+                      "File": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "insertionPoint": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "content": {
+                            "type": "string",
+                            "id": 15
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

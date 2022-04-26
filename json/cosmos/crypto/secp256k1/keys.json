@@ -1,0 +1,45 @@
+{
+  "package": "cosmos.crypto.secp256k1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "crypto": {
+            "nested": {
+              "secp256k1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
+                },
+                "nested": {
+                  "PubKey": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "key": {
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "PrivKey": {
+                    "fields": {
+                      "key": {
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

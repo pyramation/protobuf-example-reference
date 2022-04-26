@@ -1,0 +1,66 @@
+{
+  "package": "cosmos.app.v1alpha1",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "app": {
+            "nested": {
+              "v1alpha1": {
+                "nested": {
+                  "module": {
+                    "type": "ModuleDescriptor",
+                    "id": 57193479,
+                    "extend": "google.protobuf.MessageOptions"
+                  },
+                  "ModuleDescriptor": {
+                    "fields": {
+                      "goImport": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "usePackage": {
+                        "rule": "repeated",
+                        "type": "PackageReference",
+                        "id": 2
+                      },
+                      "canMigrateFrom": {
+                        "rule": "repeated",
+                        "type": "MigrateFromInfo",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "PackageReference": {
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "revision": {
+                        "type": "uint32",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "MigrateFromInfo": {
+                    "fields": {
+                      "module": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

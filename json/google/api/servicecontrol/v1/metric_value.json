@@ -1,0 +1,99 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/api/servicecontrol/v1/distribution.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "MetricValueSetProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "MetricValue": {
+                        "oneofs": {
+                          "value": {
+                            "oneof": [
+                              "boolValue",
+                              "int64Value",
+                              "doubleValue",
+                              "stringValue",
+                              "distributionValue"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "labels": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 1
+                          },
+                          "startTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 2
+                          },
+                          "endTime": {
+                            "type": "google.protobuf.Timestamp",
+                            "id": 3
+                          },
+                          "boolValue": {
+                            "type": "bool",
+                            "id": 4
+                          },
+                          "int64Value": {
+                            "type": "int64",
+                            "id": 5
+                          },
+                          "doubleValue": {
+                            "type": "double",
+                            "id": 6
+                          },
+                          "stringValue": {
+                            "type": "string",
+                            "id": 7
+                          },
+                          "distributionValue": {
+                            "type": "Distribution",
+                            "id": 8
+                          }
+                        }
+                      },
+                      "MetricValueSet": {
+                        "fields": {
+                          "metricName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "metricValues": {
+                            "rule": "repeated",
+                            "type": "MetricValue",
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

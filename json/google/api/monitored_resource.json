@@ -1,0 +1,84 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/api/label.proto",
+    "google/api/launch_stage.proto",
+    "google/protobuf/struct.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "cc_enable_arenas": true,
+              "go_package": "google.golang.org/genproto/googleapis/api/monitoredres;monitoredres",
+              "java_multiple_files": true,
+              "java_outer_classname": "MonitoredResourceProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "MonitoredResourceDescriptor": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 5
+                  },
+                  "type": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "displayName": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "description": {
+                    "type": "string",
+                    "id": 3
+                  },
+                  "labels": {
+                    "rule": "repeated",
+                    "type": "LabelDescriptor",
+                    "id": 4
+                  },
+                  "launchStage": {
+                    "type": "LaunchStage",
+                    "id": 7
+                  }
+                }
+              },
+              "MonitoredResource": {
+                "fields": {
+                  "type": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "labels": {
+                    "keyType": "string",
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              },
+              "MonitoredResourceMetadata": {
+                "fields": {
+                  "systemLabels": {
+                    "type": "google.protobuf.Struct",
+                    "id": 1
+                  },
+                  "userLabels": {
+                    "keyType": "string",
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

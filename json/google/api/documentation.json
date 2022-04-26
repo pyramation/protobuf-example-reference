@@ -1,0 +1,86 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "DocumentationProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Documentation": {
+                "fields": {
+                  "summary": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "pages": {
+                    "rule": "repeated",
+                    "type": "Page",
+                    "id": 5
+                  },
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "DocumentationRule",
+                    "id": 3
+                  },
+                  "documentationRootUrl": {
+                    "type": "string",
+                    "id": 4
+                  },
+                  "serviceRootUrl": {
+                    "type": "string",
+                    "id": 6
+                  },
+                  "overview": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              },
+              "DocumentationRule": {
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "description": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "deprecationDescription": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "Page": {
+                "fields": {
+                  "name": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "content": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "subpages": {
+                    "rule": "repeated",
+                    "type": "Page",
+                    "id": 3
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

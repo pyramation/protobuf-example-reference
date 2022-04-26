@@ -1,0 +1,61 @@
+{
+  "package": "cosmos.gov.v1",
+  "imports": [
+    "cosmos/gov/v1/gov.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "gov": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "startingProposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "deposits": {
+                        "rule": "repeated",
+                        "type": "Deposit",
+                        "id": 2
+                      },
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 3
+                      },
+                      "proposals": {
+                        "rule": "repeated",
+                        "type": "Proposal",
+                        "id": 4
+                      },
+                      "depositParams": {
+                        "type": "DepositParams",
+                        "id": 5
+                      },
+                      "votingParams": {
+                        "type": "VotingParams",
+                        "id": 6
+                      },
+                      "tallyParams": {
+                        "type": "TallyParams",
+                        "id": 7
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

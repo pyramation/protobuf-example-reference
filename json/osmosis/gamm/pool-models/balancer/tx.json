@@ -1,0 +1,79 @@
+{
+  "package": "osmosis.gamm.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "osmosis/gamm/pool-models/balancer/balancerPool.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "gamm": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/gamm/pool-models/balancer"
+                },
+                "nested": {
+                  "BalancerMsg": {
+                    "methods": {
+                      "CreateBalancerPool": {
+                        "requestType": "MsgCreateBalancerPool",
+                        "responseType": "MsgCreateBalancerPoolResponse"
+                      }
+                    }
+                  },
+                  "MsgCreateBalancerPool": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolParams": {
+                        "type": "PoolParams",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_params"
+                        }
+                      },
+                      "poolAssets": {
+                        "rule": "repeated",
+                        "type": "osmosis.gamm.v1beta1.PoolAsset",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "futurePoolGovernor": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:future_pool_governor"
+                        }
+                      }
+                    }
+                  },
+                  "MsgCreateBalancerPoolResponse": {
+                    "fields": {
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customname)": "PoolID"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

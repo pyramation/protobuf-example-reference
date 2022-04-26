@@ -1,0 +1,119 @@
+{
+  "package": "osmosis.superfluid",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "cosmos/base/v1beta1/coin.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "superfluid": {
+            "options": {
+              "go_package": "github.com/osmosis-labs/osmosis/v7/x/superfluid/types"
+            },
+            "nested": {
+              "SuperfluidAssetType": {
+                "options": {
+                  "(gogoproto.goproto_enum_prefix)": false
+                },
+                "values": {
+                  "SuperfluidAssetTypeNative": 0,
+                  "SuperfluidAssetTypeLPShare": 1
+                }
+              },
+              "SuperfluidAsset": {
+                "options": {
+                  "(gogoproto.equal)": true,
+                  "(gogoproto.goproto_getters)": false
+                },
+                "fields": {
+                  "denom": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "assetType": {
+                    "type": "SuperfluidAssetType",
+                    "id": 2
+                  }
+                }
+              },
+              "SuperfluidIntermediaryAccount": {
+                "fields": {
+                  "denom": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "valAddr": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "gaugeId": {
+                    "type": "uint64",
+                    "id": 3
+                  }
+                }
+              },
+              "OsmoEquivalentMultiplierRecord": {
+                "fields": {
+                  "epochNumber": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "denom": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "multiplier": {
+                    "type": "string",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.moretags)": "yaml:multiplier",
+                      "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Dec",
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              },
+              "SuperfluidDelegationRecord": {
+                "fields": {
+                  "delegatorAddress": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "validatorAddress": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "delegationAmount": {
+                    "type": "cosmos.base.v1beta1.Coin",
+                    "id": 3,
+                    "options": {
+                      "(gogoproto.nullable)": false,
+                      "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coin"
+                    }
+                  }
+                }
+              },
+              "LockIdIntermediaryAccountConnection": {
+                "fields": {
+                  "lockId": {
+                    "type": "uint64",
+                    "id": 1
+                  },
+                  "intermediaryAccount": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

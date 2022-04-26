@@ -1,0 +1,77 @@
+{
+  "package": "ibc.core.commitment.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "confio/proofs.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "commitment": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/23-commitment/types"
+                    },
+                    "nested": {
+                      "MerkleRoot": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "hash": {
+                            "type": "bytes",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "MerklePrefix": {
+                        "fields": {
+                          "keyPrefix": {
+                            "type": "bytes",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:key_prefix"
+                            }
+                          }
+                        }
+                      },
+                      "MerklePath": {
+                        "options": {
+                          "(gogoproto.goproto_stringer)": false
+                        },
+                        "fields": {
+                          "keyPath": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:key_path"
+                            }
+                          }
+                        }
+                      },
+                      "MerkleProof": {
+                        "fields": {
+                          "proofs": {
+                            "rule": "repeated",
+                            "type": "ics23.CommitmentProof",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

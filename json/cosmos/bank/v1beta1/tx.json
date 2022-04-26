@@ -1,0 +1,104 @@
+{
+  "package": "cosmos.bank.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto",
+    "cosmos/bank/v1beta1/bank.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "bank": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/bank/types"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "Send": {
+                        "requestType": "MsgSend",
+                        "responseType": "MsgSendResponse"
+                      },
+                      "MultiSend": {
+                        "requestType": "MsgMultiSend",
+                        "responseType": "MsgMultiSendResponse"
+                      }
+                    }
+                  },
+                  "MsgSend": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "from_address",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "fromAddress": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "toAddress": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "amount": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coins"
+                        }
+                      }
+                    }
+                  },
+                  "MsgSendResponse": {
+                    "fields": {}
+                  },
+                  "MsgMultiSend": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "inputs",
+                      "(gogoproto.equal)": false
+                    },
+                    "fields": {
+                      "inputs": {
+                        "rule": "repeated",
+                        "type": "Input",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "outputs": {
+                        "rule": "repeated",
+                        "type": "Output",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgMultiSendResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

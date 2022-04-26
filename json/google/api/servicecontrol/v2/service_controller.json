@@ -1,0 +1,163 @@
+{
+  "package": "google.api.servicecontrol.v2",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/api/client.proto",
+    "google/rpc/context/attribute_context.proto",
+    "google/rpc/status.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v2": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V2",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v2;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ServiceControllerProto",
+                      "java_package": "com.google.api.servicecontrol.v2",
+                      "objc_class_prefix": "GASC",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V2",
+                      "ruby_package": "Google::Cloud::ServiceControl::V2"
+                    },
+                    "nested": {
+                      "ServiceController": {
+                        "options": {
+                          "(google.api.default_host)": "servicecontrol.googleapis.com",
+                          "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/servicecontrol"
+                        },
+                        "methods": {
+                          "Check": {
+                            "requestType": "CheckRequest",
+                            "responseType": "CheckResponse",
+                            "options": {
+                              "(google.api.http).post": "/v2/services/{service_name}:check",
+                              "(google.api.http).body": "*"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v2/services/{service_name}:check",
+                                  "body": "*"
+                                }
+                              }
+                            ]
+                          },
+                          "Report": {
+                            "requestType": "ReportRequest",
+                            "responseType": "ReportResponse",
+                            "options": {
+                              "(google.api.http).post": "/v2/services/{service_name}:report",
+                              "(google.api.http).body": "*"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "post": "/v2/services/{service_name}:report",
+                                  "body": "*"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "CheckRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "attributes": {
+                            "type": "google.rpc.context.AttributeContext",
+                            "id": 3
+                          },
+                          "resources": {
+                            "rule": "repeated",
+                            "type": "ResourceInfo",
+                            "id": 4
+                          },
+                          "flags": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "ResourceInfo": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "type": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "permission": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "container": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "location": {
+                            "type": "string",
+                            "id": 5
+                          }
+                        }
+                      },
+                      "CheckResponse": {
+                        "fields": {
+                          "status": {
+                            "type": "google.rpc.Status",
+                            "id": 1
+                          },
+                          "headers": {
+                            "keyType": "string",
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "ReportRequest": {
+                        "fields": {
+                          "serviceName": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "serviceConfigId": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "operations": {
+                            "rule": "repeated",
+                            "type": "google.rpc.context.AttributeContext",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "ReportResponse": {
+                        "fields": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

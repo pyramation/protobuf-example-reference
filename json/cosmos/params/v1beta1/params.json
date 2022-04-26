@@ -1,0 +1,70 @@
+{
+  "package": "cosmos.params.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "params": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/params/types/proposal",
+                  "(gogoproto.equal_all)": true
+                },
+                "nested": {
+                  "ParameterChangeProposal": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "changes": {
+                        "rule": "repeated",
+                        "type": "ParamChange",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ParamChange": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "subspace": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "key": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "value": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

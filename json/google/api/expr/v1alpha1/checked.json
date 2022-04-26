@@ -1,0 +1,304 @@
+{
+  "package": "google.api.expr.v1alpha1",
+  "imports": [
+    "google/api/expr/v1alpha1/syntax.proto",
+    "google/protobuf/empty.proto",
+    "google/protobuf/struct.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1alpha1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1alpha1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "DeclProto",
+                      "java_package": "com.google.api.expr.v1alpha1"
+                    },
+                    "nested": {
+                      "CheckedExpr": {
+                        "fields": {
+                          "referenceMap": {
+                            "keyType": "int64",
+                            "type": "Reference",
+                            "id": 2
+                          },
+                          "typeMap": {
+                            "keyType": "int64",
+                            "type": "Type",
+                            "id": 3
+                          },
+                          "sourceInfo": {
+                            "type": "SourceInfo",
+                            "id": 5
+                          },
+                          "exprVersion": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "expr": {
+                            "type": "Expr",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "Type": {
+                        "oneofs": {
+                          "typeKind": {
+                            "oneof": [
+                              "dyn",
+                              "null",
+                              "primitive",
+                              "wrapper",
+                              "wellKnown",
+                              "listType",
+                              "mapType",
+                              "function",
+                              "messageType",
+                              "typeParam",
+                              "type",
+                              "error",
+                              "abstractType"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "dyn": {
+                            "type": "google.protobuf.Empty",
+                            "id": 1
+                          },
+                          "null": {
+                            "type": "google.protobuf.NullValue",
+                            "id": 2
+                          },
+                          "primitive": {
+                            "type": "PrimitiveType",
+                            "id": 3
+                          },
+                          "wrapper": {
+                            "type": "PrimitiveType",
+                            "id": 4
+                          },
+                          "wellKnown": {
+                            "type": "WellKnownType",
+                            "id": 5
+                          },
+                          "listType": {
+                            "type": "ListType",
+                            "id": 6
+                          },
+                          "mapType": {
+                            "type": "MapType",
+                            "id": 7
+                          },
+                          "function": {
+                            "type": "FunctionType",
+                            "id": 8
+                          },
+                          "messageType": {
+                            "type": "string",
+                            "id": 9
+                          },
+                          "typeParam": {
+                            "type": "string",
+                            "id": 10
+                          },
+                          "type": {
+                            "type": "Type",
+                            "id": 11
+                          },
+                          "error": {
+                            "type": "google.protobuf.Empty",
+                            "id": 12
+                          },
+                          "abstractType": {
+                            "type": "AbstractType",
+                            "id": 14
+                          }
+                        },
+                        "nested": {
+                          "ListType": {
+                            "fields": {
+                              "elemType": {
+                                "type": "Type",
+                                "id": 1
+                              }
+                            }
+                          },
+                          "MapType": {
+                            "fields": {
+                              "keyType": {
+                                "type": "Type",
+                                "id": 1
+                              },
+                              "valueType": {
+                                "type": "Type",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "FunctionType": {
+                            "fields": {
+                              "resultType": {
+                                "type": "Type",
+                                "id": 1
+                              },
+                              "argTypes": {
+                                "rule": "repeated",
+                                "type": "Type",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "AbstractType": {
+                            "fields": {
+                              "name": {
+                                "type": "string",
+                                "id": 1
+                              },
+                              "parameterTypes": {
+                                "rule": "repeated",
+                                "type": "Type",
+                                "id": 2
+                              }
+                            }
+                          },
+                          "PrimitiveType": {
+                            "values": {
+                              "PRIMITIVE_TYPE_UNSPECIFIED": 0,
+                              "BOOL": 1,
+                              "INT64": 2,
+                              "UINT64": 3,
+                              "DOUBLE": 4,
+                              "STRING": 5,
+                              "BYTES": 6
+                            }
+                          },
+                          "WellKnownType": {
+                            "values": {
+                              "WELL_KNOWN_TYPE_UNSPECIFIED": 0,
+                              "ANY": 1,
+                              "TIMESTAMP": 2,
+                              "DURATION": 3
+                            }
+                          }
+                        }
+                      },
+                      "Decl": {
+                        "oneofs": {
+                          "declKind": {
+                            "oneof": [
+                              "ident",
+                              "function"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "ident": {
+                            "type": "IdentDecl",
+                            "id": 2
+                          },
+                          "function": {
+                            "type": "FunctionDecl",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "IdentDecl": {
+                            "fields": {
+                              "type": {
+                                "type": "Type",
+                                "id": 1
+                              },
+                              "value": {
+                                "type": "Constant",
+                                "id": 2
+                              },
+                              "doc": {
+                                "type": "string",
+                                "id": 3
+                              }
+                            }
+                          },
+                          "FunctionDecl": {
+                            "fields": {
+                              "overloads": {
+                                "rule": "repeated",
+                                "type": "Overload",
+                                "id": 1
+                              }
+                            },
+                            "nested": {
+                              "Overload": {
+                                "fields": {
+                                  "overloadId": {
+                                    "type": "string",
+                                    "id": 1
+                                  },
+                                  "params": {
+                                    "rule": "repeated",
+                                    "type": "Type",
+                                    "id": 2
+                                  },
+                                  "typeParams": {
+                                    "rule": "repeated",
+                                    "type": "string",
+                                    "id": 3
+                                  },
+                                  "resultType": {
+                                    "type": "Type",
+                                    "id": 4
+                                  },
+                                  "isInstanceFunction": {
+                                    "type": "bool",
+                                    "id": 5
+                                  },
+                                  "doc": {
+                                    "type": "string",
+                                    "id": 6
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Reference": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "overloadId": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 3
+                          },
+                          "value": {
+                            "type": "Constant",
+                            "id": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

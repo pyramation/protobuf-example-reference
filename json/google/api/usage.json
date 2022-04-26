@@ -1,0 +1,57 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "UsageProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Usage": {
+                "fields": {
+                  "requirements": {
+                    "rule": "repeated",
+                    "type": "string",
+                    "id": 1
+                  },
+                  "rules": {
+                    "rule": "repeated",
+                    "type": "UsageRule",
+                    "id": 6
+                  },
+                  "producerNotificationChannel": {
+                    "type": "string",
+                    "id": 7
+                  }
+                }
+              },
+              "UsageRule": {
+                "fields": {
+                  "selector": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "allowUnregisteredCalls": {
+                    "type": "bool",
+                    "id": 2
+                  },
+                  "skipServiceControl": {
+                    "type": "bool",
+                    "id": 3
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "package": "cosmos.upgrade.v1beta1",
+  "imports": [
+    "google/protobuf/any.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "upgrade": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/upgrade/types",
+                  "(gogoproto.goproto_getters_all)": false
+                },
+                "nested": {
+                  "Plan": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "time": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2,
+                        "options": {
+                          "deprecated": true,
+                          "(gogoproto.stdtime)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "height": {
+                        "type": "int64",
+                        "id": 3
+                      },
+                      "info": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "upgradedClientState": {
+                        "type": "google.protobuf.Any",
+                        "id": 5,
+                        "options": {
+                          "deprecated": true
+                        }
+                      }
+                    }
+                  },
+                  "SoftwareUpgradeProposal": {
+                    "options": {
+                      "deprecated": true,
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "plan": {
+                        "type": "Plan",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "CancelSoftwareUpgradeProposal": {
+                    "options": {
+                      "deprecated": true,
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "ModuleVersion": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_stringer)": true
+                    },
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "version": {
+                        "type": "uint64",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "package": "osmosis.gamm.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/v1beta1/coin.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "gamm": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/gamm/types"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "JoinPool": {
+                        "requestType": "MsgJoinPool",
+                        "responseType": "MsgJoinPoolResponse"
+                      },
+                      "ExitPool": {
+                        "requestType": "MsgExitPool",
+                        "responseType": "MsgExitPoolResponse"
+                      },
+                      "SwapExactAmountIn": {
+                        "requestType": "MsgSwapExactAmountIn",
+                        "responseType": "MsgSwapExactAmountInResponse"
+                      },
+                      "SwapExactAmountOut": {
+                        "requestType": "MsgSwapExactAmountOut",
+                        "responseType": "MsgSwapExactAmountOutResponse"
+                      },
+                      "JoinSwapExternAmountIn": {
+                        "requestType": "MsgJoinSwapExternAmountIn",
+                        "responseType": "MsgJoinSwapExternAmountInResponse"
+                      },
+                      "JoinSwapShareAmountOut": {
+                        "requestType": "MsgJoinSwapShareAmountOut",
+                        "responseType": "MsgJoinSwapShareAmountOutResponse"
+                      },
+                      "ExitSwapExternAmountOut": {
+                        "requestType": "MsgExitSwapExternAmountOut",
+                        "responseType": "MsgExitSwapExternAmountOutResponse"
+                      },
+                      "ExitSwapShareAmountIn": {
+                        "requestType": "MsgExitSwapShareAmountIn",
+                        "responseType": "MsgExitSwapShareAmountInResponse"
+                      }
+                    }
+                  },
+                  "MsgJoinPool": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "shareOutAmount": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:pool_amount_out",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenInMaxs": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_in_max_amounts",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgJoinPoolResponse": {
+                    "fields": {}
+                  },
+                  "MsgExitPool": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "shareInAmount": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_in_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenOutMins": {
+                        "rule": "repeated",
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out_min_amounts",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExitPoolResponse": {
+                    "fields": {}
+                  },
+                  "SwapAmountInRoute": {
+                    "fields": {
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenOutDenom": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out_denom"
+                        }
+                      }
+                    }
+                  },
+                  "MsgSwapExactAmountIn": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "routes": {
+                        "rule": "repeated",
+                        "type": "SwapAmountInRoute",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenIn": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_in",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenOutMinAmount": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_out_min_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgSwapExactAmountInResponse": {
+                    "fields": {
+                      "tokenOutAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_out_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "SwapAmountOutRoute": {
+                    "fields": {
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenInDenom": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out_denom"
+                        }
+                      }
+                    }
+                  },
+                  "MsgSwapExactAmountOut": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "routes": {
+                        "rule": "repeated",
+                        "type": "SwapAmountOutRoute",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenInMaxAmount": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_in_max_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenOut": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgSwapExactAmountOutResponse": {
+                    "fields": {
+                      "tokenInAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_in_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgJoinSwapExternAmountIn": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenIn": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_in",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "shareOutMinAmount": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_out_min_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgJoinSwapExternAmountInResponse": {
+                    "fields": {
+                      "shareOutAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_out_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgJoinSwapShareAmountOut": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenInDenom": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_in_denom"
+                        }
+                      },
+                      "shareOutAmount": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_out_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenInMaxAmount": {
+                        "type": "string",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_in_max_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgJoinSwapShareAmountOutResponse": {
+                    "fields": {
+                      "tokenInAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_in_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExitSwapShareAmountIn": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenOutDenom": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out_denom"
+                        }
+                      },
+                      "shareInAmount": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_in_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "tokenOutMinAmount": {
+                        "type": "string",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_out_min_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExitSwapShareAmountInResponse": {
+                    "fields": {
+                      "tokenOutAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:token_out_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExitSwapExternAmountOut": {
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:sender"
+                        }
+                      },
+                      "poolId": {
+                        "type": "uint64",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:pool_id"
+                        }
+                      },
+                      "tokenOut": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:token_out",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "shareInMaxAmount": {
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_in_max_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExitSwapExternAmountOutResponse": {
+                    "fields": {
+                      "shareInAmount": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:share_in_amount",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

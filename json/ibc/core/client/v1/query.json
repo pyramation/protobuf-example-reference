@@ -1,0 +1,318 @@
+{
+  "package": "ibc.core.client.v1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "ibc/core/client/v1/client.proto",
+    "google/protobuf/any.proto",
+    "google/api/annotations.proto",
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "core": {
+            "nested": {
+              "client": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/core/02-client/types"
+                    },
+                    "nested": {
+                      "Query": {
+                        "methods": {
+                          "ClientState": {
+                            "requestType": "QueryClientStateRequest",
+                            "responseType": "QueryClientStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/client_states/{client_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/client_states/{client_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "ClientStates": {
+                            "requestType": "QueryClientStatesRequest",
+                            "responseType": "QueryClientStatesResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/client_states"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/client_states"
+                                }
+                              }
+                            ]
+                          },
+                          "ConsensusState": {
+                            "requestType": "QueryConsensusStateRequest",
+                            "responseType": "QueryConsensusStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}"
+                                }
+                              }
+                            ]
+                          },
+                          "ConsensusStates": {
+                            "requestType": "QueryConsensusStatesRequest",
+                            "responseType": "QueryConsensusStatesResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/consensus_states/{client_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/consensus_states/{client_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "ClientStatus": {
+                            "requestType": "QueryClientStatusRequest",
+                            "responseType": "QueryClientStatusResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/client_status/{client_id}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/client_status/{client_id}"
+                                }
+                              }
+                            ]
+                          },
+                          "ClientParams": {
+                            "requestType": "QueryClientParamsRequest",
+                            "responseType": "QueryClientParamsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/client/v1/params"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/client/v1/params"
+                                }
+                              }
+                            ]
+                          },
+                          "UpgradedClientState": {
+                            "requestType": "QueryUpgradedClientStateRequest",
+                            "responseType": "QueryUpgradedClientStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/upgraded_client_states"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/upgraded_client_states"
+                                }
+                              }
+                            ]
+                          },
+                          "UpgradedConsensusState": {
+                            "requestType": "QueryUpgradedConsensusStateRequest",
+                            "responseType": "QueryUpgradedConsensusStateResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/core/client/v1/upgraded_consensus_states"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/core/client/v1/upgraded_consensus_states"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "QueryClientStateRequest": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryClientStateResponse": {
+                        "fields": {
+                          "clientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryClientStatesRequest": {
+                        "fields": {
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryClientStatesResponse": {
+                        "fields": {
+                          "clientStates": {
+                            "rule": "repeated",
+                            "type": "IdentifiedClientState",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false,
+                              "(gogoproto.castrepeated)": "IdentifiedClientStates"
+                            }
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryConsensusStateRequest": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "revisionNumber": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "revisionHeight": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "latestHeight": {
+                            "type": "bool",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "QueryConsensusStateResponse": {
+                        "fields": {
+                          "consensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          },
+                          "proof": {
+                            "type": "bytes",
+                            "id": 2
+                          },
+                          "proofHeight": {
+                            "type": "ibc.core.client.v1.Height",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "QueryConsensusStatesRequest": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryConsensusStatesResponse": {
+                        "fields": {
+                          "consensusStates": {
+                            "rule": "repeated",
+                            "type": "ConsensusStateWithHeight",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryClientStatusRequest": {
+                        "fields": {
+                          "clientId": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryClientStatusResponse": {
+                        "fields": {
+                          "status": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryClientParamsRequest": {
+                        "fields": {}
+                      },
+                      "QueryClientParamsResponse": {
+                        "fields": {
+                          "params": {
+                            "type": "Params",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryUpgradedClientStateRequest": {
+                        "fields": {}
+                      },
+                      "QueryUpgradedClientStateResponse": {
+                        "fields": {
+                          "upgradedClientState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryUpgradedConsensusStateRequest": {
+                        "fields": {}
+                      },
+                      "QueryUpgradedConsensusStateResponse": {
+                        "fields": {
+                          "upgradedConsensusState": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

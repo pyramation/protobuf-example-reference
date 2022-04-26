@@ -1,0 +1,131 @@
+{
+  "package": "ibc.applications.transfer.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "ibc/applications/transfer/v1/transfer.proto",
+    "google/api/annotations.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "applications": {
+            "nested": {
+              "transfer": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
+                    },
+                    "nested": {
+                      "Query": {
+                        "methods": {
+                          "DenomTrace": {
+                            "requestType": "QueryDenomTraceRequest",
+                            "responseType": "QueryDenomTraceResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/apps/transfer/v1/denom_traces/{hash}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/apps/transfer/v1/denom_traces/{hash}"
+                                }
+                              }
+                            ]
+                          },
+                          "DenomTraces": {
+                            "requestType": "QueryDenomTracesRequest",
+                            "responseType": "QueryDenomTracesResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/apps/transfer/v1/denom_traces"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/apps/transfer/v1/denom_traces"
+                                }
+                              }
+                            ]
+                          },
+                          "Params": {
+                            "requestType": "QueryParamsRequest",
+                            "responseType": "QueryParamsResponse",
+                            "options": {
+                              "(google.api.http).get": "/ibc/apps/transfer/v1/params"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/ibc/apps/transfer/v1/params"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "QueryDenomTraceRequest": {
+                        "fields": {
+                          "hash": {
+                            "type": "string",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryDenomTraceResponse": {
+                        "fields": {
+                          "denomTrace": {
+                            "type": "DenomTrace",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryDenomTracesRequest": {
+                        "fields": {
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "QueryDenomTracesResponse": {
+                        "fields": {
+                          "denomTraces": {
+                            "rule": "repeated",
+                            "type": "DenomTrace",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.castrepeated)": "Traces",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "QueryParamsRequest": {
+                        "fields": {}
+                      },
+                      "QueryParamsResponse": {
+                        "fields": {
+                          "params": {
+                            "type": "Params",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

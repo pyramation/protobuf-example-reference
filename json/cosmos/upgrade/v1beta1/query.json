@@ -1,0 +1,188 @@
+{
+  "package": "cosmos.upgrade.v1beta1",
+  "imports": [
+    "google/api/annotations.proto",
+    "cosmos/upgrade/v1beta1/upgrade.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "upgrade": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/upgrade/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "CurrentPlan": {
+                        "requestType": "QueryCurrentPlanRequest",
+                        "responseType": "QueryCurrentPlanResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/upgrade/v1beta1/current_plan"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/upgrade/v1beta1/current_plan"
+                            }
+                          }
+                        ]
+                      },
+                      "AppliedPlan": {
+                        "requestType": "QueryAppliedPlanRequest",
+                        "responseType": "QueryAppliedPlanResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/upgrade/v1beta1/applied_plan/{name}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/upgrade/v1beta1/applied_plan/{name}"
+                            }
+                          }
+                        ]
+                      },
+                      "UpgradedConsensusState": {
+                        "requestType": "QueryUpgradedConsensusStateRequest",
+                        "responseType": "QueryUpgradedConsensusStateResponse",
+                        "options": {
+                          "deprecated": true,
+                          "(google.api.http).get": "/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "deprecated": true
+                          },
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}"
+                            }
+                          }
+                        ]
+                      },
+                      "ModuleVersions": {
+                        "requestType": "QueryModuleVersionsRequest",
+                        "responseType": "QueryModuleVersionsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/upgrade/v1beta1/module_versions"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/upgrade/v1beta1/module_versions"
+                            }
+                          }
+                        ]
+                      },
+                      "Authority": {
+                        "requestType": "QueryAuthorityRequest",
+                        "responseType": "QueryAuthorityResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/upgrade/v1beta1/authority"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/upgrade/v1beta1/authority"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryCurrentPlanRequest": {
+                    "fields": {}
+                  },
+                  "QueryCurrentPlanResponse": {
+                    "fields": {
+                      "plan": {
+                        "type": "Plan",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAppliedPlanRequest": {
+                    "fields": {
+                      "name": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAppliedPlanResponse": {
+                    "fields": {
+                      "height": {
+                        "type": "int64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryUpgradedConsensusStateRequest": {
+                    "options": {
+                      "deprecated": true
+                    },
+                    "fields": {
+                      "lastHeight": {
+                        "type": "int64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryUpgradedConsensusStateResponse": {
+                    "options": {
+                      "deprecated": true
+                    },
+                    "fields": {
+                      "upgradedConsensusState": {
+                        "type": "bytes",
+                        "id": 2
+                      }
+                    },
+                    "reserved": [
+                      [
+                        1,
+                        1
+                      ]
+                    ]
+                  },
+                  "QueryModuleVersionsRequest": {
+                    "fields": {
+                      "moduleName": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryModuleVersionsResponse": {
+                    "fields": {
+                      "moduleVersions": {
+                        "rule": "repeated",
+                        "type": "ModuleVersion",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAuthorityRequest": {
+                    "fields": {}
+                  },
+                  "QueryAuthorityResponse": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

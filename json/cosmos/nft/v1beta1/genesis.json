@@ -1,0 +1,53 @@
+{
+  "package": "cosmos.nft.v1beta1",
+  "imports": [
+    "cosmos/nft/v1beta1/nft.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "nft": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/nft"
+                },
+                "nested": {
+                  "GenesisState": {
+                    "fields": {
+                      "classes": {
+                        "rule": "repeated",
+                        "type": "cosmos.nft.v1beta1.Class",
+                        "id": 1
+                      },
+                      "entries": {
+                        "rule": "repeated",
+                        "type": "Entry",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "Entry": {
+                    "fields": {
+                      "owner": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "nfts": {
+                        "rule": "repeated",
+                        "type": "cosmos.nft.v1beta1.NFT",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

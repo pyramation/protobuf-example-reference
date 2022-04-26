@@ -1,0 +1,524 @@
+{
+  "package": "cosmos.group.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "cosmos/group/v1/types.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "group": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/group"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "GroupInfo": {
+                        "requestType": "QueryGroupInfoRequest",
+                        "responseType": "QueryGroupInfoResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/group_info/{group_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/group_info/{group_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupPolicyInfo": {
+                        "requestType": "QueryGroupPolicyInfoRequest",
+                        "responseType": "QueryGroupPolicyInfoResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/group_policy_info/{address}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/group_policy_info/{address}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupMembers": {
+                        "requestType": "QueryGroupMembersRequest",
+                        "responseType": "QueryGroupMembersResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/group_members/{group_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/group_members/{group_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupsByAdmin": {
+                        "requestType": "QueryGroupsByAdminRequest",
+                        "responseType": "QueryGroupsByAdminResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/groups_by_admin/{admin}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/groups_by_admin/{admin}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupPoliciesByGroup": {
+                        "requestType": "QueryGroupPoliciesByGroupRequest",
+                        "responseType": "QueryGroupPoliciesByGroupResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/group_policies_by_group/{group_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/group_policies_by_group/{group_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupPoliciesByAdmin": {
+                        "requestType": "QueryGroupPoliciesByAdminRequest",
+                        "responseType": "QueryGroupPoliciesByAdminResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/group_policies_by_admin/{admin}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/group_policies_by_admin/{admin}"
+                            }
+                          }
+                        ]
+                      },
+                      "Proposal": {
+                        "requestType": "QueryProposalRequest",
+                        "responseType": "QueryProposalResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/proposal/{proposal_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/proposal/{proposal_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "ProposalsByGroupPolicy": {
+                        "requestType": "QueryProposalsByGroupPolicyRequest",
+                        "responseType": "QueryProposalsByGroupPolicyResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/proposals_by_group_policy/{address}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/proposals_by_group_policy/{address}"
+                            }
+                          }
+                        ]
+                      },
+                      "VoteByProposalVoter": {
+                        "requestType": "QueryVoteByProposalVoterRequest",
+                        "responseType": "QueryVoteByProposalVoterResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/vote_by_proposal_voter/{proposal_id}/{voter}"
+                            }
+                          }
+                        ]
+                      },
+                      "VotesByProposal": {
+                        "requestType": "QueryVotesByProposalRequest",
+                        "responseType": "QueryVotesByProposalResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/votes_by_proposal/{proposal_id}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/votes_by_proposal/{proposal_id}"
+                            }
+                          }
+                        ]
+                      },
+                      "VotesByVoter": {
+                        "requestType": "QueryVotesByVoterRequest",
+                        "responseType": "QueryVotesByVoterResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/votes_by_voter/{voter}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/votes_by_voter/{voter}"
+                            }
+                          }
+                        ]
+                      },
+                      "GroupsByMember": {
+                        "requestType": "QueryGroupsByMemberRequest",
+                        "responseType": "QueryGroupsByMemberResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/groups_by_member/{address}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/groups_by_member/{address}"
+                            }
+                          }
+                        ]
+                      },
+                      "TallyResult": {
+                        "requestType": "QueryTallyResultRequest",
+                        "responseType": "QueryTallyResultResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/group/v1/proposals/{proposal_id}/tally"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/group/v1/proposals/{proposal_id}/tally"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryGroupInfoRequest": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryGroupInfoResponse": {
+                    "fields": {
+                      "info": {
+                        "type": "GroupInfo",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryGroupPolicyInfoRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryGroupPolicyInfoResponse": {
+                    "fields": {
+                      "info": {
+                        "type": "GroupPolicyInfo",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryGroupMembersRequest": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupMembersResponse": {
+                    "fields": {
+                      "members": {
+                        "rule": "repeated",
+                        "type": "GroupMember",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupsByAdminRequest": {
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupsByAdminResponse": {
+                    "fields": {
+                      "groups": {
+                        "rule": "repeated",
+                        "type": "GroupInfo",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupPoliciesByGroupRequest": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupPoliciesByGroupResponse": {
+                    "fields": {
+                      "groupPolicies": {
+                        "rule": "repeated",
+                        "type": "GroupPolicyInfo",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupPoliciesByAdminRequest": {
+                    "fields": {
+                      "admin": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupPoliciesByAdminResponse": {
+                    "fields": {
+                      "groupPolicies": {
+                        "rule": "repeated",
+                        "type": "GroupPolicyInfo",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryProposalRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryProposalResponse": {
+                    "fields": {
+                      "proposal": {
+                        "type": "Proposal",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryProposalsByGroupPolicyRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryProposalsByGroupPolicyResponse": {
+                    "fields": {
+                      "proposals": {
+                        "rule": "repeated",
+                        "type": "Proposal",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVoteByProposalVoterRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryVoteByProposalVoterResponse": {
+                    "fields": {
+                      "vote": {
+                        "type": "Vote",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryVotesByProposalRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVotesByProposalResponse": {
+                    "fields": {
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVotesByVoterRequest": {
+                    "fields": {
+                      "voter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryVotesByVoterResponse": {
+                    "fields": {
+                      "votes": {
+                        "rule": "repeated",
+                        "type": "Vote",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupsByMemberRequest": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryGroupsByMemberResponse": {
+                    "fields": {
+                      "groups": {
+                        "rule": "repeated",
+                        "type": "GroupInfo",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryTallyResultRequest": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryTallyResultResponse": {
+                    "fields": {
+                      "tally": {
+                        "type": "TallyResult",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

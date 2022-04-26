@@ -1,0 +1,42 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/protobuf/descriptor.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/annotations;annotations",
+              "java_multiple_files": true,
+              "java_outer_classname": "ClientProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "methodSignature": {
+                "rule": "repeated",
+                "type": "string",
+                "id": 1051,
+                "extend": "google.protobuf.MethodOptions"
+              },
+              "defaultHost": {
+                "type": "string",
+                "id": 1049,
+                "extend": "google.protobuf.ServiceOptions"
+              },
+              "oauthScopes": {
+                "type": "string",
+                "id": 1050,
+                "extend": "google.protobuf.ServiceOptions"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

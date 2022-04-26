@@ -1,0 +1,67 @@
+{
+  "package": "cosmwasm.wasm.v1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmwasm": {
+        "nested": {
+          "wasm": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/CosmWasm/wasmd/x/wasm/types",
+                  "(gogoproto.goproto_getters_all)": false
+                },
+                "nested": {
+                  "MsgIBCSend": {
+                    "fields": {
+                      "channel": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:source_channel"
+                        }
+                      },
+                      "timeoutHeight": {
+                        "type": "uint64",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:timeout_height"
+                        }
+                      },
+                      "timeoutTimestamp": {
+                        "type": "uint64",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:timeout_timestamp"
+                        }
+                      },
+                      "data": {
+                        "type": "bytes",
+                        "id": 6
+                      }
+                    }
+                  },
+                  "MsgIBCCloseChannel": {
+                    "fields": {
+                      "channel": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:source_channel"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

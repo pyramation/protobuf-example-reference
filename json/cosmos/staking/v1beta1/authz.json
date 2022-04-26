@@ -1,0 +1,84 @@
+{
+  "package": "cosmos.staking.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/base/v1beta1/coin.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "staking": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/staking/types"
+                },
+                "nested": {
+                  "StakeAuthorization": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "Authorization"
+                    },
+                    "oneofs": {
+                      "validators": {
+                        "oneof": [
+                          "allowList",
+                          "denyList"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "maxTokens": {
+                        "type": "cosmos.base.v1beta1.Coin",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.castrepeated)": "github.com/cosmos/cosmos-sdk/types.Coin"
+                        }
+                      },
+                      "allowList": {
+                        "type": "Validators",
+                        "id": 2
+                      },
+                      "denyList": {
+                        "type": "Validators",
+                        "id": 3
+                      },
+                      "authorizationType": {
+                        "type": "AuthorizationType",
+                        "id": 4
+                      }
+                    },
+                    "nested": {
+                      "Validators": {
+                        "fields": {
+                          "address": {
+                            "rule": "repeated",
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(cosmos_proto.scalar)": "cosmos.AddressString"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "AuthorizationType": {
+                    "values": {
+                      "AUTHORIZATION_TYPE_UNSPECIFIED": 0,
+                      "AUTHORIZATION_TYPE_DELEGATE": 1,
+                      "AUTHORIZATION_TYPE_UNDELEGATE": 2,
+                      "AUTHORIZATION_TYPE_REDELEGATE": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "package": "cosmos.group.v1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto",
+    "google/protobuf/timestamp.proto",
+    "cosmos_proto/cosmos.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "group": {
+            "nested": {
+              "v1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/group"
+                },
+                "nested": {
+                  "Member": {
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "weight": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "addedAt": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 4,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  },
+                  "Members": {
+                    "fields": {
+                      "members": {
+                        "rule": "repeated",
+                        "type": "Member",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "ThresholdDecisionPolicy": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "DecisionPolicy"
+                    },
+                    "fields": {
+                      "threshold": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "windows": {
+                        "type": "DecisionPolicyWindows",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "PercentageDecisionPolicy": {
+                    "options": {
+                      "(cosmos_proto.implements_interface)": "DecisionPolicy"
+                    },
+                    "fields": {
+                      "percentage": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "windows": {
+                        "type": "DecisionPolicyWindows",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "DecisionPolicyWindows": {
+                    "fields": {
+                      "votingPeriod": {
+                        "type": "google.protobuf.Duration",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "minExecutionPeriod": {
+                        "type": "google.protobuf.Duration",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "VoteOption": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "VOTE_OPTION_UNSPECIFIED": 0,
+                      "VOTE_OPTION_YES": 1,
+                      "VOTE_OPTION_ABSTAIN": 2,
+                      "VOTE_OPTION_NO": 3,
+                      "VOTE_OPTION_NO_WITH_VETO": 4
+                    }
+                  },
+                  "GroupInfo": {
+                    "fields": {
+                      "id": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "admin": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "version": {
+                        "type": "uint64",
+                        "id": 4
+                      },
+                      "totalWeight": {
+                        "type": "string",
+                        "id": 5
+                      },
+                      "createdAt": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 6,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  },
+                  "GroupMember": {
+                    "fields": {
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "member": {
+                        "type": "Member",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "GroupPolicyInfo": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "address": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "groupId": {
+                        "type": "uint64",
+                        "id": 2
+                      },
+                      "admin": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "version": {
+                        "type": "uint64",
+                        "id": 5
+                      },
+                      "decisionPolicy": {
+                        "type": "google.protobuf.Any",
+                        "id": 6,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "DecisionPolicy"
+                        }
+                      },
+                      "createdAt": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 7,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  },
+                  "Proposal": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "id": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "address": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "proposers": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 4,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "submitTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      },
+                      "groupVersion": {
+                        "type": "uint64",
+                        "id": 6
+                      },
+                      "groupPolicyVersion": {
+                        "type": "uint64",
+                        "id": 7
+                      },
+                      "status": {
+                        "type": "ProposalStatus",
+                        "id": 8
+                      },
+                      "result": {
+                        "type": "ProposalResult",
+                        "id": 9
+                      },
+                      "finalTallyResult": {
+                        "type": "TallyResult",
+                        "id": 10,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "votingPeriodEnd": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 11,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      },
+                      "executorResult": {
+                        "type": "ProposalExecutorResult",
+                        "id": 12
+                      },
+                      "messages": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 13
+                      }
+                    }
+                  },
+                  "ProposalStatus": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "PROPOSAL_STATUS_UNSPECIFIED": 0,
+                      "PROPOSAL_STATUS_SUBMITTED": 1,
+                      "PROPOSAL_STATUS_CLOSED": 2,
+                      "PROPOSAL_STATUS_ABORTED": 3,
+                      "PROPOSAL_STATUS_WITHDRAWN": 4
+                    }
+                  },
+                  "ProposalResult": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "PROPOSAL_RESULT_UNSPECIFIED": 0,
+                      "PROPOSAL_RESULT_UNFINALIZED": 1,
+                      "PROPOSAL_RESULT_ACCEPTED": 2,
+                      "PROPOSAL_RESULT_REJECTED": 3
+                    }
+                  },
+                  "ProposalExecutorResult": {
+                    "options": {
+                      "(gogoproto.goproto_enum_prefix)": false
+                    },
+                    "values": {
+                      "PROPOSAL_EXECUTOR_RESULT_UNSPECIFIED": 0,
+                      "PROPOSAL_EXECUTOR_RESULT_NOT_RUN": 1,
+                      "PROPOSAL_EXECUTOR_RESULT_SUCCESS": 2,
+                      "PROPOSAL_EXECUTOR_RESULT_FAILURE": 3
+                    }
+                  },
+                  "TallyResult": {
+                    "options": {
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "yesCount": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "abstainCount": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "noCount": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "noWithVetoCount": {
+                        "type": "string",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "Vote": {
+                    "fields": {
+                      "proposalId": {
+                        "type": "uint64",
+                        "id": 1
+                      },
+                      "voter": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "option": {
+                        "type": "VoteOption",
+                        "id": 3
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "id": 4
+                      },
+                      "submitTime": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 5,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdtime)": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "package": "cosmos.authz.v1beta1",
+  "imports": [
+    "cosmos_proto/cosmos.proto",
+    "gogoproto/gogo.proto",
+    "google/protobuf/any.proto",
+    "cosmos/authz/v1beta1/authz.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "authz": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/authz",
+                  "(gogoproto.goproto_getters_all)": false
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "Grant": {
+                        "requestType": "MsgGrant",
+                        "responseType": "MsgGrantResponse"
+                      },
+                      "Exec": {
+                        "requestType": "MsgExec",
+                        "responseType": "MsgExecResponse"
+                      },
+                      "Revoke": {
+                        "requestType": "MsgRevoke",
+                        "responseType": "MsgRevokeResponse"
+                      }
+                    }
+                  },
+                  "MsgGrant": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "granter"
+                    },
+                    "fields": {
+                      "granter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "grantee": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "grant": {
+                        "type": "cosmos.authz.v1beta1.Grant",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "MsgExecResponse": {
+                    "fields": {
+                      "results": {
+                        "rule": "repeated",
+                        "type": "bytes",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "MsgExec": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "grantee"
+                    },
+                    "fields": {
+                      "grantee": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "msgs": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.accepts_interface)": "sdk.Msg, authz.Authorization"
+                        }
+                      }
+                    }
+                  },
+                  "MsgGrantResponse": {
+                    "fields": {}
+                  },
+                  "MsgRevoke": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "granter"
+                    },
+                    "fields": {
+                      "granter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "grantee": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "msgTypeUrl": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgRevokeResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

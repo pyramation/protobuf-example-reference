@@ -1,0 +1,637 @@
+{
+  "package": "cosmos.staking.v1beta1",
+  "imports": [
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "cosmos/staking/v1beta1/staking.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "staking": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/staking/types"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Validators": {
+                        "requestType": "QueryValidatorsRequest",
+                        "responseType": "QueryValidatorsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators"
+                            }
+                          }
+                        ]
+                      },
+                      "Validator": {
+                        "requestType": "QueryValidatorRequest",
+                        "responseType": "QueryValidatorResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators/{validator_addr}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators/{validator_addr}"
+                            }
+                          }
+                        ]
+                      },
+                      "ValidatorDelegations": {
+                        "requestType": "QueryValidatorDelegationsRequest",
+                        "responseType": "QueryValidatorDelegationsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations"
+                            }
+                          }
+                        ]
+                      },
+                      "ValidatorUnbondingDelegations": {
+                        "requestType": "QueryValidatorUnbondingDelegationsRequest",
+                        "responseType": "QueryValidatorUnbondingDelegationsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations"
+                            }
+                          }
+                        ]
+                      },
+                      "Delegation": {
+                        "requestType": "QueryDelegationRequest",
+                        "responseType": "QueryDelegationResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}"
+                            }
+                          }
+                        ]
+                      },
+                      "UnbondingDelegation": {
+                        "requestType": "QueryUnbondingDelegationRequest",
+                        "responseType": "QueryUnbondingDelegationResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation"
+                            }
+                          }
+                        ]
+                      },
+                      "DelegatorDelegations": {
+                        "requestType": "QueryDelegatorDelegationsRequest",
+                        "responseType": "QueryDelegatorDelegationsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/delegations/{delegator_addr}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/delegations/{delegator_addr}"
+                            }
+                          }
+                        ]
+                      },
+                      "DelegatorUnbondingDelegations": {
+                        "requestType": "QueryDelegatorUnbondingDelegationsRequest",
+                        "responseType": "QueryDelegatorUnbondingDelegationsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations"
+                            }
+                          }
+                        ]
+                      },
+                      "Redelegations": {
+                        "requestType": "QueryRedelegationsRequest",
+                        "responseType": "QueryRedelegationsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations"
+                            }
+                          }
+                        ]
+                      },
+                      "DelegatorValidators": {
+                        "requestType": "QueryDelegatorValidatorsRequest",
+                        "responseType": "QueryDelegatorValidatorsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators"
+                            }
+                          }
+                        ]
+                      },
+                      "DelegatorValidator": {
+                        "requestType": "QueryDelegatorValidatorRequest",
+                        "responseType": "QueryDelegatorValidatorResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}"
+                            }
+                          }
+                        ]
+                      },
+                      "HistoricalInfo": {
+                        "requestType": "QueryHistoricalInfoRequest",
+                        "responseType": "QueryHistoricalInfoResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/historical_info/{height}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/historical_info/{height}"
+                            }
+                          }
+                        ]
+                      },
+                      "Pool": {
+                        "requestType": "QueryPoolRequest",
+                        "responseType": "QueryPoolResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/pool"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/pool"
+                            }
+                          }
+                        ]
+                      },
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/staking/v1beta1/params"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/staking/v1beta1/params"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryValidatorsRequest": {
+                    "fields": {
+                      "status": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryValidatorsResponse": {
+                    "fields": {
+                      "validators": {
+                        "rule": "repeated",
+                        "type": "Validator",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryValidatorRequest": {
+                    "fields": {
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryValidatorResponse": {
+                    "fields": {
+                      "validator": {
+                        "type": "Validator",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryValidatorDelegationsRequest": {
+                    "fields": {
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryValidatorDelegationsResponse": {
+                    "fields": {
+                      "delegationResponses": {
+                        "rule": "repeated",
+                        "type": "DelegationResponse",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.castrepeated)": "DelegationResponses"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryValidatorUnbondingDelegationsRequest": {
+                    "fields": {
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryValidatorUnbondingDelegationsResponse": {
+                    "fields": {
+                      "unbondingResponses": {
+                        "rule": "repeated",
+                        "type": "UnbondingDelegation",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegationRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryDelegationResponse": {
+                    "fields": {
+                      "delegationResponse": {
+                        "type": "DelegationResponse",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryUnbondingDelegationRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryUnbondingDelegationResponse": {
+                    "fields": {
+                      "unbond": {
+                        "type": "UnbondingDelegation",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryDelegatorDelegationsRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorDelegationsResponse": {
+                    "fields": {
+                      "delegationResponses": {
+                        "rule": "repeated",
+                        "type": "DelegationResponse",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorUnbondingDelegationsRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorUnbondingDelegationsResponse": {
+                    "fields": {
+                      "unbondingResponses": {
+                        "rule": "repeated",
+                        "type": "UnbondingDelegation",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryRedelegationsRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "srcValidatorAddr": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "dstValidatorAddr": {
+                        "type": "string",
+                        "id": 3,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 4
+                      }
+                    }
+                  },
+                  "QueryRedelegationsResponse": {
+                    "fields": {
+                      "redelegationResponses": {
+                        "rule": "repeated",
+                        "type": "RedelegationResponse",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorValidatorsRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorValidatorsResponse": {
+                    "fields": {
+                      "validators": {
+                        "rule": "repeated",
+                        "type": "Validator",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryDelegatorValidatorRequest": {
+                    "options": {
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "delegatorAddr": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "validatorAddr": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryDelegatorValidatorResponse": {
+                    "fields": {
+                      "validator": {
+                        "type": "Validator",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryHistoricalInfoRequest": {
+                    "fields": {
+                      "height": {
+                        "type": "int64",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryHistoricalInfoResponse": {
+                    "fields": {
+                      "hist": {
+                        "type": "HistoricalInfo",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryPoolRequest": {
+                    "fields": {}
+                  },
+                  "QueryPoolResponse": {
+                    "fields": {
+                      "pool": {
+                        "type": "Pool",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {}
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "params": {
+                        "type": "Params",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

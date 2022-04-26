@@ -1,0 +1,108 @@
+{
+  "package": "cosmos.params.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/api/annotations.proto",
+    "cosmos/params/v1beta1/params.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "params": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/params/types/proposal"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Params": {
+                        "requestType": "QueryParamsRequest",
+                        "responseType": "QueryParamsResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/params/v1beta1/params"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/params/v1beta1/params"
+                            }
+                          }
+                        ]
+                      },
+                      "Subspaces": {
+                        "requestType": "QuerySubspacesRequest",
+                        "responseType": "QuerySubspacesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/params/v1beta1/subspaces"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/params/v1beta1/subspaces"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryParamsRequest": {
+                    "fields": {
+                      "subspace": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "key": {
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryParamsResponse": {
+                    "fields": {
+                      "param": {
+                        "type": "ParamChange",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "QuerySubspacesRequest": {
+                    "fields": {}
+                  },
+                  "QuerySubspacesResponse": {
+                    "fields": {
+                      "subspaces": {
+                        "rule": "repeated",
+                        "type": "Subspace",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "Subspace": {
+                    "fields": {
+                      "subspace": {
+                        "type": "string",
+                        "id": 1
+                      },
+                      "keys": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

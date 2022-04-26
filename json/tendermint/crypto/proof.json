@@ -1,0 +1,99 @@
+{
+  "package": "tendermint.crypto",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "crypto": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/crypto"
+            },
+            "nested": {
+              "Proof": {
+                "fields": {
+                  "total": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "index": {
+                    "type": "int64",
+                    "id": 2
+                  },
+                  "leafHash": {
+                    "type": "bytes",
+                    "id": 3
+                  },
+                  "aunts": {
+                    "rule": "repeated",
+                    "type": "bytes",
+                    "id": 4
+                  }
+                }
+              },
+              "ValueOp": {
+                "fields": {
+                  "key": {
+                    "type": "bytes",
+                    "id": 1
+                  },
+                  "proof": {
+                    "type": "Proof",
+                    "id": 2
+                  }
+                }
+              },
+              "DominoOp": {
+                "fields": {
+                  "key": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "input": {
+                    "type": "string",
+                    "id": 2
+                  },
+                  "output": {
+                    "type": "string",
+                    "id": 3
+                  }
+                }
+              },
+              "ProofOp": {
+                "fields": {
+                  "type": {
+                    "type": "string",
+                    "id": 1
+                  },
+                  "key": {
+                    "type": "bytes",
+                    "id": 2
+                  },
+                  "data": {
+                    "type": "bytes",
+                    "id": 3
+                  }
+                }
+              },
+              "ProofOps": {
+                "fields": {
+                  "ops": {
+                    "rule": "repeated",
+                    "type": "ProofOp",
+                    "id": 1,
+                    "options": {
+                      "(gogoproto.nullable)": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

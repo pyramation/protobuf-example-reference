@@ -1,0 +1,49 @@
+{
+  "package": "tendermint.version",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "tendermint": {
+        "nested": {
+          "version": {
+            "options": {
+              "go_package": "github.com/tendermint/tendermint/proto/tendermint/version"
+            },
+            "nested": {
+              "App": {
+                "fields": {
+                  "protocol": {
+                    "type": "uint64",
+                    "id": 1
+                  },
+                  "software": {
+                    "type": "string",
+                    "id": 2
+                  }
+                }
+              },
+              "Consensus": {
+                "options": {
+                  "(gogoproto.equal)": true
+                },
+                "fields": {
+                  "block": {
+                    "type": "uint64",
+                    "id": 1
+                  },
+                  "app": {
+                    "type": "uint64",
+                    "id": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

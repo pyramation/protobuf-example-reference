@@ -1,0 +1,58 @@
+{
+  "package": "osmosis.txfees.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "osmosis/txfees/v1beta1/feetoken.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "txfees": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/txfees/types"
+                },
+                "nested": {
+                  "UpdateFeeTokenProposal": {
+                    "options": {
+                      "(gogoproto.equal)": true,
+                      "(gogoproto.goproto_getters)": false,
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "title": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:title"
+                        }
+                      },
+                      "description": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:description"
+                        }
+                      },
+                      "feetoken": {
+                        "type": "FeeToken",
+                        "id": 3,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:fee_token",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

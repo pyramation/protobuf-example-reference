@@ -1,0 +1,84 @@
+{
+  "package": "google.api.servicecontrol.v1",
+  "imports": [
+    "google/rpc/status.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "servicecontrol": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "csharp_namespace": "Google.Cloud.ServiceControl.V1",
+                      "go_package": "google.golang.org/genproto/googleapis/api/servicecontrol/v1;servicecontrol",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "CheckErrorProto",
+                      "java_package": "com.google.api.servicecontrol.v1",
+                      "php_namespace": "Google\\Cloud\\ServiceControl\\V1",
+                      "ruby_package": "Google::Cloud::ServiceControl::V1"
+                    },
+                    "nested": {
+                      "CheckError": {
+                        "fields": {
+                          "code": {
+                            "type": "Code",
+                            "id": 1
+                          },
+                          "subject": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "detail": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "status": {
+                            "type": "google.rpc.Status",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "Code": {
+                            "values": {
+                              "ERROR_CODE_UNSPECIFIED": 0,
+                              "NOT_FOUND": 5,
+                              "PERMISSION_DENIED": 7,
+                              "RESOURCE_EXHAUSTED": 8,
+                              "SERVICE_NOT_ACTIVATED": 104,
+                              "BILLING_DISABLED": 107,
+                              "PROJECT_DELETED": 108,
+                              "PROJECT_INVALID": 114,
+                              "CONSUMER_INVALID": 125,
+                              "IP_ADDRESS_BLOCKED": 109,
+                              "REFERER_BLOCKED": 110,
+                              "CLIENT_APP_BLOCKED": 111,
+                              "API_TARGET_BLOCKED": 122,
+                              "API_KEY_INVALID": 105,
+                              "API_KEY_EXPIRED": 112,
+                              "API_KEY_NOT_FOUND": 113,
+                              "INVALID_CREDENTIAL": 123,
+                              "NAMESPACE_LOOKUP_UNAVAILABLE": 300,
+                              "SERVICE_STATUS_UNAVAILABLE": 301,
+                              "BILLING_STATUS_UNAVAILABLE": 302,
+                              "CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE": 305
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "package": "cosmos.base.tendermint.v1beta1",
+  "imports": [
+    "google/protobuf/any.proto",
+    "google/api/annotations.proto",
+    "tendermint/p2p/types.proto",
+    "tendermint/types/block.proto",
+    "tendermint/types/types.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "tendermint": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
+                    },
+                    "nested": {
+                      "Service": {
+                        "methods": {
+                          "GetNodeInfo": {
+                            "requestType": "GetNodeInfoRequest",
+                            "responseType": "GetNodeInfoResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/node_info"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/node_info"
+                                }
+                              }
+                            ]
+                          },
+                          "GetSyncing": {
+                            "requestType": "GetSyncingRequest",
+                            "responseType": "GetSyncingResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/syncing"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/syncing"
+                                }
+                              }
+                            ]
+                          },
+                          "GetLatestBlock": {
+                            "requestType": "GetLatestBlockRequest",
+                            "responseType": "GetLatestBlockResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/blocks/latest"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/blocks/latest"
+                                }
+                              }
+                            ]
+                          },
+                          "GetBlockByHeight": {
+                            "requestType": "GetBlockByHeightRequest",
+                            "responseType": "GetBlockByHeightResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/blocks/{height}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/blocks/{height}"
+                                }
+                              }
+                            ]
+                          },
+                          "GetLatestValidatorSet": {
+                            "requestType": "GetLatestValidatorSetRequest",
+                            "responseType": "GetLatestValidatorSetResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/validatorsets/latest"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/validatorsets/latest"
+                                }
+                              }
+                            ]
+                          },
+                          "GetValidatorSetByHeight": {
+                            "requestType": "GetValidatorSetByHeightRequest",
+                            "responseType": "GetValidatorSetByHeightResponse",
+                            "options": {
+                              "(google.api.http).get": "/cosmos/base/tendermint/v1beta1/validatorsets/{height}"
+                            },
+                            "parsedOptions": [
+                              {
+                                "(google.api.http)": {
+                                  "get": "/cosmos/base/tendermint/v1beta1/validatorsets/{height}"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "GetValidatorSetByHeightRequest": {
+                        "fields": {
+                          "height": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GetValidatorSetByHeightResponse": {
+                        "fields": {
+                          "blockHeight": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "validators": {
+                            "rule": "repeated",
+                            "type": "Validator",
+                            "id": 2
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "GetLatestValidatorSetRequest": {
+                        "fields": {
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageRequest",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetLatestValidatorSetResponse": {
+                        "fields": {
+                          "blockHeight": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "validators": {
+                            "rule": "repeated",
+                            "type": "Validator",
+                            "id": 2
+                          },
+                          "pagination": {
+                            "type": "cosmos.base.query.v1beta1.PageResponse",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Validator": {
+                        "fields": {
+                          "address": {
+                            "type": "string",
+                            "id": 1,
+                            "options": {
+                              "(cosmos_proto.scalar)": "cosmos.AddressString"
+                            }
+                          },
+                          "pubKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          },
+                          "votingPower": {
+                            "type": "int64",
+                            "id": 3
+                          },
+                          "proposerPriority": {
+                            "type": "int64",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "GetBlockByHeightRequest": {
+                        "fields": {
+                          "height": {
+                            "type": "int64",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetBlockByHeightResponse": {
+                        "fields": {
+                          "blockId": {
+                            "type": ".tendermint.types.BlockID",
+                            "id": 1
+                          },
+                          "block": {
+                            "type": ".tendermint.types.Block",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GetLatestBlockRequest": {
+                        "fields": {}
+                      },
+                      "GetLatestBlockResponse": {
+                        "fields": {
+                          "blockId": {
+                            "type": ".tendermint.types.BlockID",
+                            "id": 1
+                          },
+                          "block": {
+                            "type": ".tendermint.types.Block",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GetSyncingRequest": {
+                        "fields": {}
+                      },
+                      "GetSyncingResponse": {
+                        "fields": {
+                          "syncing": {
+                            "type": "bool",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "GetNodeInfoRequest": {
+                        "fields": {}
+                      },
+                      "GetNodeInfoResponse": {
+                        "fields": {
+                          "nodeInfo": {
+                            "type": ".tendermint.p2p.NodeInfo",
+                            "id": 1
+                          },
+                          "applicationVersion": {
+                            "type": "VersionInfo",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "VersionInfo": {
+                        "fields": {
+                          "name": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "appName": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "version": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "gitCommit": {
+                            "type": "string",
+                            "id": 4
+                          },
+                          "buildTags": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "goVersion": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "buildDeps": {
+                            "rule": "repeated",
+                            "type": "Module",
+                            "id": 7
+                          },
+                          "cosmosSdkVersion": {
+                            "type": "string",
+                            "id": 8
+                          }
+                        }
+                      },
+                      "Module": {
+                        "fields": {
+                          "path": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "version": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "sum": {
+                            "type": "string",
+                            "id": 3
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

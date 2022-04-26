@@ -1,0 +1,289 @@
+{
+  "package": "cosmos.base.abci.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "tendermint/abci/types.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "base": {
+            "nested": {
+              "abci": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/types",
+                      "(gogoproto.goproto_stringer_all)": false
+                    },
+                    "nested": {
+                      "TxResponse": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "height": {
+                            "type": "int64",
+                            "id": 1
+                          },
+                          "txhash": {
+                            "type": "string",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.customname)": "TxHash"
+                            }
+                          },
+                          "codespace": {
+                            "type": "string",
+                            "id": 3
+                          },
+                          "code": {
+                            "type": "uint32",
+                            "id": 4
+                          },
+                          "data": {
+                            "type": "string",
+                            "id": 5
+                          },
+                          "rawLog": {
+                            "type": "string",
+                            "id": 6
+                          },
+                          "logs": {
+                            "rule": "repeated",
+                            "type": "ABCIMessageLog",
+                            "id": 7,
+                            "options": {
+                              "(gogoproto.castrepeated)": "ABCIMessageLogs",
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "info": {
+                            "type": "string",
+                            "id": 8
+                          },
+                          "gasWanted": {
+                            "type": "int64",
+                            "id": 9
+                          },
+                          "gasUsed": {
+                            "type": "int64",
+                            "id": 10
+                          },
+                          "tx": {
+                            "type": "google.protobuf.Any",
+                            "id": 11
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "id": 12
+                          },
+                          "events": {
+                            "rule": "repeated",
+                            "type": "tendermint.abci.Event",
+                            "id": 13,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "ABCIMessageLog": {
+                        "options": {
+                          "(gogoproto.stringer)": true
+                        },
+                        "fields": {
+                          "msgIndex": {
+                            "type": "uint32",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.jsontag)": "msg_index"
+                            }
+                          },
+                          "log": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "events": {
+                            "rule": "repeated",
+                            "type": "StringEvent",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.castrepeated)": "StringEvents",
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "StringEvent": {
+                        "options": {
+                          "(gogoproto.stringer)": true
+                        },
+                        "fields": {
+                          "type": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "attributes": {
+                            "rule": "repeated",
+                            "type": "Attribute",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          }
+                        }
+                      },
+                      "Attribute": {
+                        "fields": {
+                          "key": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "value": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "GasInfo": {
+                        "fields": {
+                          "gasWanted": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "gasUsed": {
+                            "type": "uint64",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "Result": {
+                        "options": {
+                          "(gogoproto.goproto_getters)": false
+                        },
+                        "fields": {
+                          "data": {
+                            "type": "bytes",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "log": {
+                            "type": "string",
+                            "id": 2
+                          },
+                          "events": {
+                            "rule": "repeated",
+                            "type": "tendermint.abci.Event",
+                            "id": 3,
+                            "options": {
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "msgResponses": {
+                            "rule": "repeated",
+                            "type": "google.protobuf.Any",
+                            "id": 4
+                          }
+                        }
+                      },
+                      "SimulationResponse": {
+                        "fields": {
+                          "gasInfo": {
+                            "type": "GasInfo",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.embed)": true,
+                              "(gogoproto.nullable)": false
+                            }
+                          },
+                          "result": {
+                            "type": "Result",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "MsgData": {
+                        "options": {
+                          "deprecated": true,
+                          "(gogoproto.stringer)": true
+                        },
+                        "fields": {
+                          "msgType": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "data": {
+                            "type": "bytes",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "TxMsgData": {
+                        "options": {
+                          "(gogoproto.stringer)": true
+                        },
+                        "fields": {
+                          "data": {
+                            "rule": "repeated",
+                            "type": "MsgData",
+                            "id": 1,
+                            "options": {
+                              "deprecated": true
+                            }
+                          },
+                          "msgResponses": {
+                            "rule": "repeated",
+                            "type": "google.protobuf.Any",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "SearchTxsResult": {
+                        "options": {
+                          "(gogoproto.stringer)": true
+                        },
+                        "fields": {
+                          "totalCount": {
+                            "type": "uint64",
+                            "id": 1
+                          },
+                          "count": {
+                            "type": "uint64",
+                            "id": 2
+                          },
+                          "pageNumber": {
+                            "type": "uint64",
+                            "id": 3
+                          },
+                          "pageTotal": {
+                            "type": "uint64",
+                            "id": 4
+                          },
+                          "limit": {
+                            "type": "uint64",
+                            "id": 5
+                          },
+                          "txs": {
+                            "rule": "repeated",
+                            "type": "TxResponse",
+                            "id": 6
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

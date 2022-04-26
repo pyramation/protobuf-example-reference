@@ -1,0 +1,63 @@
+{
+  "package": "cosmos.crisis.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "cosmos_proto/cosmos.proto",
+    "cosmos/msg/v1/msg.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "crisis": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/crisis/types"
+                },
+                "nested": {
+                  "Msg": {
+                    "methods": {
+                      "VerifyInvariant": {
+                        "requestType": "MsgVerifyInvariant",
+                        "responseType": "MsgVerifyInvariantResponse"
+                      }
+                    }
+                  },
+                  "MsgVerifyInvariant": {
+                    "options": {
+                      "(cosmos.msg.v1.signer)": "sender",
+                      "(gogoproto.equal)": false,
+                      "(gogoproto.goproto_getters)": false
+                    },
+                    "fields": {
+                      "sender": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "invariantModuleName": {
+                        "type": "string",
+                        "id": 2
+                      },
+                      "invariantRoute": {
+                        "type": "string",
+                        "id": 3
+                      }
+                    }
+                  },
+                  "MsgVerifyInvariantResponse": {
+                    "fields": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

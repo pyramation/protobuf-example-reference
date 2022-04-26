@@ -1,0 +1,52 @@
+{
+  "package": "google.api",
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig",
+              "java_multiple_files": true,
+              "java_outer_classname": "LoggingProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Logging": {
+                "fields": {
+                  "producerDestinations": {
+                    "rule": "repeated",
+                    "type": "LoggingDestination",
+                    "id": 1
+                  },
+                  "consumerDestinations": {
+                    "rule": "repeated",
+                    "type": "LoggingDestination",
+                    "id": 2
+                  }
+                },
+                "nested": {
+                  "LoggingDestination": {
+                    "fields": {
+                      "monitoredResource": {
+                        "type": "string",
+                        "id": 3
+                      },
+                      "logs": {
+                        "rule": "repeated",
+                        "type": "string",
+                        "id": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

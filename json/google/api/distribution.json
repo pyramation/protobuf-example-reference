@@ -1,0 +1,160 @@
+{
+  "package": "google.api",
+  "imports": [
+    "google/protobuf/any.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "options": {
+              "go_package": "google.golang.org/genproto/googleapis/api/distribution;distribution",
+              "java_multiple_files": true,
+              "java_outer_classname": "DistributionProto",
+              "java_package": "com.google.api",
+              "objc_class_prefix": "GAPI"
+            },
+            "nested": {
+              "Distribution": {
+                "fields": {
+                  "count": {
+                    "type": "int64",
+                    "id": 1
+                  },
+                  "mean": {
+                    "type": "double",
+                    "id": 2
+                  },
+                  "sumOfSquaredDeviation": {
+                    "type": "double",
+                    "id": 3
+                  },
+                  "range": {
+                    "type": "Range",
+                    "id": 4
+                  },
+                  "bucketOptions": {
+                    "type": "BucketOptions",
+                    "id": 6
+                  },
+                  "bucketCounts": {
+                    "rule": "repeated",
+                    "type": "int64",
+                    "id": 7
+                  },
+                  "exemplars": {
+                    "rule": "repeated",
+                    "type": "Exemplar",
+                    "id": 10
+                  }
+                },
+                "nested": {
+                  "Range": {
+                    "fields": {
+                      "min": {
+                        "type": "double",
+                        "id": 1
+                      },
+                      "max": {
+                        "type": "double",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "BucketOptions": {
+                    "oneofs": {
+                      "options": {
+                        "oneof": [
+                          "linearBuckets",
+                          "exponentialBuckets",
+                          "explicitBuckets"
+                        ]
+                      }
+                    },
+                    "fields": {
+                      "linearBuckets": {
+                        "type": "Linear",
+                        "id": 1
+                      },
+                      "exponentialBuckets": {
+                        "type": "Exponential",
+                        "id": 2
+                      },
+                      "explicitBuckets": {
+                        "type": "Explicit",
+                        "id": 3
+                      }
+                    },
+                    "nested": {
+                      "Linear": {
+                        "fields": {
+                          "numFiniteBuckets": {
+                            "type": "int32",
+                            "id": 1
+                          },
+                          "width": {
+                            "type": "double",
+                            "id": 2
+                          },
+                          "offset": {
+                            "type": "double",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Exponential": {
+                        "fields": {
+                          "numFiniteBuckets": {
+                            "type": "int32",
+                            "id": 1
+                          },
+                          "growthFactor": {
+                            "type": "double",
+                            "id": 2
+                          },
+                          "scale": {
+                            "type": "double",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "Explicit": {
+                        "fields": {
+                          "bounds": {
+                            "rule": "repeated",
+                            "type": "double",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Exemplar": {
+                    "fields": {
+                      "value": {
+                        "type": "double",
+                        "id": 1
+                      },
+                      "timestamp": {
+                        "type": "google.protobuf.Timestamp",
+                        "id": 2
+                      },
+                      "attachments": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Any",
+                        "id": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "package": "osmosis.poolincentives.v1beta1",
+  "imports": [
+    "gogoproto/gogo.proto",
+    "google/protobuf/duration.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "osmosis": {
+        "nested": {
+          "poolincentives": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/osmosis-labs/osmosis/v7/x/pool-incentives/types"
+                },
+                "nested": {
+                  "Params": {
+                    "options": {
+                      "(gogoproto.goproto_stringer)": false
+                    },
+                    "fields": {
+                      "mintedDenom": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:minted_denom"
+                        }
+                      }
+                    }
+                  },
+                  "LockableDurationsInfo": {
+                    "fields": {
+                      "lockableDurations": {
+                        "rule": "repeated",
+                        "type": "google.protobuf.Duration",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.nullable)": false,
+                          "(gogoproto.stdduration)": true,
+                          "(gogoproto.moretags)": "yaml:lockable_durations"
+                        }
+                      }
+                    }
+                  },
+                  "DistrInfo": {
+                    "fields": {
+                      "totalWeight": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.moretags)": "yaml:total_weight",
+                          "(gogoproto.nullable)": false
+                        }
+                      },
+                      "records": {
+                        "rule": "repeated",
+                        "type": "DistrRecord",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  },
+                  "DistrRecord": {
+                    "options": {
+                      "(gogoproto.equal)": true
+                    },
+                    "fields": {
+                      "gaugeId": {
+                        "type": "uint64",
+                        "id": 1,
+                        "options": {
+                          "(gogoproto.moretags)": "yaml:gauge_id"
+                        }
+                      },
+                      "weight": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(gogoproto.customtype)": "github.com/cosmos/cosmos-sdk/types.Int",
+                          "(gogoproto.nullable)": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

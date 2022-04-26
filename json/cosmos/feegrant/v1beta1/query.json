@@ -1,0 +1,157 @@
+{
+  "package": "cosmos.feegrant.v1beta1",
+  "imports": [
+    "cosmos/feegrant/v1beta1/feegrant.proto",
+    "cosmos/base/query/v1beta1/pagination.proto",
+    "google/api/annotations.proto",
+    "cosmos_proto/cosmos.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "feegrant": {
+            "nested": {
+              "v1beta1": {
+                "options": {
+                  "go_package": "github.com/cosmos/cosmos-sdk/x/feegrant"
+                },
+                "nested": {
+                  "Query": {
+                    "methods": {
+                      "Allowance": {
+                        "requestType": "QueryAllowanceRequest",
+                        "responseType": "QueryAllowanceResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}"
+                            }
+                          }
+                        ]
+                      },
+                      "Allowances": {
+                        "requestType": "QueryAllowancesRequest",
+                        "responseType": "QueryAllowancesResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/feegrant/v1beta1/allowances/{grantee}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/feegrant/v1beta1/allowances/{grantee}"
+                            }
+                          }
+                        ]
+                      },
+                      "AllowancesByGranter": {
+                        "requestType": "QueryAllowancesByGranterRequest",
+                        "responseType": "QueryAllowancesByGranterResponse",
+                        "options": {
+                          "(google.api.http).get": "/cosmos/feegrant/v1beta1/issued/{granter}"
+                        },
+                        "parsedOptions": [
+                          {
+                            "(google.api.http)": {
+                              "get": "/cosmos/feegrant/v1beta1/issued/{granter}"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "QueryAllowanceRequest": {
+                    "fields": {
+                      "granter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "grantee": {
+                        "type": "string",
+                        "id": 2,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      }
+                    }
+                  },
+                  "QueryAllowanceResponse": {
+                    "fields": {
+                      "allowance": {
+                        "type": "cosmos.feegrant.v1beta1.Grant",
+                        "id": 1
+                      }
+                    }
+                  },
+                  "QueryAllowancesRequest": {
+                    "fields": {
+                      "grantee": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryAllowancesResponse": {
+                    "fields": {
+                      "allowances": {
+                        "rule": "repeated",
+                        "type": "cosmos.feegrant.v1beta1.Grant",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryAllowancesByGranterRequest": {
+                    "fields": {
+                      "granter": {
+                        "type": "string",
+                        "id": 1,
+                        "options": {
+                          "(cosmos_proto.scalar)": "cosmos.AddressString"
+                        }
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageRequest",
+                        "id": 2
+                      }
+                    }
+                  },
+                  "QueryAllowancesByGranterResponse": {
+                    "fields": {
+                      "allowances": {
+                        "rule": "repeated",
+                        "type": "cosmos.feegrant.v1beta1.Grant",
+                        "id": 1
+                      },
+                      "pagination": {
+                        "type": "cosmos.base.query.v1beta1.PageResponse",
+                        "id": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

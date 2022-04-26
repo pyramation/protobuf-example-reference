@@ -1,0 +1,106 @@
+{
+  "package": "google.api.expr.v1alpha1",
+  "imports": [
+    "google/api/expr/v1alpha1/value.proto",
+    "google/rpc/status.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1alpha1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1alpha1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "EvalProto",
+                      "java_package": "com.google.api.expr.v1alpha1"
+                    },
+                    "nested": {
+                      "EvalState": {
+                        "fields": {
+                          "values": {
+                            "rule": "repeated",
+                            "type": "ExprValue",
+                            "id": 1
+                          },
+                          "results": {
+                            "rule": "repeated",
+                            "type": "Result",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "Result": {
+                            "fields": {
+                              "expr": {
+                                "type": "int64",
+                                "id": 1
+                              },
+                              "value": {
+                                "type": "int64",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "ExprValue": {
+                        "oneofs": {
+                          "kind": {
+                            "oneof": [
+                              "value",
+                              "error",
+                              "unknown"
+                            ]
+                          }
+                        },
+                        "fields": {
+                          "value": {
+                            "type": "Value",
+                            "id": 1
+                          },
+                          "error": {
+                            "type": "ErrorSet",
+                            "id": 2
+                          },
+                          "unknown": {
+                            "type": "UnknownSet",
+                            "id": 3
+                          }
+                        }
+                      },
+                      "ErrorSet": {
+                        "fields": {
+                          "errors": {
+                            "rule": "repeated",
+                            "type": "google.rpc.Status",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "UnknownSet": {
+                        "fields": {
+                          "exprs": {
+                            "rule": "repeated",
+                            "type": "int64",
+                            "id": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

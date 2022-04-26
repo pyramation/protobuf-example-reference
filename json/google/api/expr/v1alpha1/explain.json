@@ -1,0 +1,65 @@
+{
+  "package": "google.api.expr.v1alpha1",
+  "imports": [
+    "google/api/expr/v1alpha1/value.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "google": {
+        "nested": {
+          "api": {
+            "nested": {
+              "expr": {
+                "nested": {
+                  "v1alpha1": {
+                    "options": {
+                      "cc_enable_arenas": true,
+                      "go_package": "google.golang.org/genproto/googleapis/api/expr/v1alpha1;expr",
+                      "java_multiple_files": true,
+                      "java_outer_classname": "ExplainProto",
+                      "java_package": "com.google.api.expr.v1alpha1"
+                    },
+                    "nested": {
+                      "Explain": {
+                        "options": {
+                          "deprecated": true
+                        },
+                        "fields": {
+                          "values": {
+                            "rule": "repeated",
+                            "type": "Value",
+                            "id": 1
+                          },
+                          "exprSteps": {
+                            "rule": "repeated",
+                            "type": "ExprStep",
+                            "id": 2
+                          }
+                        },
+                        "nested": {
+                          "ExprStep": {
+                            "fields": {
+                              "id": {
+                                "type": "int64",
+                                "id": 1
+                              },
+                              "valueIndex": {
+                                "type": "int32",
+                                "id": 2
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

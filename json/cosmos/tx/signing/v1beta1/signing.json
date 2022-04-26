@@ -1,0 +1,114 @@
+{
+  "package": "cosmos.tx.signing.v1beta1",
+  "imports": [
+    "cosmos/crypto/multisig/v1beta1/multisig.proto",
+    "google/protobuf/any.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "cosmos": {
+        "nested": {
+          "tx": {
+            "nested": {
+              "signing": {
+                "nested": {
+                  "v1beta1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/cosmos-sdk/types/tx/signing"
+                    },
+                    "nested": {
+                      "SignMode": {
+                        "values": {
+                          "SIGN_MODE_UNSPECIFIED": 0,
+                          "SIGN_MODE_DIRECT": 1,
+                          "SIGN_MODE_TEXTUAL": 2,
+                          "SIGN_MODE_DIRECT_AUX": 3,
+                          "SIGN_MODE_LEGACY_AMINO_JSON": 127
+                        }
+                      },
+                      "SignatureDescriptors": {
+                        "fields": {
+                          "signatures": {
+                            "rule": "repeated",
+                            "type": "SignatureDescriptor",
+                            "id": 1
+                          }
+                        }
+                      },
+                      "SignatureDescriptor": {
+                        "fields": {
+                          "publicKey": {
+                            "type": "google.protobuf.Any",
+                            "id": 1
+                          },
+                          "data": {
+                            "type": "Data",
+                            "id": 2
+                          },
+                          "sequence": {
+                            "type": "uint64",
+                            "id": 3
+                          }
+                        },
+                        "nested": {
+                          "Data": {
+                            "oneofs": {
+                              "sum": {
+                                "oneof": [
+                                  "single",
+                                  "multi"
+                                ]
+                              }
+                            },
+                            "fields": {
+                              "single": {
+                                "type": "Single",
+                                "id": 1
+                              },
+                              "multi": {
+                                "type": "Multi",
+                                "id": 2
+                              }
+                            },
+                            "nested": {
+                              "Single": {
+                                "fields": {
+                                  "mode": {
+                                    "type": "SignMode",
+                                    "id": 1
+                                  },
+                                  "signature": {
+                                    "type": "bytes",
+                                    "id": 2
+                                  }
+                                }
+                              },
+                              "Multi": {
+                                "fields": {
+                                  "bitarray": {
+                                    "type": "cosmos.crypto.multisig.v1beta1.CompactBitArray",
+                                    "id": 1
+                                  },
+                                  "signatures": {
+                                    "rule": "repeated",
+                                    "type": "Data",
+                                    "id": 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

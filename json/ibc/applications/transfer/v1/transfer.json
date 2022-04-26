@@ -1,0 +1,60 @@
+{
+  "package": "ibc.applications.transfer.v1",
+  "imports": [
+    "gogoproto/gogo.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "nested": {
+      "ibc": {
+        "nested": {
+          "applications": {
+            "nested": {
+              "transfer": {
+                "nested": {
+                  "v1": {
+                    "options": {
+                      "go_package": "github.com/cosmos/ibc-go/v2/modules/apps/transfer/types"
+                    },
+                    "nested": {
+                      "DenomTrace": {
+                        "fields": {
+                          "path": {
+                            "type": "string",
+                            "id": 1
+                          },
+                          "baseDenom": {
+                            "type": "string",
+                            "id": 2
+                          }
+                        }
+                      },
+                      "Params": {
+                        "fields": {
+                          "sendEnabled": {
+                            "type": "bool",
+                            "id": 1,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:send_enabled"
+                            }
+                          },
+                          "receiveEnabled": {
+                            "type": "bool",
+                            "id": 2,
+                            "options": {
+                              "(gogoproto.moretags)": "yaml:receive_enabled"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
